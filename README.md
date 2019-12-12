@@ -1,2 +1,2 @@
-# iPlay-Tracker
-Java app for a torrent tracker
+## iPlay Torrent Tracker
+
