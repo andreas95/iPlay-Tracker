@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<VBox fx:id="PanePoll" spacing="5" alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.andreas.tracker.iplay.fragments.PollFragment">
+    <padding><Insets top="10" /></padding>
+    <children>
+        <VBox fx:id="PaneAdd" alignment="CENTER">
+            <children>
+                <Text text="Add Poll" fill="white"  style="-fx-font-size:11pt; -fx-font-weight:bold;"/>
+                <GridPane vgap="15" hgap="10" styleClass="transparent-pane" alignment="TOP_CENTER" maxWidth="600">
+                    <padding><Insets top="30" left="20" right="10" bottom="30"/></padding>
+                    <children>
+                        <Text text="Question:" fill="aliceblue" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                            <font>
+                                <Font name="Adobe Hebrew BOLD" size="14.0" />
+                            </font>
+                        </Text>
+                        <TextField fx:id="FieldQuestion" prefWidth="300" GridPane.rowIndex="0" GridPane.columnIndex="1" promptText="Type your question here"/>
+
+                        <GridPane fx:id="PaneAddAnswers" vgap="10" hgap="50" GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                            <children>
+                                <Text text="Answers:" fill="aliceblue" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                    <font>
+                                        <Font name="Adobe Hebrew BOLD" size="14.0" />
+                                    </font>
+                                </Text>
+                                <TextField fx:id="FieldAnswer1" prefWidth="300" GridPane.rowIndex="0" GridPane.columnIndex="1" promptText="Type your answer here"/>
+                            </children>
+                        </GridPane>
+
+                        <Button fx:id="ButtonAddAnswer" GridPane.columnIndex="0" GridPane.rowIndex="2" text="Add Answer" mnemonicParsing="false" styleClass="btn" onAction="#addAnswer">
+                            <graphic>
+                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../../../../resources/img/common/button/add.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+
+                        <HBox alignment="BOTTOM_RIGHT" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                            <children>
+                                <Button fx:id="ButtonCancel" mnemonicParsing="false" text="Cancel" styleClass="btn" onAction="#cancel" >
+                                    <graphic>
+                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/button/delete.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="ButtonSavePoll" mnemonicParsing="false" text="Save" styleClass="btn" onAction="#savePoll" >
+                                    <graphic>
+                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/button/add.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                </GridPane>
+            </children>
+        </VBox>
+
+        <VBox fx:id="PaneEdit" alignment="CENTER">
+            <children>
+                <Text text="Edit Poll" fill="white"  style="-fx-font-size:11pt; -fx-font-weight:bold;"/>
+                <GridPane fx:id="PaneEditScene1" alignment="CENTER">
+                    <children>
+                        <HBox prefHeight="10" prefWidth="400" styleClass="little-pane-header" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <VBox alignment="CENTER" prefWidth="400" styleClass="little-pane-middle" GridPane.columnIndex="0" GridPane.rowIndex="1" >
+                            <children>
+                                <ComboBox fx:id="ListPolls" GridPane.columnIndex="0" GridPane.rowIndex="0" value="---- None selected ----" prefWidth="300">
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" top="10.0" />
+                                    </VBox.margin>
+                                </ComboBox>
+                                <Button fx:id="ButtonNextEdit" mnemonicParsing="false" text="Next" styleClass="btn" onMouseClicked="#edit" >
+                                    <graphic>
+                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/button/add.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" top="0.0" />
+                                    </VBox.margin>
+                                </Button>
+                            </children>
+                        </VBox>
+                        <HBox prefHeight="10" prefWidth="400" styleClass="little-pane-footer" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    </children>
+                </GridPane>
+                <GridPane fx:id="PaneEditScene2" vgap="10" hgap="10" alignment="TOP_CENTER" styleClass="transparent-pane" maxWidth="600">
+                    <padding><Insets top="30" left="20" right="10" bottom="30"/></padding>
+                    <children>
+                        <Text text="Question:" fill="aliceblue" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                            <font>
+                                <Font name="Adobe Hebrew BOLD" size="14.0" />
+                            </font>
+                        </Text>
+                        <TextField fx:id="FieldQuestionEdit" prefWidth="300" GridPane.rowIndex="0" GridPane.columnIndex="1" promptText="Type your question here"/>
+
+                        <GridPane fx:id="PaneAddAnswersEdit" vgap="10" hgap="50" GridPane.rowIndex="1" GridPane.columnIndex="0" GridPane.columnSpan="2">
+                            <children>
+                            </children>
+                        </GridPane>
+
+                        <Button fx:id="ButtonAddAnswerEdit" GridPane.columnIndex="0" GridPane.rowIndex="2" text="Add Answer" mnemonicParsing="false" styleClass="btn" onAction="#addAnswerEdit">
+                            <graphic>
+                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../../../../resources/img/common/button/add.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                        </Button>
+
+                        <HBox alignment="BOTTOM_RIGHT" spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                            <children>
+                                <Button fx:id="ButtonCancelEdit" mnemonicParsing="false" text="Cancel" styleClass="btn" onAction="#cancel" >
+                                    <graphic>
+                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/button/delete.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="ButtonEditPoll" mnemonicParsing="false" text="Save" styleClass="btn" onAction="#editPoll" >
+                                    <graphic>
+                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/button/add.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                </GridPane>
+            </children>
+        </VBox>
+
+        <VBox fx:id="PaneDelete" alignment="CENTER">
+            <children>
+                <Text text="Delete Poll" fill="white"  style="-fx-font-size:11pt; -fx-font-weight:bold;"/>
+                <GridPane fx:id="PaneDeleteList" alignment="CENTER">
+                    <children>
+                        <HBox prefHeight="10" prefWidth="400" styleClass="little-pane-header" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <VBox alignment="CENTER" prefWidth="400" styleClass="little-pane-middle" GridPane.columnIndex="0" GridPane.rowIndex="1" >
+                            <children>
+                                <ComboBox fx:id="ListPollDelete" GridPane.columnIndex="0" GridPane.rowIndex="0" value="---- None selected ----" prefWidth="300">
+                                    <VBox.margin>
+                                        <Insets bottom="10.0" top="10.0" />
+                                    </VBox.margin>
+                                </ComboBox>
+                                <HBox spacing="5" alignment="CENTER">
+                                    <children>
+                                        <Button fx:id="ButtonCancelDelete" mnemonicParsing="false" text="Cancel" styleClass="btn" onMouseClicked="#cancel" >
+                                            <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../../../../resources/img/common/button/delete.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                            <HBox.margin>
+                                                <Insets bottom="10.0" top="0.0" />
+                                            </HBox.margin>
+                                        </Button>
+                                        <Button fx:id="ButtonDeletePoll" mnemonicParsing="false" text="Delete" styleClass="btn" onMouseClicked="#delete" >
+                                            <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../../../../resources/img/common/button/add.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                            <HBox.margin>
+                                                <Insets bottom="10.0" top="0.0" />
+                                            </HBox.margin>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                        <HBox prefHeight="10" prefWidth="400" styleClass="little-pane-footer" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                    </children>
+                </GridPane>
+            </children>
+        </VBox>
+    </children>
+</VBox>

@@ -1,0 +1,1068 @@
+/****************************************************************
+
+    Interface Design
+
+****************************************************************/
+
+.root {
+    -fx-background-image: url(../img/tyrian/background.jpg);
+    -fx-background-color: black;
+    -fx-font-family: tahoma, arial, helvetica, sans-serif;
+    -fx-font-size: 8pt;
+    -fx-background-repeat: no-repeat;
+}
+
+.header {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/tyrian/header.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+.middle {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/tyrian/middle.png);
+     -fx-background-position:left;
+}
+
+.footer {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/tyrian/footer.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+.btn {
+    -fx-background-color:white;
+    -fx-text-fill:#565656 ;
+    -fx-font-weight: bold;
+    -fx-padding:2px;
+    -fx-background-radius: 0;
+}
+
+.btn:hover {
+    -fx-background-color:white;
+    -fx-text-fill:  #dd4b39;
+    -fx-font-weight: bold;
+    -fx-padding:2px;
+    -fx-background-radius: 0;
+    -fx-cursor: hand;
+}
+
+.text-field {
+    -fx-background-radius: 0;
+    -fx-padding:3px;
+}
+
+.check-box .box{
+    -fx-padding:2px;
+    -fx-background-radius: 0;
+    -fx-mark-color: #2471ff;
+}
+
+.radio-button:selected{
+    -fx-mark-color: #2471ff;
+}
+
+.combo-box{
+    -fx-background-color:white;
+    -fx-text-fill:black;
+    -fx-padding:-2px;
+    -fx-background-radius: 0;
+}
+
+.link{
+    -fx-fill: white;
+    -fx-font-weight:bold;
+}
+
+.link:hover{
+    -fx-fill: #dd4b39;
+    -fx-font-weight:bold;
+    -fx-cursor: hand;
+}
+
+/****************************************************************
+
+      iFeels
+
+****************************************************************/
+
+#ifeels {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/ifeels.png);
+     -fx-background-repeat:no-repeat;
+}
+#tyrian {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/ifeels_buttons.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:0px -120px;
+}
+#helios {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/ifeels_buttons.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:0px -60px;
+}
+#coagulate {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/ifeels_buttons.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:0px -180px;
+}
+#starfall {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/ifeels_buttons.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:0px 0px;
+}
+
+/****************************************************************
+
+    User bar
+
+****************************************************************/
+
+#userbar {
+    -fxpadding:0px;
+    -fx-border:none;
+    -fx-background-image:url(../img/common/userbar_bkg.png);
+    -fx-background-repeat:no-repeat;
+    -fx-background-position:center;
+}
+
+#userbar_arrowdown {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/stats.png);
+     -fx-background-repeat:no-repeat;
+	 -fx-background-position: 0px -176px;
+}
+
+#userbar_arrowup {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/stats.png);
+     -fx-background-repeat:no-repeat;
+	 -fx-background-position: 0px -192px;
+}
+
+#userbar_inbox {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/stats.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position: 0px -32px;
+}
+
+#userbar_outbox {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/stats.png);
+     -fx-background-repeat:no-repeat;
+	 -fx-background-position: 0px 0px;
+}
+
+#userbar_buddy {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/stats.png);
+     -fx-background-repeat:no-repeat;
+	 -fx-background-position: 0px -96px;
+}
+
+#userbar_list {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/stats.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position: 0px -16px;
+}
+
+#userbar_torrents {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/stats.png);
+     -fx-background-repeat:no-repeat;
+	 -fx-background-position: 0px -64px;
+}
+
+#userbar#users {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/stats.png);
+     -fx-background-repeat:no-repeat;
+	 -fx-background-position: 0px -48px;
+}
+
+#userbar_logview {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/stats.png);
+     -fx-background-repeat:no-repeat;
+	 -fx-background-position: 0px -80px;
+}
+
+#userbar_note {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/stats.png);
+     -fx-background-repeat:no-repeat;
+	 -fx-background-position: 0px -208px;
+}
+
+#userbar_invite {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/stats.png);
+     -fx-background-repeat:no-repeat;
+	 -fx-background-position: 0px -128px;
+}
+
+#userbar_milestone {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/stats.png);
+     -fx-background-repeat:no-repeat;
+	 -fx-background-position: 0px -144px;
+}
+
+#userbar_logout {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/stats.png);
+     -fx-background-repeat:no-repeat;
+	 -fx-background-position: 0px -160px;
+}
+
+#userbar_calendar {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/stats.png);
+     -fx-background-repeat:no-repeat;
+	 -fx-background-position: 0px -112px;
+}
+
+#userbar_board {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/stats.png);
+     -fx-background-repeat:no-repeat;
+	 -fx-background-position: 0px -224px;
+}
+
+#userbar_iseed {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/stats.png);
+     -fx-background-repeat:no-repeat;
+	 -fx-background-position: 0px -240px;
+}
+
+/****************************************************************
+
+    Home
+
+****************************************************************/
+
+.home-header {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/home_header.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+.home-middle {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/home_middle.png);
+     -fx-background-position:left;
+}
+
+.home-footer {
+     -fx-padding:0px;
+    -fx-border-width:0px;
+    -fx-background-image: url(../img/common/home_footer.png);
+    -fx-background-repeat:no-repeat;
+    -fx-background-position:left;
+}
+
+.polls-header {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/polls_header.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+.polls-middle {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/polls_middle.png);
+     -fx-background-position:left;
+}
+
+.polls-footer {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/polls_footer.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+/* Progress bar for poll */
+.progress-bar .bar {
+    -fx-padding: 6px;
+    -fx-background-insets: 0;
+    -fx-background-color: #a7a7a7;
+}
+
+/****************************************************************
+
+  Browse
+
+****************************************************************/
+
+.inactive-link{
+    -fx-fill: #565656;
+    -fx-font-weight: bold;
+}
+
+.inactive-link:hover{
+    -fx-fill: red;
+    -fx-font-weight: bold;
+}
+
+.separator-text{
+   -fx-fill: #565656;
+   -fx-font-size: 16px;
+   -fx-font-weight: bold;
+}
+
+.table-view{
+	-fx-background-color:transparent;
+}
+
+.table-view .column-header .arrow{
+	-fx-background-color:aliceblue;
+	 -fx-padding: 0.2em;
+    -fx-shape: "M4,17v-2.889l4.124-3.86l4.125,3.86V17l-4.125-3.375L4,17z";
+}
+
+.table-view .column-header .label{
+ 	-fx-text-fill:aliceblue ;
+     -fx-alignment: CENTER_LEFT;
+     -fx-padding: 5px;
+ }
+
+.table-view .column-added-style .label {
+    -fx-alignment: CENTER;
+    -fx-padding: 0 0 0 -15px;
+ }
+
+.table-view .column-center-style .label {
+    -fx-alignment: CENTER;
+ }
+
+.table-view .table-cell{
+	-fx-text-fill:#fffbf8;
+	-fx-font-weight:bold;
+    -fx-alignment:CENTER_LEFT;
+        -fx-padding: 5px;
+    -fx-border-width:0;
+}
+
+.column-header{
+	 -fx-background-color:#565656;
+	 -fx-size:40px;
+}
+
+.table-row-cell {
+	-fx-background-color:transparent;
+    -fx-cell-size: 50px;
+      -fx-border-color:#020202;
+    -fx-border-width: 1px 0px 1px 0px ;
+    -fx-border-style:dashed ;
+}
+
+.table-view *.scroll-bar:horizontal *.increment-button,
+.table-view *.scroll-bar:horizontal *.decrement-button {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.tableView .scroll-bar:horizontal .increment-arrow {
+    -fx-background-color: transparent !important;
+}
+
+.tableView .scroll-bar:vertical .increment-arrow {
+    -fx-background-color: transparent !important;
+}
+
+.tableView .scroll-bar:horizontal .decrement-arrow {
+    -fx-background-color: transparent !important;
+}
+
+.tableView .scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: transparent !important;
+}
+
+.table-view *.scroll-bar:horizontal *.increment-button,
+.table-view *.scroll-bar:horizontal *.decrement-button {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.table-view *.scroll-bar:horizontal *.increment-arrow,
+.table-view *.scroll-bar:horizontal *.decrement-arrow {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-shape: null;
+}
+
+
+.table-view *.scroll-bar:vertical *.increment-button,
+.table-view *.scroll-bar:vertical *.decrement-button {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.tableView .scroll-bar:vertical .increment-arrow {
+    -fx-background-color: transparent !important;
+}
+
+.tableView .scroll-bar:vertical .increment-arrow {
+    -fx-background-color: transparent !important;
+}
+
+.tableView .scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: transparent !important;
+}
+
+.tableView .scroll-bar:vertical .decrement-arrow {
+    -fx-background-color: transparent !important;
+}
+
+.table-view *.scroll-bar:vertical *.increment-button,
+.table-view *.scroll-bar:vertical *.decrement-button {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+}
+
+.table-view *.scroll-bar:vertical *.increment-arrow,
+.table-view *.scroll-bar:vertical *.decrement-arrow {
+    -fx-background-color: null;
+    -fx-background-radius: 0;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-shape: null;
+}
+
+.button-page-next{
+    -fx-font-size: 0;
+    -fx-background-color: transparent;
+    -fx-background-image: url("../img/common/browse/table/page/next.png");
+}
+
+.button-page-prev{
+    -fx-background-color: transparent;
+    -fx-background-image: url("../img/common/browse/table/page/prev.png");
+}
+
+.scroll-pane > .viewport{
+	-fx-background-color:transparent;
+}
+.scroll-pane{
+		-fx-background-color:transparent;
+}
+
+/****************************************************************
+
+  Header and Footer Links
+
+****************************************************************/
+
+#links{
+    -fx-background-position: 0px -20px;
+}
+
+/****************************************************************
+
+  ScrollBar Skin
+
+****************************************************************/
+
+
+/*
+.scroll-bar:horizontal, .scroll-bar:horizontal:focused,
+.scroll-bar:horizontal > .track-background {
+    -fx-background-color:transparent;
+    -fx-background-insets: 0.0;
+    -fx-padding: 0.0 0.0 2.0 0.0;
+}
+
+.scroll-bar:horizontal:hover, .scroll-bar:horizontal:focused:hover,
+.scroll-bar:horizontal:hover > .track-background {
+    -fx-background-color:transparent;
+    -fx-background-insets: 0.0;
+    -fx-padding: 0.0 0.0 0.0 0.0;
+}
+
+.scroll-bar:vertical{
+    -fx-background-color:transparent;
+    -fx-background-insets: 0.0;
+    -fx-padding: -1.0 2.0 -1.0 0.0;
+}
+
+.scroll-bar:vertical > .track-background,
+.scroll-bar:vertical:hover > .track-background,
+.scroll-bar:vertical:hover, .scroll-bar:vertical:focused:hover {
+    -fx-background-color:transparent;
+    -fx-background-insets: 0.0;
+    -fx-padding: -1.0 0.0 -1.0 0.0;
+}
+
+.scroll-bar:horizontal > .thumb, .scroll-bar:vertical > .thumb {
+    -fx-background-color: rgb(0.0, 0.0, 0.0, 0.5);
+    -fx-background-insets: 0.0;
+    -fx-background-radius: 4.0;
+}
+
+.scroll-bar:horizontal:hover > .thumb, .scroll-bar:vertical:hover > .thumb {
+    -fx-background-color: rgb(0.0, 0.0, 0.0, 0.5);
+    -fx-background-radius: 6.0;
+}
+
+.scroll-bar:vertical:hover > .thumb {
+    -fx-background-insets: 0.0 2.0 0.0 2.0;
+}
+
+.scroll-bar:horizontal:hover > .thumb {
+    -fx-background-insets: 2.0 0.0 2.0 0.0;
+}
+
+.scroll-bar:horizontal > .track,
+.scroll-bar:vertical > .track {
+    -fx-background-color: transparent;
+    -fx-background-radius: 0.0;
+    -fx-background-insets: 0.0;
+}
+
+.scroll-bar:horizontal:hover > .track,
+.scroll-bar:vertical:hover > .track {
+    -fx-border-color: rgb(198.0, 198.0, 198.0);
+}
+
+.scroll-bar:vertical:hover > .track {
+    -fx-background-color: linear-gradient(rgb(238.0, 238.0, 238.0, 0.7) 0.0%, rgb(255.0, 255.0, 255.0, 0.7) 100.0%);
+    -fx-border-width: 0.0 0.0 0.0 1.0;
+    -fx-border-insets: 0.0 0.0 0.0 -1.0;
+}
+
+.scroll-bar:horizontal:hover > .track {
+    -fx-background-color: linear-gradient(rgb(238.0, 238.0, 238.0, 0.8) 0.0%, rgb(255.0, 255.0, 255.0, 0.8) 100.0%);
+    -fx-border-width: 1.0 0.0 0.0 0.0;
+    -fx-border-insets: -1.0 0.0 0.0 0.0;
+}
+
+.scroll-bar > .increment-button,
+.scroll-bar > .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-insets:  0.0;
+    -fx-padding: 0.0em;
+}
+
+.scroll-bar:vertical:hover > .increment-button,
+.scroll-bar:vertical:hover > .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-insets:  0.0;
+    -fx-padding: 0.0em 6.0pt 0.0em 0.0em;
+}
+
+.scroll-bar:horizontal:hover > .increment-button,
+.scroll-bar:horizontal:hover > .decrement-button {
+    -fx-background-color: transparent;
+    -fx-background-insets:  0.0;
+    -fx-padding: 6.0pt 0.0em 0.0em 0.0em;
+}
+
+.scroll-bar:horizontal > .increment-button > .increment-arrow,
+.scroll-bar:horizontal > .decrement-button > .decrement-arrow {
+    -fx-background-color: transparent;
+    -fx-background-insets:  0.0;
+    -fx-padding: 4.0pt 0.0em 0.0em 0.0em;
+}
+
+.scroll-bar:vertical > .increment-button > .increment-arrow,
+.scroll-bar:vertical > .decrement-button > .decrement-arrow {
+    -fx-background-color: transparent;
+    -fx-background-insets:  0.0;
+    -fx-padding: 0.0em 4.0pt 0.0em 0.0em;
+}
+
+.scroll-bar:disabled {
+    -fx-opacity: -fx-disabled-opacity;
+}
+
+*/
+
+/****************************************************************
+
+      My Profile
+
+****************************************************************/
+
+.profile-header-left {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/profile/profile_header_left.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+.profile-header-right {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/profile/profile_header_right.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+.profile-middle-left {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/profile/profile_middle_left.png);
+     -fx-background-position:left;
+}
+
+.profile-middle-right {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/profile/profile_middle_right.png);
+     -fx-background-position:left;
+}
+
+.profile-footer-left {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/profile/profile_footer_left.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+.profile-footer-right {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/profile/profile_footer_right.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+
+/****************************************************************
+
+      View Torrents Like Button
+
+****************************************************************/
+
+
+.thanks {
+    -fx-background-color: fafafa;
+    -fx-text-fill: #555555;
+       -fx-background-radius: 10px;
+    -fx-padding: 3px;
+
+}
+
+.thanks:hover {
+    -fx-background-color: fafafa;
+    -fx-text-fill: black;
+    -fx-background-radius: 10px;
+    -fx-padding: 3px;
+    -fx-cursor: hand;
+}
+
+.torrent-header-left {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/torrent/torrent_header_left.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+.torrent-header-right {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/torrent/torrent_header_right.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+.torrent-middle-left {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/torrent/torrent_middle_left.png);
+     -fx-background-position:left;
+}
+
+.torrent-middle-right {
+     -fx-padding:0 0 0 10px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/torrent/torrent_middle_right.png);
+     -fx-background-position:left;
+}
+
+.torrent-footer-left {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/torrent/torrent_footer_left.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+.torrent-footer-right {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/torrent/torrent_footer_right.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+/****************************************************************
+
+      Details table
+
+****************************************************************/
+
+.dltable-h1 {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/table/dltable_h1.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+.dltable-h2 {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/table/dltable_h2.png);
+     -fx-background-position:left;
+}
+
+.dltable-h4 {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/table/dltable_h4.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+.dltable-m1 {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/table/dltable_m1.png);
+     -fx-background-position:left;
+}
+
+.dltable-m2 {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/table/dltable_m2.png);
+     -fx-background-position:left;
+}
+
+.dltable-m4 {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/table/dltable_m4.png);
+     -fx-background-position:left;
+}
+
+
+.dltable-f1 {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/table/dltable_f1.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+.dltable-f2 {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/table/dltable_f2.png);
+     -fx-background-position:left;
+}
+
+.dltable-f4 {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/table/dltable_f4.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+/****************************************************************
+
+      Upload Torrents
+
+****************************************************************/
+
+
+.upload-header-left {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/upload/upload_header_left.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+.upload-header-right {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/upload/upload_header_right.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+.upload-middle-left {
+      -fx-padding:0 20px 0 0;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/upload/upload_middle_left.png);
+     -fx-background-position:left;
+}
+
+.upload-middle-right {
+     -fx-padding:0 0 0 10px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/upload/upload_middle_right.png);
+     -fx-background-position:left;
+}
+
+.upload-footer-left {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/upload/upload_footer_left.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+.upload-footer-right {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/upload/upload_footer_right.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+/****************************************************************
+
+        Pane messages
+
+****************************************************************/
+
+.little-pane-header {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/tbox_header.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+.little-pane-middle {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/tbox_middle.png);
+     -fx-background-position:left;
+}
+
+.little-pane-footer {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/common/tbox_footer.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+/****************************************************************
+
+        Rules, FAQ, Guides
+
+****************************************************************/
+
+.table-header {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/login/table_header.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+.table-middle {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/login/table_middle.png);
+     -fx-background-position:left;
+}
+
+.table-footer {
+     -fx-padding:0px;
+     -fx-border-width:0px;
+     -fx-background-image: url(../img/login/table_footer.png);
+     -fx-background-repeat:no-repeat;
+     -fx-background-position:left;
+}
+
+/****************************************************************
+
+        Forums
+
+****************************************************************/
+
+#unlockednew {
+    -fx-padding:0px;
+    -fx-border-width:0px;
+    -fx-background-image: url(../img/common/forumscat.png);
+    -fx-background-repeat:no-repeat;
+    -fx-background-position: 0px -184px;
+}
+
+#unlocked {
+    -fx-padding:0px;
+    -fx-border-width:0px;
+    -fx-background-image: url(../img/common/forumscat.png);
+    -fx-background-repeat:no-repeat;
+    -fx-background-position: 0px -46px;
+}
+
+#lockednew {
+    -fx-padding:0px;
+    -fx-border-width:0px;
+    -fx-background-image: url(../img/common/forumscat.png);
+    -fx-background-repeat:no-repeat;
+    -fx-background-position: 0px -92px;
+}
+
+#locked {
+    -fx-padding:0px;
+    -fx-border-width:0px;
+    -fx-background-image: url(../img/common/forumscat.png);
+    -fx-background-repeat:no-repeat;
+    -fx-background-position: 0px -230px;
+}
+
+#stickyn {
+    -fx-padding:0px;
+    -fx-border-width:0px;
+    -fx-background-image: url(../img/common/forumscat.png);
+    -fx-background-repeat:no-repeat;
+    -fx-background-position: 0px 0px;
+}
+
+#stickyo {
+    -fx-padding:0px;
+    -fx-border-width:0px;
+    -fx-background-image: url(../img/common/forumscat.png);
+    -fx-background-repeat:no-repeat;
+    -fx-background-position: 0px -138px;
+}
+
+#stickyln {
+    -fx-padding:0px;
+    -fx-border-width:0px;
+    -fx-background-image: url(../img/common/forumscat.png);
+    -fx-background-repeat:no-repeat;
+    -fx-background-position: 0px -322px;
+}
+
+#stickylo {
+    -fx-padding:0px;
+    -fx-border-width:0px;
+    -fx-background-image: url(../img/common/forumscat.png);
+    -fx-background-repeat:no-repeat;
+    -fx-background-position: 0px -276px;
+}
+
+#online {
+	-fx-padding:0px;
+	-fx-border-width:0px;
+	-fx-background-image: url(../img/common/forumbuttons.png);
+	-fx-background-repeat:no-repeat;
+	-fx-background-position: 0px 0px;
+}
+
+#offline {
+	-fx-padding:0px;
+	-fx-border-width:0px;
+	-fx-background-image: url(../img/common/forumbuttons.png);
+	-fx-background-repeat:no-repeat;
+	-fx-background-position: 0px -168px;
+}
+
+#pm {
+	-fx-padding:0px;
+	-fx-border-width:0px;
+	-fx-background-image: url(../img/common/forumbuttons.png);
+	-fx-background-repeat:no-repeat;
+	-fx-background-position: 0px -72px;
+}
+
+#quote {
+	-fx-padding:0px;
+	-fx-border-width:0px;
+	-fx-background-image: url(../img/common/forumbuttons.png);
+	-fx-background-repeat:no-repeat;
+	-fx-background-position: 0px -144px;
+}
+
+#report {
+	-fx-padding:0px;
+	-fx-border-width:0px;
+	-fx-background-image: url(../img/common/forumbuttons.png);
+	-fx-background-repeat:no-repeat;
+	-fx-background-position: 0px -120px;
+}
+
+#delete {
+	-fx-padding:0px;
+	-fx-border-width:0px;
+	-fx-background-image: url(../img/common/forumbuttons.png);
+	-fx-background-repeat:no-repeat;
+	-fx-background-position: 0px -24px;
+}
+
+#edit {
+	-fx-padding:0px;
+	-fx-border-width:0px;
+	-fx-background-image: url(../img/common/forumbuttons.png);
+	-fx-background-repeat:no-repeat;
+	-fx-background-position: 0px -96px;
+}
+
+#top {
+	-fx-padding:0px;
+	-fx-border-width:0px;
+	-fx-background-image: url(../img/common/forumbuttons.png);
+	-fx-background-repeat:no-repeat;
+	-fx-background-position: 0px -48px;
+}

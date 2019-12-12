@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Tracker">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/Tracker_jar/Tracker.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

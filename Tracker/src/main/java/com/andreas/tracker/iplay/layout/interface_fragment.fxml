@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox prefHeight="615.0" prefWidth="1000.0" spacing="10" stylesheets="@../../../../../../resources/css/tyrian.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.andreas.tracker.iplay.fragments.InterfaceFragment">
+    <children>
+        <VBox fx:id="Main" alignment="CENTER">
+            <children>
+        <GridPane alignment="CENTER" hgap="20" vgap="10">
+            <children>
+        <VBox fx:id="BoxiFeel" alignment="TOP_CENTER" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <children>
+                <Label id="ifeels" fx:id="ButtoniFeel" mnemonicParsing="false" onMouseClicked="#ifeel" prefHeight="15" prefWidth="137" />
+                <HBox fx:id="BoxStyle" spacing="10">
+                    <children>
+                        <Label id="helios" fx:id="ButtonHelios" mnemonicParsing="false" onMouseClicked="#helios" prefHeight="60" prefWidth="130" />
+                        <Label id="coagulate" fx:id="ButtonCoagulate" mnemonicParsing="false" onMouseClicked="#coagulate" prefHeight="60" prefWidth="130" />
+                        <Label id="starfall" fx:id="ButtonStarfall" mnemonicParsing="false" onMouseClicked="#starfall" prefHeight="60" prefWidth="130" />
+                        <Label id="tyrian" fx:id="ButtonTyrian" mnemonicParsing="false" onMouseClicked="#tyrian" prefHeight="60" prefWidth="130" />
+                    </children>
+                </HBox>
+                </children>
+            </VBox>
+            </children>
+               <columnConstraints>
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+               </rowConstraints>
+            </GridPane>
+
+
+
+                <!-- REMOVE FROM V1.0
+      <VBox fx:id="PaneSocialMedia" alignment="CENTER" spacing="5" maxWidth="100" styleClass="social_media" stylesheets="@../../../../../../resources/css/social_media.css">
+                  <children>
+                      <Text text="Follow Us">
+                          <font>
+                              <Font name="Arial Bold Italic" size="14.0" />
+                          </font>
+                      </Text>
+
+
+                      <VBox alignment="CENTER" maxWidth="65" styleClass="social_box" spacing="4">
+                          <children>
+                              <HBox spacing="4">
+                                  <children>
+                                      <Button fx:id="ButtonFacebook" mnemonicParsing="false" onAction="#facebook" prefHeight="28" prefWidth="26" styleClass="facebook" />
+                                      <Button fx:id="ButtonTwitter" mnemonicParsing="false" onAction="#twitter" prefHeight="28" prefWidth="26" styleClass="twitter" />
+                                  </children>
+                              </HBox>
+
+                              <HBox spacing="4">
+                                  <children>
+                                      <Button fx:id="ButtonTumblr" mnemonicParsing="false" onAction="#tumblr" prefHeight="28" prefWidth="26" styleClass="tumblr" />
+                                      <Button fx:id="ButtonGooglePlus" mnemonicParsing="false" onAction="#googleplus" prefHeight="28" prefWidth="26" styleClass="google-plus" />
+                                  </children>
+                              </HBox>
+                          </children>
+                      </VBox>
+
+                      <Label fx:id="ButtonClose" text="Close" textFill="#464646" contentDisplay="LEFT" onMouseClicked="#closePaneMedia">
+                          <font>
+                              <Font name="Arial Bold" size="11.0" />
+                          </font>
+                          <graphic>
+                              <ImageView fitHeight="8.0" fitWidth="8.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@../../../../../../resources/img/social_media/close.png" />
+                                  </image>
+                              </ImageView>
+                          </graphic>
+                      </Label>
+                  </children>
+              </VBox>
+
+
+              -->
+
+
+
+                polls-header
+                        <Label fx:id="ButtonHome" layoutX="94.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#home" prefHeight="17.0" prefWidth="36.0" styleClass="top-button" />
+                        <Label fx:id="ButtonBrowse" layoutX="150.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#browse" prefHeight="17.0" prefWidth="44.0" styleClass="top-button" />
+                        <Label fx:id="ButtoniDocs" layoutX="217.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#idocs" prefHeight="17.0" prefWidth="36.0" styleClass="top-button" />
+                        <Label fx:id="ButtonMusic" layoutX="273.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#music" prefHeight="17.0" prefWidth="37.0" styleClass="top-button" />
+                        <Label fx:id="ButtonAdult" layoutX="334.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#adult" prefHeight="17.0" prefWidth="33.0" styleClass="top-button" />
+                        <Label fx:id="ButtonRequests" layoutX="390.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#requests" prefHeight="17.0" prefWidth="52.0" styleClass="top-button" />
+                        <Label fx:id="ButtonUpload" layoutX="464.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#upload" prefHeight="17.0" prefWidth="42.0" styleClass="top-button" />
+                        <Label fx:id="ButtonProfile" layoutX="531.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#profile" prefHeight="17.0" prefWidth="36.0" styleClass="top-button" />
+                        <Label fx:id="ButtonForum" layoutX="589.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#forum" prefHeight="17.0" prefWidth="43.0" styleClass="top-button" />
+                        <Label fx:id="ButtonDonate" layoutX="651.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#donate" prefHeight="17.0" prefWidth="44.0" styleClass="top-button" />
+                        <Label fx:id="ButtonGuides" layoutX="718.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#guides" prefHeight="17.0" prefWidth="37.0" styleClass="top-button" />
+                        <Label fx:id="ButtonIrc" layoutX="782.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#irc" prefHeight="17.0" prefWidth="16.0" styleClass="top-button" />
+                        <Label fx:id="ButtonRules" layoutX="822.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#rules" prefHeight="17.0" prefWidth="33.0" styleClass="top-button" />
+                        <Label fx:id="ButtonStaff" layoutX="877.0" layoutY="138.0" mnemonicParsing="false" onMouseClicked="#staff" prefHeight="17.0" prefWidth="33.0" styleClass="top-button" />
+                    </children>
+                </AnchorPane>
+
+                <VBox alignment="CENTER" maxWidth="1000" styleClass="middle">
+                    <children>
+                        <HBox alignment="TOP_CENTER">
+                            <padding><Insets top="20" /></padding>
+                            <children>
+                                <AnchorPane id="userbar" fx:id="UserBar" prefHeight="59" prefWidth="902">
+                                    <children>
+                                        <HBox fx:id="top_left" alignment="CENTER_LEFT" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="15.0">
+                                            <children>
+                                                <Text fill="white" style="-fx-font-size:9pt;" text="Welcome back, " />
+                                                <Text fx:id="TextUser" style="-fx-font-size:9pt;" styleClass="link" />
+                                                <Text fill="white" style="-fx-font-size:9pt; -fx-font-weight:bold;" text=" - " />
+                                                <Text fx:id="TextType" fill="#ff00a8" style="-fx-font-size:9pt; -fx-font-weight:bold;" />
+                                                <Label id="userbar_invite" fx:id="ButtonMyProfile" prefHeight="16" prefWidth="16" />
+                                                <Label id="userbar_milestone" fx:id="ButtonStar" prefHeight="16" prefWidth="16" />
+                                                <Label id="userbar_board" fx:id="ButtonChat" prefHeight="16" prefWidth="16" />
+                                                <Label id="userbar_iseed" fx:id="ButtoniSeed" prefHeight="16" prefWidth="16" />
+                                                <Label id="userbar_logout" fx:id="ButtonLogout" onMouseClicked="#logout" prefHeight="16" prefWidth="16" />
+                                            </children>
+                                        </HBox>
+
+                                        <HBox fx:id="top_right" alignment="CENTER_RIGHT" spacing="4" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="15.0">
+                                            <children>
+                                                <Label id="userbar_calendar" prefHeight="16" prefWidth="16" />
+                                                <Label fx:id="TextTime" style="-fx-font-size:9pt;" textFill="white" />
+                                            </children>
+                                        </HBox>
+
+                                        <HBox fx:id="bottom_left" alignment="CENTER_LEFT" AnchorPane.leftAnchor="25.0" AnchorPane.topAnchor="32.0">
+                                            <children>
+                                                <Text fill="white" style="-fx-font-size:9pt;" text="Ratio: " />
+                                                <Text fx:id="TextRatio" fill="white" style="-fx-font-size:9pt;" />
+                                                <Text fill="white" style="-fx-font-size:9pt;" text=" Uploaded: " />
+                                                <Text fx:id="TextUploaded" fill="white" style="-fx-font-size:9pt;" />
+                                                <Text fill="white" style="-fx-font-size:9pt;-fx-font-weight:bold" text=" GB " />
+                                                <Text fill="white" style="-fx-font-size:9pt;" text="Downloaded: " />
+                                                <Text fx:id="TextDownloaded" fill="white" style="-fx-font-size:9pt;" />
+                                                <Text fill="white" style="-fx-font-size:9pt; -fx-font-weight:bold;" text=" GB " />
+                                                <Text fill="white" style="-fx-font-size:9pt;" text="Active: " />
+                                                <Label id="userbar_arrowup" prefHeight="16" prefWidth="16" />
+                                                <Label fx:id="TextUploadActive" style="-fx-font-size:9pt;" textFill="white" />
+                                                <Label id="userbar_arrowdown" prefHeight="16" prefWidth="16" />
+                                                <Label fx:id="TextDownloadActive" style="-fx-font-size:9pt;" textFill="white" />
+                                            </children>
+                                        </HBox>
+
+                                        <HBox fx:id="bottom_right" alignment="CENTER_RIGHT" spacing="4" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="32.0">
+                                            <children>
+                                                <Label id="userbar_inbox" prefHeight="16" prefWidth="16" />
+                                                <Label fx:id="ButtonInbox" textFill="white" />
+                                                <Label id="userbar_outbox" prefHeight="16" prefWidth="16" />
+                                                <Label fx:id="ButtonSentbox" textFill="white" />
+                                                <Label id="userbar_buddy" fx:id="ButtonFriends" prefHeight="16" prefWidth="16" />
+                                                <Label id="userbar_list" prefHeight="16" prefWidth="16" />
+                                                <Label fx:id="ButtonInvites" textFill="white" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </AnchorPane>
+                            </children>
+                        </HBox>
+
+                        <VBox fx:id="PaneFragment" alignment="TOP_CENTER">
+                            <padding><Insets top="15" /></padding>
+                        </VBox>
+                    </children>
+                </VBox>
+
+                <AnchorPane maxWidth="1000.0" prefHeight="144" styleClass="footer">
+                    <children>
+                        <Label fx:id="ButtonLinks" layoutX="304.0" layoutY="45.0" mnemonicParsing="false" onMouseClicked="#links" prefHeight="17.0" prefWidth="33.0" styleClass="top-button" />
+                        <Label fx:id="ButtonUsers" layoutX="360.0" layoutY="45.0" mnemonicParsing="false" onMouseClicked="#users" prefHeight="17.0" prefWidth="33.0" styleClass="top-button" />
+                        <Label fx:id="ButtonDisclaimer" layoutX="417.0" layoutY="45.0" mnemonicParsing="false" onMouseClicked="#disclaimer" prefHeight="17.0" prefWidth="58.0" styleClass="top-button" />
+                        <Label fx:id="ButtonTop10" layoutX="498.0" layoutY="45.0" mnemonicParsing="false" onMouseClicked="#top10" prefHeight="17.0" prefWidth="33.0" styleClass="top-button" />
+                        <Label fx:id="ButtonFAQ" layoutX="556.0" layoutY="45.0" mnemonicParsing="false" onMouseClicked="#faq" prefHeight="17.0" prefWidth="27.0" styleClass="top-button" />
+                        <Label fx:id="ButtonRss" layoutX="607.0" layoutY="45.0" mnemonicParsing="false" onMouseClicked="#rss" prefHeight="17.0" prefWidth="21.0" styleClass="top-button" />
+                        <Label fx:id="ButtonSetupRss" layoutX="650.0" layoutY="45.0" mnemonicParsing="false" onMouseClicked="#setuprss" prefHeight="17.0" prefWidth="52.0" styleClass="top-button" />
+                    </children>
+                </AnchorPane>
+
+        </children>
+    </VBox>
+        <ScrollPane fx:id="Sp" fitToWidth="true" hbarPolicy="AS_NEEDED" vbarPolicy="AS_NEEDED" />
+        </children>
+    </VBox>

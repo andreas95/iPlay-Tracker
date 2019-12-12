@@ -1,0 +1,34 @@
+.facebook{
+	-fx-background-image:url(../img/social_media/facebook.jpg);
+	-fx-background-color: transparent;
+}
+
+.google-plus{
+	-fx-background-image:url(../img/social_media/google-plus.jpg);
+	-fx-background-color: transparent;
+}
+
+.tumblr{
+	-fx-background-image:url(../img/social_media/tumblr.jpg);
+	-fx-background-color: transparent;
+}
+
+.twitter{
+	-fx-background-image:url(../img/social_media/twitter.jpg);
+	-fx-background-color: transparent;
+}
+
+.social_media{
+    -fx-background-color: #d8d7d7;
+    -fx-background-radius: 0 10px 10px 0;
+    -fx-padding: 10px;
+}
+
+.social_box{
+    -fx-background-color:#2a2a2a;
+    -fx-background-radius:7px;
+    -fx-padding:5px;
+    -fx-border-color:#000;
+    -fx-border-width: 1px;
+    -fx-border-radius: 7px;
+}

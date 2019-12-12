@@ -1,0 +1,27 @@
+#accept {
+	-fx-background-image:url(../img/message/accept.png);
+	-fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-repeat:no-repeat;
+}
+
+#error {
+	-fx-background-image:url(../img/message/error.png);
+	-fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-repeat:no-repeat;
+}
+
+#warn {
+	-fx-background-image:url(../img/message/warn.png);
+	-fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-repeat:no-repeat;
+}
+
+#question {
+	-fx-background-image:url(../img/message/question.png);
+	-fx-background-color: transparent;
+    -fx-border-width: 0;
+    -fx-background-repeat:no-repeat;
+}

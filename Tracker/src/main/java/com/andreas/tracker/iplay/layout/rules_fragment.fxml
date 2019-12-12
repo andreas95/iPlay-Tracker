@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.layout.VBox?>
+<VBox alignment="CENTER" spacing="15" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.andreas.tracker.iplay.fragments.RulesFragment">
+    <padding><Insets top="10" bottom="30"/></padding>
+    <children>
+        <VBox alignment="CENTER">
+            <children>
+                <Text fill="white" text="Main Rules - Breaking these rules will get you banned" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                    <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-header"/>
+                <VBox maxWidth="750" alignment="CENTER_LEFT" styleClass="table-middle">
+                    <children>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • This is a torrent site which promotes sharing amongst the community. If you are not willing to give back to the community what you take from it, this site is not for you. In other words, we expect you to have an acceptable share ratio.">
+                            <VBox.margin><Insets top="5" bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • We're a community. Working together is what makes this place what it is. If you come across something which violates a rule, report it! Ignoring it is only damaging the community.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • Do not sell our invites. The invites were given to you to invite your friends or people you think that can contribute. If you are found selling invites, you'll lose your account.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <TextFlow>
+                            <children>
+                                <Text fill="white" text=" • "/>
+                                <Text fill="red" text="(Updated) "/>
+                                <Text wrappingWidth="735" fill="white"
+                                      text="Do NOT upload our torrents/files to other trackers (private, public, it doesn't matter)! Stealing torrents will result in your account being disabled."/>
+                            </children>
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • One (1) account per person per lifetime.  Anyone creating additional accounts will be banned.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • Use your account or lose it.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <TextFlow>
+                            <children>
+                                <Text fill="white" text=" • "/>
+                                <Text fill="red" text="(New) "/>
+                                <Text wrappingWidth="735" fill="white"
+                                      text="Accounts that have zero activity (0 bytes uploaded) after being a member for 28 days will be disabled automatically by the system."/>
+                            </children>
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                        <TextFlow>
+                            <children>
+                                <Text fill="white" text=" • "/>
+                                <Text fill="red" text="(New) "/>
+                                <Text wrappingWidth="735" fill="white"
+                                      text="Accounts with less than 175MB in total Upload / Download activity per month may be disabled."/>
+                            </children>
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                    </children>
+                </VBox>
+                <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-footer"/>
+            </children>
+        </VBox>
+        <VBox alignment="CENTER">
+            <children>
+                <Text fill="white" text="Downloading Rules - By not following these rules you will lose download privileges!" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                    <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-header"/>
+                <VBox maxWidth="750" alignment="CENTER_LEFT" styleClass="table-middle">
+                    <children>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • Low ratios may result in severe consequences, including banning in extreme cases. (low ratio &lt; 0.4)">
+                            <VBox.margin><Insets top="10" bottom="10" left="10"/></VBox.margin></Text>
+                        <TextFlow>
+                            <children>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Always give back what you took and try to seed every torrent to a "/>
+                                <Text fill="white" text="1:1 ratio." style="-fx-font-weight:bold;"/>
+                            </children>
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • Seeding is your best chance to get your ratio up. Use it and upload with your maximum speed.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • Give others a chance to seed. If your ratio on a single torrent is already above 2.0, you should give others the chance to seed too. Overseeding will only make it hard or even impossible for others to keep a good ratio.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                    </children>
+                </VBox>
+                <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-footer"/>
+            </children>
+        </VBox>
+        <VBox alignment="CENTER">
+            <children>
+                <Text fill="white" text="General Forum Guidelines - Please follow these guidelines or else you might end up with a warning!" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                    <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-header"/>
+                <VBox maxWidth="750" alignment="CENTER_LEFT" styleClass="table-middle">
+                    <children>
+                        <Text fx:id="TextPosting" wrappingWidth="735" fill="white" styleClass="link"
+                              text=" • Click here first.">
+                            <VBox.margin><Insets top="5" bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • Do not tell people to read the Rules, the FAQ, or comment on their ratios and torrents.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • Do not make comments to lock, move or trash topics. These are all Moderating decisions.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • Do not quote excessively. One quote of a quote box is sufficient. Edit the quote to make your point instead. Always remove large images when quoting a post.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • No self-congratulatory (its my birthday, I am a power user, etc.) or banal topics of any kind are allowed. If in any doubt, ask a moderator for permission.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • No advertising, mechandising or promotions of any sort are allowed in the forums.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • Please don't use our forum to promote blogs (yours or others)">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • Please do not use other users avatars.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • No aggressive behaviour or flaming in the forums.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <TextFlow>
+                            <children>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Don't post comments that don't add anything to the discussion. "/>
+                                <Text wrappingWidth="735" fill="white" style="-fx-font-weight:bold;"
+                                      text="NO SPAMMING!"/>
+                            </children>
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • No language other than Romanian or English in the forums.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • No requesting or posting of serials, CD keys, passwords or cracks in the forums.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • No images larger than 800x600, and preferably web-optimised.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • Please ensure all questions are posted in the correct section! (BitTorrent questions in the BitTorrent - Networking section, General questions in the General discussions section, etc.)">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • Posts are not often deleted. Though they are sometimes moved to the trash. Please check though the trash before accusing Mods of deleting posts.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <TextFlow>
+                            <children>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Last, please read the"/>
+                                <Text wrappingWidth="735" fill="white" style="-fx-font-weight:bold;"
+                                      text=" FAQ "/>
+                                <Text wrappingWidth="735" fill="white"
+                                      text="before asking any questions!"/>
+                            </children>
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                    </children>
+                </VBox>
+                <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-footer"/>
+            </children>
+        </VBox>
+        <VBox alignment="CENTER">
+            <children>
+                <Text fill="white" text="Torrent Comments Guidelines - Please follow these guidelines or else you might end up with a warning!" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                    <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                <HBox maxWidth="750" prefHeight="10" alignment="CENTER" styleClass="table-header"/>
+                <VBox maxWidth="750" alignment="CENTER" styleClass="table-middle">
+                    <children>
+                        <TextFlow>
+                            <children>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Always "/>
+                                <Text wrappingWidth="735" fill="white" style="-fx-font-weight:bold;"
+                                      text="respect the uploader!"/>
+                            </children>
+                            <VBox.margin><Insets top="5" bottom="10" left="10"/></VBox.margin></TextFlow>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • Please limit your torrent comments to the specific upload in question.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • If you have no intentions of downloading, don't comment.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • No language other than Romanian or English in the comments.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • No comments on the upload speed.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • No aggressive behaviour or flaming.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • No links to warez, crack or serial sites.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • No requesting or posting of serials, CD keys, passwords or cracks.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • Remember our releases are not subject to your own taste, If you don't like a release, stay away from it.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <TextFlow>
+                            <children>
+                                <Text wrappingWidth="735" fill="white" text=" • "/>
+                                <Text wrappingWidth="735" fill="red" text="(Updated) "/>
+                                <Text wrappingWidth="735" fill="white" text="No questions requesting Screenshots, System Requirements, Subtitles, etc."/>
+                            </children>
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                        <TextFlow>
+                            <children>
+                                <Text wrappingWidth="735" fill="white" text=" • "/>
+                                <Text wrappingWidth="735" fill="red" text="(New) "/>
+                                <Text wrappingWidth="735" fill="white" text="Do not post links or discuss about"/>
+                                <Text wrappingWidth="735" fill="white" text=" SUBTITLES " style="-fx-font-weight:bold;"/>
+                                <Text wrappingWidth="735" fill="white" text="in the comments."/>
+                            </children>
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                    </children>
+                </VBox>
+                <HBox maxWidth="750" prefHeight="10" alignment="CENTER" styleClass="table-footer"/>
+            </children>
+        </VBox>
+        <VBox alignment="CENTER">
+            <children>
+                <Text fill="white" text="Avatar and Signature Guidelines - Please try to follow these guidelines" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                    <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-header"/>
+                <VBox maxWidth="750" alignment="CENTER_LEFT" styleClass="table-middle">
+                    <children>
+                        <TextFlow>
+                            <children>
+                                <Text wrappingWidth="735" fill="white" text=" • "/>
+                                <Text wrappingWidth="735" fill="red" text="(New) "/>
+                                <Text wrappingWidth="735" fill="white" text="The avatars and signatures must be uploaded in the local bitbucket, by selecting the right option (avatar if uploading an avatar, signature if uploading a signature). You cannot update your profile if you try to use an avatar or signature not uploaded in the local bitbucket."/>
+                            </children>
+                            <VBox.margin><Insets top="5" bottom="10" left="10"/></VBox.margin></TextFlow>
+                        <TextFlow>
+                            <children>
+                                <Text wrappingWidth="735" fill="white" text=" • "/>
+                                <Text wrappingWidth="735" fill="red" text="(New) "/>
+                                <Text wrappingWidth="735" fill="white" text="Images formats accepted are: JPG, PNG, GIF (non animated). If you upload an animated GIF, only the first frame will be preserved."/>
+                            </children>
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                        <TextFlow>
+                            <children>
+                                <Text wrappingWidth="735" fill="white" text=" • "/>
+                                <Text wrappingWidth="735" fill="red" text="(New) "/>
+                                <Text wrappingWidth="735" fill="white" text=" The images for avatars will be automatically resized to 150x250 px if they are larger or smaller in width or larger in height. To avoid image distorsion, try using directly 150 px width and at most 250 px height sized avatars."/>
+                            </children>
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                        <TextFlow>
+                            <children>
+                                <Text wrappingWidth="735" fill="white" text=" • "/>
+                                <Text wrappingWidth="735" fill="red" text="(New) "/>
+                                <Text wrappingWidth="735" fill="white" text=" The images for signatures will be automatically resized to 525x125 px if they are larger (in width, height or both). To avoid image distorsion, try using directly 525x125 px or smaller sized signatures."/>
+                            </children>
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                        <TextFlow>
+                            <children>
+                                <Text wrappingWidth="735" fill="white" text=" • "/>
+                                <Text wrappingWidth="735" fill="red" text="(New) "/>
+                                <Text wrappingWidth="735" fill="white" text="You can use only one avatar and/or only one signature. For the signature you can choose between the following options: no signature or simple text signature (max. 150 alphanumeric characters; no formatting, BB codes or links are accepted; if used, they will be ignored) or one image (uploaded in the local bitbucket, using the above rules) "/>
+                            </children>
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • Do not use potentially offensive material involving porn, religious material, animal / human cruelty or ideologically charged images. Mods have wide discretion on what is acceptable. If in doubt PM one.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • Do not have excessive images in your profile.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • Do not include any images, flames or language that would not be allowed in the forums. Remember it may be a Moderator who's looking at your profile!">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                    </children>
+                </VBox>
+                <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-footer"/>
+            </children>
+        </VBox>
+        <VBox alignment="CENTER">
+            <children>
+                <Text fill="white" text="Requesting Rules - By not following these rules you will lose download privileges!" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                    <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-header"/>
+                <VBox maxWidth="750" alignment="CENTER_LEFT" styleClass="table-middle">
+                    <children>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • Don't request stuff which is already uploaded. Use the provided search function before making a request.">
+                            <VBox.margin><Insets top="5" bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • Do not request UNRELEASED stuff.">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • Don't make any request in forum/comments, use the Request Section!">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • In your request you must include some DETAILS ( a link and some little description : imdb.com / gamespot.com .. )">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <TextFlow>
+                            <children>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Do not request"/>
+                                <Text wrappingWidth="735" fill="white" style="-fx-font-weight:bold;"
+                                      text=" subtitles."/>
+                            </children>
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                        <TextFlow>
+                            <children>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Do not request"/>
+                                <Text wrappingWidth="735" fill="white" style="-fx-font-weight:bold;"
+                                      text=" ROMANIAN "/>
+                                <Text wrappingWidth="735" fill="white"
+                                      text="stuff."/>
+                            </children>
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                        <TextFlow>
+                            <children>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Do not request"/>
+                                <Text wrappingWidth="735" fill="white" style="-fx-font-weight:bold;"
+                                      text=" XXX "/>
+                                <Text wrappingWidth="735" fill="white"
+                                      text="materials."/>
+                            </children>
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                        <Text wrappingWidth="735" fill="white"
+                              text=" • Do not request FREE STUFF(demos, trailers, etc.).">
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                        <TextFlow>
+                            <children>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • "/>
+                                <Text wrappingWidth="735" fill="red"
+                                      text="(Updated) "/>
+                                <Text wrappingWidth="735" fill="white"
+                                      text="Don't request for PACKS, COLLECTIONS, DISCOGRAPHIES etc. pack'em yourself, request each release separately (however we do accept TV series full seasons)."/>
+                            </children>
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                    </children>
+                </VBox>
+                <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-footer"/>
+            </children>
+        </VBox>
+        <VBox alignment="CENTER">
+            <children>
+                <Text fill="white" text="Cheating" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                    <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-header"/>
+                <VBox maxWidth="750" alignment="CENTER_LEFT" styleClass="table-middle">
+                    <children>
+                        <TextFlow>
+                            <children>
+                                <Text wrappingWidth="735" fill="white" text=" • "/>
+                                <Text wrappingWidth="735" fill="red" text="(New) "/>
+                                <Text wrappingWidth="735" fill="white" text="We won't tolerate any attempt of any kind of &quot;Fake upload&quot; / &quot;Ghost leeching&quot; or any other method of cheating the ratio system. Breaking this rule will get your account disabled."/>
+                            </children>
+                            <VBox.margin><Insets top="5" bottom="10" left="10"/></VBox.margin></TextFlow>
+                        <TextFlow>
+                            <children>
+                                <Text wrappingWidth="735" fill="white" text=" • "/>
+                                <Text wrappingWidth="735" fill="red" text="(New) "/>
+                                <Text wrappingWidth="735" fill="white" text="Don't try all kinds of software to cheat, remember, we try also any kinds of software/script that will help us finding those who brake the rules and we are having some funny time."/>
+                            </children>
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                        <TextFlow>
+                            <children>
+                                <Text wrappingWidth="735" fill="white" text=" • "/>
+                                <Text wrappingWidth="735" fill="red" text="(New) "/>
+                                <Text wrappingWidth="735" fill="white" text="We won't tolerate any person who is using iPLAY as their website/tracker source."/>
+                            </children>
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                        <TextFlow>
+                            <children>
+                                <Text wrappingWidth="735" fill="white" text=" • "/>
+                                <Text wrappingWidth="735" fill="red" text="(New) "/>
+                                <Text wrappingWidth="735" fill="white" text="We will ban/disable all ip/accounts of all website/tracker persons that will brake the above rule!"/>
+                            </children>
+                            <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                    </children>
+                </VBox>
+                <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-footer"/>
+            </children>
+        </VBox>
+    </children>
+</VBox>
+
+
+

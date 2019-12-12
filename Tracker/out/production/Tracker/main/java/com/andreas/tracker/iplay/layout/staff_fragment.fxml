@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="PaneMain" alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.andreas.tracker.iplay.fragments.StaffFragment">
+    <children>
+        <VBox fx:id="PaneTickets" alignment="CENTER" spacing="5">
+            <children>
+                <Text fill="white" style="-fx-font-size:11pt; -fx-font-weight:bold;" text="Firstline Support" />
+                <VBox alignment="CENTER">
+                    <children>
+                        <HBox alignment="CENTER" maxWidth="400" styleClass="little-pane-header" />
+                        <HBox alignment="CENTER" maxWidth="400" spacing="5" styleClass="little-pane-middle">
+                            <children>
+                                <Button fx:id="ButtonNewTicket" mnemonicParsing="false" onAction="#new_ticket" styleClass="btn" text="New ticket">
+                                    <graphic>
+                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/button/add.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <HBox.margin>
+                                        <Insets bottom="6.0" top="6.0" />
+                                    </HBox.margin>
+                                </Button>
+                                <Button fx:id="ButtonViewTickets" mnemonicParsing="false" onAction="#view_my_tickets" styleClass="btn" text="View my ticket(s)">
+                                    <graphic>
+                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/button/add.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <HBox.margin>
+                                        <Insets bottom="6.0" top="6.0" />
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" maxWidth="400" styleClass="little-pane-footer" />
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <children>
+                        <HBox alignment="CENTER" maxWidth="400" styleClass="little-pane-header" />
+                        <HBox alignment="CENTER" maxWidth="400" spacing="5" styleClass="little-pane-middle">
+                            <children>
+                                <Label text="The new ticketing systems allows you to deal with tracker issues in a new way." textFill="white" wrapText="true">
+                                    <graphic>
+                                        <ImageView fitHeight="64.0" fitWidth="64.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/help_balloon.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" top="10.0" />
+                                    </HBox.margin>
+                                </Label>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" maxWidth="400" styleClass="little-pane-footer" />
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+        <VBox fx:id="PaneNewTicket" alignment="CENTER" spacing="5">
+            <children>
+                <Text fill="white" style="-fx-font-size:11pt; -fx-font-weight:bold;" text="New Ticket" />
+                <GridPane alignment="CENTER">
+                    <children>
+                        <HBox prefHeight="20" prefWidth="142" styleClass="profile-header-left" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <HBox prefHeight="20" prefWidth="398" styleClass="profile-header-right" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <HBox alignment="CENTER_RIGHT" prefWidth="142" styleClass="profile-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                            <children>
+                                <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Category">
+                                    <HBox.margin>
+                                        <Insets right="30.0" />
+                                    </HBox.margin></Text>
+                            </children>
+                        </HBox>
+                        <HBox prefWidth="398" styleClass="profile-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <children>
+                                <ComboBox fx:id="ComboTicketCategory" prefHeight="23.0" prefWidth="200.0" value="None">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="10.0" />
+                                    </HBox.margin>
+                                </ComboBox>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefWidth="142" styleClass="profile-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                            <children>
+                                <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Subject">
+                                    <HBox.margin>
+                                        <Insets right="30.0" />
+                                    </HBox.margin></Text>
+                            </children>
+                        </HBox>
+                        <HBox prefWidth="398" styleClass="profile-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <children>
+                                <TextField fx:id="FieldSubject" prefHeight="23.0" prefWidth="370.0">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="10.0" />
+                                    </HBox.margin>
+                                </TextField>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefWidth="142" styleClass="profile-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                            <children>
+                                <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Message">
+                                    <HBox.margin>
+                                        <Insets right="30.0" />
+                                    </HBox.margin></Text>
+                            </children>
+                        </HBox>
+                        <HBox prefWidth="398" styleClass="profile-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                            <children>
+                                <TextArea fx:id="FieldMessage" prefHeight="300" prefWidth="370.0">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" left="10.0" />
+                                    </HBox.margin>
+                                </TextArea>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefHeight="31.0" prefWidth="0.0" styleClass="profile-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                        <HBox spacing="5" alignment="CENTER" prefWidth="398" styleClass="profile-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                            <children>
+                                <Button fx:id="ButtonCancelTicket" mnemonicParsing="false" onAction="#cancel" styleClass="btn" text="Cancel">
+                                    <graphic>
+                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/button/delete.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </HBox.margin>
+                                </Button>
+                                <Button fx:id="ButtonSendTicket" mnemonicParsing="false" onAction="#send_ticket" styleClass="btn" text="Send">
+                                    <graphic>
+                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/button/add.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="20" prefWidth="142" styleClass="profile-footer-left" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+                        <HBox prefHeight="20" prefWidth="398" styleClass="profile-footer-right" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                    </children>
+                    <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                </GridPane>
+            </children>
+        </VBox>
+        <VBox fx:id="PaneViewTickets" alignment="CENTER" spacing="5">
+            <children>
+                <Text fill="white" style="-fx-font-size:11pt; -fx-font-weight:bold;" text="My tickets" />
+                <GridPane fx:id="PaneMyTickets" alignment="CENTER">
+                    <children>
+                        <HBox alignment="CENTER" prefHeight="45" prefWidth="50.0" styleClass="dltable-h1" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <HBox alignment="CENTER" prefHeight="45" styleClass="dltable-h2" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                            <children>
+                                <Text fill="white" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Subject">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin></Text>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="45" styleClass="dltable-h2" GridPane.columnIndex="2" GridPane.rowIndex="0">
+                            <children>
+                                <Text fill="white" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Sender">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin></Text>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="45" styleClass="dltable-h2" GridPane.columnIndex="3" GridPane.rowIndex="0">
+                            <children>
+                                <Text fill="white" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Category">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin></Text>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="45" styleClass="dltable-h2" GridPane.columnIndex="4" GridPane.rowIndex="0">
+                            <children>
+                                <Text fill="white" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Added">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin></Text>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="45" styleClass="dltable-h2" GridPane.columnIndex="5" GridPane.rowIndex="0">
+                            <children>
+                                <Text fill="white" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Solved">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin></Text>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="45" styleClass="dltable-h2" GridPane.columnIndex="6" GridPane.rowIndex="0">
+                            <children>
+                                <Text fill="white" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Done by">
+                           <HBox.margin>
+                              <Insets right="20.0" />
+                           </HBox.margin></Text>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="45" styleClass="dltable-h2" GridPane.columnIndex="7" GridPane.rowIndex="0">
+                                <children>
+                                    <Text fill="white" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Done in">
+                                        <HBox.margin>
+                                            <Insets />
+                                        </HBox.margin></Text>
+                                </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="45" prefWidth="50.0" styleClass="dltable-h4" GridPane.columnIndex="8" GridPane.rowIndex="0">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin></HBox>
+                    </children>
+               <columnConstraints>
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+               </rowConstraints>
+                </GridPane>
+            </children>
+        </VBox>
+    </children>
+</VBox>

@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="Main" alignment="CENTER" spacing="5"  xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.andreas.tracker.iplay.fragments.UploadFragment">
+    <padding><Insets top="10" /></padding>
+    <children>
+        <VBox fx:id="PaneUpload" alignment="CENTER">
+            <children>
+                <Text fill="white" style="-fx-font-size:11pt; -fx-font-weight:bold;" text="Upload Torrents" />
+                <GridPane alignment="CENTER">
+                    <children>
+                        <HBox prefHeight="20" prefWidth="110" styleClass="upload-header-left" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <HBox prefHeight="20" prefWidth="500" styleClass="upload-header-right" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <HBox alignment="CENTER_RIGHT" prefWidth="110" styleClass="upload-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                            <children>
+                                <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Category" />
+                            </children>
+                            <padding>
+                                <Insets right="10.0" />
+                            </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefWidth="500" styleClass="upload-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <children>
+                                <ComboBox fx:id="ComboCategory" prefWidth="150.0">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </HBox.margin></ComboBox>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefWidth="110" styleClass="upload-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                            <children>
+                                <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Name" />
+                            </children>
+                        </HBox>
+                        <HBox prefWidth="500" styleClass="upload-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <children>
+                                <TextField fx:id="FieldName" prefWidth="470.0">
+                                    <padding>
+                                        <Insets bottom="10.0" />
+                                    </padding>
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </HBox.margin></TextField>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefWidth="110" styleClass="upload-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                            <children>
+                                <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Genre" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefWidth="500" styleClass="upload-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                            <children>
+                                <TextField fx:id="FieldGenre" prefWidth="470.0">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </HBox.margin></TextField>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefWidth="110" styleClass="upload-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                            <children>
+                                <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Link1" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefWidth="500" styleClass="upload-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                            <children>
+                                <TextField fx:id="FieldLink1" prefWidth="470.0">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </HBox.margin></TextField>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefWidth="110" styleClass="upload-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                            <children>
+                                <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Link2" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefWidth="500" styleClass="upload-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                            <children>
+                                <TextField fx:id="FieldLink2" prefWidth="470.0">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </HBox.margin></TextField>
+                            </children>
+                        </HBox>
+                        <HBox alignment="TOP_RIGHT" prefWidth="110" styleClass="upload-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="6">
+                            <children>
+                                <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Tags" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="BASELINE_LEFT" prefWidth="500" spacing="5" styleClass="upload-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                            <children>
+                                <CheckBox fx:id="CheckBlueTag">
+                                    <graphic>
+                                        <ImageView fitHeight="21.0" fitWidth="10.0" pickOnBounds="true" smooth="false">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/browse/table/tags/blue.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </CheckBox>
+                                <CheckBox fx:id="CheckGreenTag">
+                                    <graphic>
+                                        <ImageView fitHeight="21.0" fitWidth="10.0" pickOnBounds="true" smooth="false">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/browse/table/tags/green.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </HBox.margin>
+                                </CheckBox>
+                                <CheckBox fx:id="CheckRedTag">
+                                    <graphic>
+                                        <ImageView fitHeight="21.0" fitWidth="10.0" pickOnBounds="true" smooth="false">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/browse/table/tags/red.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </CheckBox>
+                                <CheckBox fx:id="CheckWhiteTag">
+                                    <graphic>
+                                        <ImageView fitHeight="21.0" fitWidth="10.0" pickOnBounds="true" smooth="false">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/browse/table/tags/white.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </CheckBox>
+                                <CheckBox fx:id="CheckBlackTag">
+                                    <graphic>
+                                        <ImageView fitHeight="21.0" fitWidth="10.0" pickOnBounds="true" smooth="false">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/browse/table/tags/black.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </CheckBox>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefWidth="110" styleClass="upload-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="7">
+                            <children>
+                                <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Size" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefWidth="500" styleClass="upload-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                            <children>
+                                <TextField fx:id="FieldSize" prefHeight="22.0" prefWidth="62.0" />
+                                <ComboBox fx:id="ComboSize" prefHeight="22.0" prefWidth="63.0">
+                                    <HBox.margin>
+                                        <Insets />
+                                    </HBox.margin></ComboBox>
+                            </children>
+                            <GridPane.margin>
+                                <Insets />
+                            </GridPane.margin>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefWidth="110" styleClass="upload-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="8">
+                            <children>
+                                <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Description" />
+                            </children>
+                            <GridPane.margin>
+                                <Insets />
+                            </GridPane.margin>
+                        </HBox>
+                        <HBox prefWidth="500" styleClass="upload-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                            <children>
+                                <TextArea fx:id="TextDescription" prefHeight="300.0" prefWidth="470.0">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" top="10.0" />
+                                    </HBox.margin></TextArea>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefWidth="110" styleClass="upload-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="9" />
+                        <HBox alignment="CENTER" prefWidth="500" spacing="5" styleClass="upload-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                            <children>
+                                <Button fx:id="ButtonCancel" mnemonicParsing="false" onAction="#cancel" styleClass="btn" text="Cancel">
+                                    <graphic>
+                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/button/delete.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                           <HBox.margin>
+                              <Insets bottom="10.0" />
+                           </HBox.margin>
+                                </Button>
+                                <Button fx:id="ButtonSave" mnemonicParsing="false" onAction="#save" styleClass="btn" text="Save">
+                                    <graphic>
+                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/button/add.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                           <HBox.margin>
+                              <Insets bottom="10.0" />
+                           </HBox.margin>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="20" prefWidth="110" styleClass="upload-footer-left" GridPane.columnIndex="0" GridPane.rowIndex="10" />
+                        <HBox prefHeight="20" prefWidth="500" styleClass="upload-footer-right" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                    </children>
+                    <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                </GridPane>
+            </children>
+        </VBox>
+        <VBox alignment="CENTER" fx:id="PaneAccessDenied">
+            <children>
+                <Text fill="white" style="-fx-font-size:11pt; -fx-font-weight:bold;" text="Access Denied" />
+                <VBox alignment="CENTER">
+                    <children>
+                        <HBox alignment="CENTER" prefHeight="10" maxWidth="400" styleClass="little-pane-header">
+                            <children>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" maxWidth="400" styleClass="little-pane-middle">
+                            <children>
+                                <VBox spacing="10" alignment="CENTER">
+                                    <children>
+                                        <Label text="Sorry" textFill="white" style="-fx-font-size: 10pt; -fx-font-weight:bold;" contentDisplay="TOP">
+                                            <graphic>
+                                                <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../../../../resources/img/message/question.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Label>
+                                        <VBox alignment="CENTER">
+                                            <children>
+                                                <Text fill="white" text="${'You are not authorized to upload torrents.\nIf you think that you are qualified for uploading rights, please fill out'}" textAlignment="CENTER"/>
+                                                <Text fx:id="Link" onMouseClicked="#upload_app" styleClass="link" text="the uploader application form."/>
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="10" maxWidth="400" styleClass="little-pane-footer">
+                            <children>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+        <VBox fx:id="PaneUploadApplication" alignment="CENTER">
+            <children>
+                <Text fill="white" style="-fx-font-size:11pt; -fx-font-weight:bold;" text="Uploader application" />
+                <GridPane alignment="CENTER">
+                    <children>
+                        <HBox prefHeight="20" prefWidth="110" styleClass="upload-header-left" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                        <HBox prefHeight="20" prefWidth="500" styleClass="upload-header-right" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                        <HBox alignment="CENTER_RIGHT" prefWidth="110" styleClass="upload-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                            <children>
+                                <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="My username is" textAlignment="RIGHT" wrappingWidth="90.0" />
+                            </children>
+                            <padding>
+                                <Insets right="10.0" />
+                            </padding>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefWidth="500" styleClass="upload-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                            <children>
+                                <Text fx:id="TextUser" fill="white" style="-fx-font-size:8pt; -fx-font-weight:bold;">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </HBox.margin></Text>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefWidth="110" styleClass="upload-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                            <children>
+                                <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="I have joined at" textAlignment="RIGHT" wrappingWidth="90.0" />
+                            </children>
+                        </HBox>
+                        <HBox prefWidth="500" styleClass="upload-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                            <children>
+                                <Text fx:id="TextJoinDate" fill="white" style="-fx-font-size:8pt; -fx-font-weight:bold;">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </HBox.margin></Text>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefWidth="110" styleClass="upload-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                            <children>
+                                <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="My internal upload speed" textAlignment="RIGHT" wrappingWidth="90.0" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefWidth="500" styleClass="upload-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                            <children>
+                                <TextField fx:id="FieldSpeedInternal" prefWidth="470.0">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </HBox.margin></TextField>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefWidth="110" styleClass="upload-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                            <children>
+                                <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="My external download speed" textAlignment="RIGHT" wrappingWidth="90.0" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefWidth="500" styleClass="upload-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                            <children>
+                                <TextField fx:id="FieldSpeedExternal" prefWidth="470.0">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </HBox.margin></TextField>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefWidth="110" styleClass="upload-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                            <children>
+                                <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="What releases can you get" textAlignment="RIGHT" wrappingWidth="90.0" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefWidth="500" styleClass="upload-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                            <children>
+                                <TextField fx:id="FieldReleases" prefWidth="470.0">
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </HBox.margin></TextField>
+                            </children>
+                        </HBox>
+                        <HBox alignment="TOP_RIGHT" prefWidth="110" styleClass="upload-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="6">
+                            <children>
+                                <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="I am uploader at other sites" textAlignment="RIGHT" wrappingWidth="90.0" />
+                            </children>
+                        </HBox>
+                        <HBox alignment="BASELINE_LEFT" prefWidth="500" spacing="5" styleClass="upload-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                            <children>
+                                <RadioButton fx:id="ButtonYesUploader" text="Yes" textFill="white"/>
+                                <RadioButton fx:id="ButtonNoUploader" text="No" textFill="white"/>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER_RIGHT" prefWidth="110" styleClass="upload-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+                        <HBox alignment="CENTER" prefWidth="500" spacing="5" styleClass="upload-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                            <children>
+                                <Button fx:id="ButtonCancelApp" mnemonicParsing="false" onAction="#cancel" styleClass="btn" text="Cancel">
+                                    <graphic>
+                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/button/delete.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </HBox.margin>
+                                </Button>
+                                <Button fx:id="ButtonSendApp" mnemonicParsing="false" onAction="#send_app" styleClass="btn" text="Send">
+                                    <graphic>
+                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/button/add.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                    <HBox.margin>
+                                        <Insets bottom="10.0" />
+                                    </HBox.margin>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox prefHeight="20" prefWidth="110" styleClass="upload-footer-left" GridPane.columnIndex="0" GridPane.rowIndex="8" />
+                        <HBox prefHeight="20" prefWidth="500" styleClass="upload-footer-right" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                    </children>
+                    <columnConstraints>
+                        <ColumnConstraints />
+                        <ColumnConstraints />
+                    </columnConstraints>
+                    <rowConstraints>
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                        <RowConstraints />
+                    </rowConstraints>
+                    <VBox.margin>
+                        <Insets />
+                    </VBox.margin>
+                </GridPane>
+            </children>
+        </VBox>
+    </children>
+</VBox>

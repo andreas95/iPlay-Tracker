@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="TOP_CENTER" spacing="5" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.andreas.tracker.iplay.fragments.ViewProfileFragment">
+    <padding><Insets top="10" /></padding>
+    <children>
+        <Label fx:id="TextProfileName" contentDisplay="RIGHT" style="-fx-font-size:11pt; -fx-font-weight:bold;" textFill="white" />
+
+        <VBox alignment="CENTER" spacing="0">
+            <children>
+                <HBox alignment="CENTER" spacing="0">
+                    <children>
+                        <HBox prefHeight="20" prefWidth="142" styleClass="profile-header-left" />
+                        <HBox prefHeight="20" prefWidth="398" styleClass="profile-header-right" />
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" spacing="0">
+                    <children>
+                        <AnchorPane prefWidth="142" styleClass="profile-middle-left">
+                            <children>
+                                <Text fill="black" layoutX="55.0" layoutY="10.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Join date" />
+                                <Text fill="black" layoutX="54.0" layoutY="35.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Last seen" />
+                                <Text fill="black" layoutX="76.0" layoutY="60.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Email" />
+                                <Text fill="black" layoutX="52.0" layoutY="85.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Uploaded" />
+                                <Text fill="black" layoutX="34.0" layoutY="110.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Downloaded" />
+                                <Text fill="black" layoutX="43.0" layoutY="135.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Share ratio" />
+                                <Text fill="black" layoutX="67.0" layoutY="160.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Invites" />
+                                <Text fill="black" layoutX="48.0" layoutY="185.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Invited by" />
+                                <Text fill="black" layoutX="73.0" layoutY="210.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Class" />
+                                <Text fill="black" layoutX="2.0" layoutY="235.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Torrents comments" />
+                                <Text fill="black" layoutX="32.0" layoutY="260.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Forum posts" />
+                                <Text fill="black" layoutX="11.0" layoutY="285.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Torrents thanks" />
+                            </children>
+                        </AnchorPane>
+                        <AnchorPane prefWidth="398" styleClass="profile-middle-right">
+                            <children>
+                                <Text fx:id="TextJoinDate" fill="white" layoutX="0.0" layoutY="10.0" style="-fx-font-size:9pt;" />
+                                <Text fx:id="TextLastSeen" fill="white" layoutX="0.0" layoutY="35.0" style="-fx-font-size:9pt;" />
+                                <Text fx:id="TextEmail" fill="white" layoutX="0.0" layoutY="60.0" style="-fx-font-size:9pt;" />
+                                <Text fx:id="TextUploaded" fill="white" layoutX="0.0" layoutY="85.0" style="-fx-font-size:9pt;" />
+                                <Text fx:id="TextDownloaded" fill="white" layoutX="0.0" layoutY="110.0" style="-fx-font-size:9pt;" />
+                                <Text fx:id="TextRatio" fill="white" layoutX="0.0" layoutY="135.0" style="-fx-font-size:9pt;" />
+                                <Text fx:id="TextInvites" fill="white" layoutX="0.0" layoutY="160.0" style="-fx-font-size:9pt;" />
+                                <Text fx:id="TextInvitedBy" fill="white" layoutX="0.0" layoutY="185.0" style="-fx-font-size:9pt;" />
+                                <Text fx:id="TextClass" fill="white" layoutX="0.0" layoutY="210.0" style="-fx-font-size:9pt;" />
+                                <Text fx:id="TextTorrentsComments" fill="white" layoutX="0.0" layoutY="235.0" style="-fx-font-size:9pt;" />
+                                <Text fx:id="TextForumPosts" fill="white" layoutX="0.0" layoutY="260.0" style="-fx-font-size:9pt;" />
+                                <Text fx:id="TextTorrentsThanks" fill="white" layoutX="0.0" layoutY="285.0" style="-fx-font-size:9pt;" />
+                            </children>
+                        </AnchorPane>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" spacing="0">
+                    <children>
+                        <HBox prefHeight="20" prefWidth="142" styleClass="profile-footer-left" />
+                        <HBox prefHeight="20" prefWidth="398" styleClass="profile-footer-right" />
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</VBox>

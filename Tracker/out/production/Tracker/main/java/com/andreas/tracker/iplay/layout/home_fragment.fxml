@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Label?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.web.WebView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<VBox alignment="TOP_CENTER" spacing="5" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.andreas.tracker.iplay.fragments.HomeFragment">
+    <children>
+        <HBox alignment="BASELINE_CENTER">
+            <padding><Insets bottom="10" /></padding>
+            <children>
+                <Text text="Welcome to our newest member, " fill="white"/>
+                <Text fx:id="LastUser" styleClass="link"/>
+                <Text text="!" fill="white"/>
+            </children>
+        </HBox>
+
+        <Text text="Recent news" fill="white" style="-fx-font-size:9pt; -fx-font-weight:bold;"/>
+        <VBox spacing="0" alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER" prefHeight="15" maxWidth="740" styleClass="home-header">
+                    <children>
+                    </children>
+                </HBox>
+                <VBox fx:id="PaneNews" spacing="6" alignment="CENTER" maxWidth="740" styleClass="home-middle">
+                    <children>
+                        <HBox fx:id="ButtonGroup" spacing="10" alignment="CENTER_RIGHT">
+                            <padding><Insets right="10" /></padding>
+                            <children>
+                                <Button fx:id="ButtonAddNews" mnemonicParsing="false" text="Add" styleClass="btn" onAction="#addNews" >
+                                    <graphic>
+                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/button/add.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="ButtonEditNews" mnemonicParsing="false" text="Edit" styleClass="btn" onAction="#editNews" >
+                                    <graphic>
+                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/button/edit.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                                <Button fx:id="ButtonDeleteNews" mnemonicParsing="false" text="Delete" styleClass="btn" onAction="#deleteNews" >
+                                    <graphic>
+                                        <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/button/delete.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </children>
+                        </HBox>
+                        <HBox fx:id="title_news" alignment="CENTER_LEFT">
+                            <padding><Insets left="10" /></padding>
+                            <children>
+                                <Text fill="white" text="•  "/>
+                                <Text fx:id="TextDate" fill="white"/>
+                                <Text fill="white" text=" - "/>
+                                <Text fx:id="TextTitle" fill="#6f3b83" style="-fx-font-weight:bold; -fx-font-size:9pt;"/>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER">
+                            <children>
+                                <Line stroke="#8894ac" strokeWidth="4" startX="0" startY="0" endX="700" endY="0"/>
+                            </children>
+                        </HBox>
+                        <HBox>
+                            <padding><Insets left="10" /></padding>
+                            <children>
+                                <WebView fx:id="NewsContent" prefHeight="100" maxWidth="700"/>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+                </children>
+            <HBox alignment="CENTER" prefHeight="15" maxWidth="740" styleClass="home-footer">
+                <children>
+                </children>
+            </HBox>
+        </VBox>
+
+        <VBox spacing="5" alignment="CENTER">
+            <padding><Insets top="20"/></padding>
+            <children>
+                <Text text="Poll" fill="white" style="-fx-font-size:9pt; -fx-font-weight:bold;"/>
+                <VBox alignment="CENTER">
+                    <children>
+                        <HBox alignment="CENTER" prefHeight="15" maxWidth="740" styleClass="home-header">
+                            <children>
+                            </children>
+                        </HBox>
+                        <VBox fx:id="PanePoll" spacing="6" alignment="CENTER" maxWidth="740" styleClass="home-middle">
+                            <children>
+                                <HBox fx:id="ButtonGroupPoll" spacing="10" alignment="CENTER_RIGHT">
+                                    <padding><Insets right="10" /></padding>
+                                    <children>
+                                        <Button fx:id="ButtonAddPoll" mnemonicParsing="false" text="Add" styleClass="btn" onAction="#addPoll" >
+                                            <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../../../../resources/img/common/button/add.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="ButtonEditPoll" mnemonicParsing="false" text="Edit" styleClass="btn" onAction="#editPoll" >
+                                            <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../../../../resources/img/common/button/edit.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                        <Button fx:id="ButtonDeletePoll" mnemonicParsing="false" text="Delete" styleClass="btn" onAction="#deletePoll" >
+                                            <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../../../../resources/img/common/button/delete.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                </HBox>
+
+                                <VBox fx:id="PanePollEmpty" alignment="CENTER">
+                                    <padding><Insets top="10" bottom="10" /></padding>
+                                    <children>
+                                        <HBox alignment="CENTER" prefHeight="10" maxWidth="600" styleClass="polls-header">
+                                            <children>
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER" maxWidth="600" styleClass="polls-middle">
+                                            <children>
+                                                <Text text="None polls into database." fill="white"/>
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER" prefHeight="10" maxWidth="600" styleClass="polls-footer">
+                                            <children>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+
+                                <VBox fx:id="PanePollVote" alignment="CENTER">
+                                    <padding><Insets top="10"/></padding>
+                                    <children>
+                                        <HBox alignment="CENTER" prefHeight="10" maxWidth="600" styleClass="polls-header">
+                                            <children>
+                                            </children>
+                                        </HBox>
+                                        <VBox alignment="CENTER" maxWidth="600" styleClass="polls-middle">
+                                            <children>
+                                                <Text fx:id="TextPollTitleVote" text="" fill="white" style="-fx-font-size:9pt; -fx-font-weight:bold;"/>
+
+                                                <GridPane fx:id="PollDataVote" vgap="15" hgap="15" alignment="TOP_CENTER">
+                                                    <padding><Insets top="15" bottom="15"/></padding>
+                                                    <children>
+                                                    </children>
+                                                </GridPane>
+
+                                                <HBox alignment="BOTTOM_CENTER">
+                                                    <padding><Insets top="10" bottom="15"/></padding>
+                                                    <children>
+                                                        <Button fx:id="ButtonVote" styleClass="btn" text="Vote" mnemonicParsing="false" onAction="#vote">
+                                                            <graphic>
+                                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                                    <image>
+                                                                        <Image url="@../../../../../../resources/img/common/button/vote.png" />
+                                                                    </image>
+                                                                </ImageView>
+                                                            </graphic>
+                                                        </Button>
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+                                        <HBox alignment="CENTER" prefHeight="10" maxWidth="600" styleClass="polls-footer">
+                                            <children>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+
+
+                                <VBox fx:id="PanePollResult" alignment="CENTER">
+                                    <padding><Insets top="10"/></padding>
+                                    <children>
+                                        <HBox alignment="CENTER" prefHeight="10" maxWidth="600" styleClass="polls-header">
+                                            <children>
+                                            </children>
+                                        </HBox>
+                                        <VBox alignment="CENTER" maxWidth="600" styleClass="polls-middle">
+                                            <children>
+                                                <Text fx:id="TextPollTitle" text="" fill="white" style="-fx-font-size:9pt; -fx-font-weight:bold;"/>
+                                                <VBox fx:id="PollData" spacing="3" alignment="CENTER">
+                                                    <padding><Insets top="15"/></padding>
+                                                    <children>
+                                                    </children>
+                                                </VBox>
+                                                <HBox alignment="CENTER">
+                                                    <padding><Insets top="10"/></padding>
+                                                    <children>
+                                                        <Text text="Votes: " fill="white"/>
+                                                        <Text fx:id="TextVotes"  fill="white"/>
+                                                    </children>
+                                                </HBox>
+                                            </children>
+                                        </VBox>
+                                        <HBox alignment="CENTER" prefHeight="10" maxWidth="600" styleClass="polls-footer">
+                                            <children>
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+
+                                <HBox fx:id="PanePollBottom" spacing="4" alignment="CENTER">
+                                    <children>
+                                        <Label fx:id="PreviousPoll" text="Previous polls" textFill="white"/>
+                                        <Text fill="white" text="|"/>
+                                        <Label fx:id="Suggestions" textFill="white" text="Suggestions"/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </VBox>
+                        <HBox alignment="CENTER" prefHeight="15" maxWidth="740" styleClass="home-footer">
+                            <children>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+
+        <VBox alignment="TOP_CENTER" spacing="5">
+            <padding><Insets top="20"/></padding>
+            <children>
+                <Text text="DiSCLAiMER" fill="white" style="-fx-font-size:9pt; -fx-font-weight:bold;"/>
+                <VBox fx:id="PaneDisclaimer" alignment="CENTER">
+                    <children>
+                        <HBox alignment="CENTER" prefHeight="15" maxWidth="740" styleClass="home-header">
+                            <children>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" maxWidth="740" styleClass="home-middle">
+                            <children>
+                                <HBox>
+                                    <padding><Insets left="10" /></padding>
+                                    <children>
+                                       <Text fill="white" wrappingWidth="730" text="None of the files shown here are actually hosted on this server. The links are provided solely by this site's users. The administrator of this site cannot be held responsible for what its users post, or any other actions of its users. You may not use this site to distribute or download any material when you do not have the legal rights to do so. It is your own responsibility to adhere to these terms."/>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="15" maxWidth="740" styleClass="home-footer">
+                            <children>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </children>
+</VBox>

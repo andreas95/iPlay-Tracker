@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.text.Text?>
+<VBox alignment="TOP_CENTER" spacing="20" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.andreas.tracker.iplay.fragments.Top10Fragment">
+    <children>
+        <VBox alignment="TOP_CENTER" spacing="20" styleClass="transparent-pane" maxWidth="800">
+            <padding><Insets top="30" left="20" right="10" bottom="30"/></padding>
+            <children>
+                <Label fx:id="TextMessage" textFill="aliceblue" text="Error!" contentDisplay="TOP">
+                    <font>
+                        <Font name="Adobe Hebrew BOLD" size="14.0" />
+                    </font>
+                    <graphic>
+                        <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                            <image>
+                                <Image url="@../../../../../../resources/img/common/cominsoon.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Label>
+            </children>
+        </VBox>
+    </children>
+</VBox>

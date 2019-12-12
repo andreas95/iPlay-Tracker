@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<VBox alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.andreas.tracker.iplay.fragments.MessageFragment">
+    <padding><Insets top="10"/></padding>
+    <children>
+        <VBox fx:id="PaneMessage" alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER" prefHeight="10" maxWidth="400" styleClass="little-pane-header">
+                    <children>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" maxWidth="400" styleClass="little-pane-middle">
+                    <children>
+                        <VBox spacing="10" alignment="CENTER">
+                            <children>
+                                <Label fx:id="TypeError" textFill="white" style="-fx-font-size: 10pt; -fx-font-weight:bold;" contentDisplay="TOP"/>
+                                <Text fx:id="MessageError" fill="white" text="" textAlignment="CENTER"/>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="10" maxWidth="400" styleClass="little-pane-footer">
+                    <children>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</VBox>

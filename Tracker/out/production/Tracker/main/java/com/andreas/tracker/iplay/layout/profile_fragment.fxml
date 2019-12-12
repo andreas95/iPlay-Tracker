@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" spacing="5" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.andreas.tracker.iplay.fragments.ProfileFragment">
+    <padding><Insets top="10" /></padding>
+    <children>
+        <TextFlow textAlignment="CENTER">
+            <children>
+                <Text fx:id="TextUser" fill="white" style="-fx-font-size:11pt; -fx-font-weight:bold;" />
+                <Text fill="white" style="-fx-font-size:11pt; -fx-font-weight:bold;" text="'s Profile" />
+            </children>
+        </TextFlow>
+        <VBox alignment="CENTER" spacing="0">
+           <children>
+               <HBox alignment="CENTER" spacing="0">
+                   <children>
+                       <HBox prefHeight="20" prefWidth="142" styleClass="profile-header-left" />
+                       <HBox prefHeight="20" prefWidth="398" styleClass="profile-header-right" />
+                   </children>
+               </HBox>
+               <HBox alignment="CENTER" spacing="0">
+                   <children>
+                      <AnchorPane prefWidth="142" styleClass="profile-middle-left">
+                           <children>
+                               <Text fill="black" layoutX="22.0" layoutY="10.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Account parked" />
+                               <Text fill="black" layoutX="46.0" layoutY="34.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Accept PMs" />
+                               <Text fill="black" layoutX="50.0" layoutY="63.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Delete PMs" />
+                               <Text fill="black" layoutX="59.0" layoutY="88.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Save PMs" />
+                               <Text fill="black" layoutX="13.0" layoutY="117.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Email notification" />
+                               <Text fill="black" layoutX="51.0" layoutY="147.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Stylesheet" />
+                               <Text fill="black" layoutX="66.0" layoutY="185.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Country" />
+                               <Text fill="black" layoutX="55.0" layoutY="220.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Language" />
+                               <Text fill="black" layoutX="30.0" layoutY="255.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Email address" />
+                               <Text fill="black" layoutX="31.0" layoutY="293.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Old Password" />
+                               <Text fill="black" layoutX="8.0" layoutY="336.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Change password" />
+                               <Text fill="black" layoutX="19.0" layoutY="376.0" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Password again" />
+                           </children>
+                       </AnchorPane>
+                       <AnchorPane prefWidth="398" styleClass="profile-middle-right">
+                           <children>
+                               <HBox layoutY="-5.0" spacing="10.0">
+                                   <children>
+                                       <RadioButton fx:id="ButtonParkedYes" text="Yes" textFill="white" />
+                                       <RadioButton fx:id="ButtonParkedNo" text="No" textFill="white" />
+                                   </children>
+                               </HBox>
+                               <HBox layoutY="20.0" spacing="15">
+                                   <children>
+                                       <RadioButton fx:id="ButtonPMAll" text="All (except blocks)" textFill="white" />
+                                       <RadioButton fx:id="ButtonPMFriends" text="Friends only" textFill="white" />
+                                       <RadioButton fx:id="ButtonPMStaff" text="Staff only" textFill="white" />
+                                   </children>
+                               </HBox>
+                               <CheckBox fx:id="CheckDeletePM" layoutY="48.0" text="${'(Default value for \u0022Delete PM on reply\u0022)'}" textFill="white" />
+                               <CheckBox fx:id="CheckSavePM" layoutY="74.0" text="${'(Default value for \u0022Save PM to Sentbox\u0022)'}" textFill="white" />
+                               <CheckBox fx:id="CheckEmailNotification" layoutY="103.0" text="Notify me when I have received a PM" textFill="white" />
+                               <ComboBox fx:id="ComboStylesheet" layoutY="135.0" prefWidth="200" value="Tyrian"/>
+                               <ComboBox fx:id="ComboCountry" layoutY="172.0" prefWidth="200" value="Romania"/>
+                               <ComboBox fx:id="ComboLanguage" layoutY="208.0" prefWidth="200" value="English"/>
+                               <TextField fx:id="FieldEmail" layoutY="242.0" prefWidth="200" />
+                               <PasswordField fx:id="FieldOldPassword" layoutY="278.0" prefWidth="200" />
+                               <PasswordField fx:id="FieldNewPassword" layoutY="319.0" prefWidth="200" />
+                               <PasswordField fx:id="FieldNewPasswordAgain" layoutY="359.0" prefWidth="200" />
+                           </children>
+                       </AnchorPane>
+                   </children>
+               </HBox>
+               <HBox alignment="CENTER" spacing="0">
+                   <children>
+                       <HBox prefHeight="20" prefWidth="142" styleClass="profile-footer-left" />
+                       <HBox prefHeight="20" prefWidth="398" styleClass="profile-footer-right" />
+                   </children>
+               </HBox>
+           </children>
+        </VBox>
+    </children>
+</VBox>

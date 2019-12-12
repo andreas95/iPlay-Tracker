@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.text.Text?>
+<VBox alignment="CENTER" spacing="20" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.andreas.tracker.iplay.fragments.SetupRssFragment">
+    <children>
+        <HBox alignment="CENTER" prefHeight="10" maxWidth="400" styleClass="pane-header">
+            <children>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" maxWidth="400" styleClass="pane-middle">
+            <children>
+                <VBox spacing="10" alignment="CENTER">
+                    <children>
+                        <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                            <image>
+                                <Image url="@../../../../../../resources/img/message/error.png" />
+                            </image>
+                        </ImageView>
+                        <Text fill="white" text="Error" style="-fx-font-size:9pt; -fx-font-weight:bold;"/>
+                    </children>
+                </VBox>
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="10" maxWidth="400" styleClass="pane-footer">
+            <children>
+            </children>
+        </HBox>
+    </children>
+</VBox>

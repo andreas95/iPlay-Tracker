@@ -1,0 +1,666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="PaneMain" alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.andreas.tracker.iplay.fragments.ForumFragment">
+    <padding><Insets top="10" /></padding>
+    <children>
+        <VBox fx:id="PaneForum" alignment="CENTER" spacing="15">
+           <children>
+               <HBox alignment="CENTER" spacing="10">
+                  <children>
+                      <Button fx:id="ButtonSearchForums" mnemonicParsing="false" onAction="#search_forums" styleClass="btn" text="Search forums">
+                          <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@../../../../../../resources/img/common/button/search.png" />
+                                  </image>
+                              </ImageView>
+                          </graphic>
+                      </Button>
+                      <Button fx:id="ButtonViewUnread" mnemonicParsing="false" onAction="#view_unread" styleClass="btn" text="View Unread">
+                          <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@../../../../../../resources/img/common/button/comment.png" />
+                                  </image>
+                              </ImageView>
+                          </graphic>
+                      </Button>
+                      <Button fx:id="ButtonTodaysPosts" mnemonicParsing="false" onAction="#todays_posts" styleClass="btn" text="Todays Posts">
+                          <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@../../../../../../resources/img/common/button/ucomment.png" />
+                                  </image>
+                              </ImageView>
+                          </graphic>
+                      </Button>
+                      <Button fx:id="ButtonMarkAllAsRead" mnemonicParsing="false" onAction="#mark_all_as_read" styleClass="btn" text="Mark all as read">
+                          <graphic>
+                              <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                  <image>
+                                      <Image url="@../../../../../../resources/img/common/button/update.png" />
+                                  </image>
+                              </ImageView>
+                          </graphic>
+                      </Button>
+                  </children>
+               </HBox>
+               <VBox alignment="CENTER">
+                   <children>
+                       <HBox alignment="CENTER">
+                           <children>
+                               <HBox alignment="CENTER" prefHeight="45" prefWidth="60.0" styleClass="dltable-h1" />
+                               <AnchorPane prefHeight="45.0" prefWidth="700.0" styleClass="dltable-h2">
+                                   <children>
+                                       <Text fill="white" layoutX="100.0" layoutY="25.0" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="iPlay" />
+                                       <Text fill="white" layoutX="300.0" layoutY="25.0" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Topics" />
+                                       <Text fill="white" layoutX="360.0" layoutY="25.0" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Posts" />
+                                       <Text fill="white" layoutX="540.0" layoutY="25.0" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Last post" wrappingWidth="128.0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefHeight="45" prefWidth="50.0" styleClass="dltable-h4" />
+                           </children>
+                       </HBox>
+                       <GridPane alignment="CENTER">
+                           <children>
+                               <HBox alignment="CENTER" prefWidth="60.0" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                   <children>
+                                       <Label id="stickyn" prefHeight="46.0" prefWidth="50.0">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin></Label>
+                                   </children>
+                               </HBox>
+                        <AnchorPane prefWidth="700.0" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                           <children>
+                               <VBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="7.0" spacing="1.0">
+                                   <children>
+                                       <Text fill="white" styleClass="link" text="Anunturi" />
+                                       <Text fill="#6d6d6d" style="-fx-font-size: 8pt;" text="Agentia de stiri" />
+                                   </children>
+                               </VBox>
+                              <Text fill="white" layoutX="315.0" layoutY="25.0" text="0" />
+                              <Text fill="white" layoutX="375.0" layoutY="25.0" text="0" />
+                           </children>
+                        </AnchorPane>
+                               <HBox alignment="CENTER" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                               <HBox alignment="CENTER" prefWidth="60.0" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                   <children>
+                                       <Label id="stickyn" prefHeight="46.0" prefWidth="50.0">
+                                           <HBox.margin>
+                                               <Insets />
+                                           </HBox.margin></Label>
+                                   </children>
+                               </HBox>
+                               <AnchorPane prefWidth="700.0" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                   <children>
+                                       <VBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="7.0" spacing="1.0">
+                                           <children>
+                                               <Text fill="white" styleClass="link" text="Bugs/Sugestii/Feedback/Reclamatii" />
+                                               <Text fill="#6d6d6d" style="-fx-font-size: 8pt;" text="Parerea ta e importanta pentru noi." />
+                                           </children>
+                                       </VBox>
+                                       <Text fill="white" layoutX="315.0" layoutY="25.0" text="0" />
+                                       <Text fill="white" layoutX="375.0" layoutY="25.0" text="0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                               <HBox alignment="CENTER" prefWidth="60.0" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                   <children>
+                                       <Label id="stickyn" prefHeight="46.0" prefWidth="50.0">
+                                           <HBox.margin>
+                                               <Insets />
+                                           </HBox.margin></Label>
+                                   </children>
+                               </HBox>
+                               <AnchorPane prefWidth="700.0" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                   <children>
+                                       <VBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="7.0" spacing="1.0">
+                                           <children>
+                                               <Text fill="white" styleClass="link" text="Guides &amp; Turotials" />
+                                               <Text fill="#6d6d6d" style="-fx-font-size: 8pt;" text="We train you lazy bastards." />
+                                           </children>
+                                       </VBox>
+                                       <Text fill="white" layoutX="315.0" layoutY="25.0" text="0" />
+                                       <Text fill="white" layoutX="375.0" layoutY="25.0" text="0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefHeight="10" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                               <HBox alignment="CENTER" prefHeight="10" prefWidth="60" styleClass="dltable-f1" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                               <HBox alignment="CENTER" prefHeight="10" prefWidth="700" styleClass="dltable-f2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                               <HBox alignment="CENTER" prefHeight="10" prefWidth="50" styleClass="dltable-f4" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                           </children>
+                       </GridPane>
+                   </children>
+               </VBox>
+               <VBox alignment="CENTER">
+                   <children>
+                       <HBox alignment="CENTER">
+                           <children>
+                               <HBox alignment="CENTER" prefHeight="45" prefWidth="60.0" styleClass="dltable-h1" />
+                               <AnchorPane prefHeight="45.0" prefWidth="700.0" styleClass="dltable-h2">
+                                   <children>
+                                       <Text fill="white" layoutX="100.0" layoutY="25.0" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="General" />
+                                       <Text fill="white" layoutX="300.0" layoutY="25.0" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Topics" />
+                                       <Text fill="white" layoutX="360.0" layoutY="25.0" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Posts" />
+                                       <Text fill="white" layoutX="540.0" layoutY="25.0" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Last post" wrappingWidth="128.0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefHeight="45" prefWidth="50.0" styleClass="dltable-h4" />
+                           </children>
+                       </HBox>
+                       <GridPane alignment="CENTER">
+                           <children>
+                               <HBox alignment="CENTER" prefWidth="60.0" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                   <children>
+                                       <Label id="stickyn" prefHeight="46.0" prefWidth="50.0">
+                                           <HBox.margin>
+                                               <Insets />
+                                           </HBox.margin></Label>
+                                   </children>
+                               </HBox>
+                               <AnchorPane prefWidth="700.0" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                   <children>
+                                       <VBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="7.0" spacing="1.0">
+                                           <children>
+                                               <Text fill="white" styleClass="link" text="General Chat" />
+                                               <Text fill="#6d6d6d" style="-fx-font-size: 8pt;" text="Discutii diverse in limita bunului simt." />
+                                           </children>
+                                       </VBox>
+                                       <Text fill="white" layoutX="315.0" layoutY="25.0" text="0" />
+                                       <Text fill="white" layoutX="375.0" layoutY="25.0" text="0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                               <HBox alignment="CENTER" prefWidth="60.0" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                   <children>
+                                       <Label id="stickyn" prefHeight="46.0" prefWidth="50.0">
+                                           <HBox.margin>
+                                               <Insets />
+                                           </HBox.margin></Label>
+                                   </children>
+                               </HBox>
+                               <AnchorPane prefWidth="700.0" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                   <children>
+                                       <VBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="7.0" spacing="1.0">
+                                           <children>
+                                               <Text fill="white" styleClass="link" text="Bittorrent/Networking/Internet" />
+                                               <Text fill="#6d6d6d" style="-fx-font-size: 8pt;" text="Locul unde se intalnesc biti." />
+                                           </children>
+                                       </VBox>
+                                       <Text fill="white" layoutX="315.0" layoutY="25.0" text="0" />
+                                       <Text fill="white" layoutX="375.0" layoutY="25.0" text="0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                               <HBox alignment="CENTER" prefWidth="60.0" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                   <children>
+                                       <Label id="stickyn" prefHeight="46.0" prefWidth="50.0">
+                                           <HBox.margin>
+                                               <Insets />
+                                           </HBox.margin></Label>
+                                   </children>
+                               </HBox>
+                               <AnchorPane prefWidth="700.0" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                   <children>
+                                       <VBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="7.0" spacing="1.0">
+                                           <children>
+                                               <Text fill="white" styleClass="link" text="General English Discussion" />
+                                               <Text fill="#6d6d6d" style="-fx-font-size: 8pt;" text="The foreign legion." />
+                                           </children>
+                                       </VBox>
+                                       <Text fill="white" layoutX="315.0" layoutY="25.0" text="0" />
+                                       <Text fill="white" layoutX="375.0" layoutY="25.0" text="0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefHeight="10" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                               <HBox alignment="CENTER" prefWidth="60.0" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                                   <children>
+                                       <Label id="stickyn" prefHeight="46.0" prefWidth="50.0">
+                                           <HBox.margin>
+                                               <Insets />
+                                           </HBox.margin></Label>
+                                   </children>
+                               </HBox>
+                               <AnchorPane prefWidth="700.0" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                   <children>
+                                       <VBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="7.0" spacing="1.0">
+                                           <children>
+                                               <Text fill="white" styleClass="link" text="Movies &amp; TV" />
+                                               <Text fill="#6d6d6d" style="-fx-font-size: 8pt;" text="Multiplexul de acasa." />
+                                           </children>
+                                       </VBox>
+                                       <Text fill="white" layoutX="315.0" layoutY="25.0" text="0" />
+                                       <Text fill="white" layoutX="375.0" layoutY="25.0" text="0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                               <HBox alignment="CENTER" prefWidth="60.0" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                                   <children>
+                                       <Label id="stickyn" prefHeight="46.0" prefWidth="50.0">
+                                           <HBox.margin>
+                                               <Insets />
+                                           </HBox.margin></Label>
+                                   </children>
+                               </HBox>
+                               <AnchorPane prefWidth="700.0" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                   <children>
+                                       <VBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="7.0" spacing="1.0">
+                                           <children>
+                                               <Text fill="white" styleClass="link" text="Music" />
+                                               <Text fill="#6d6d6d" style="-fx-font-size: 8pt;" text="In love with music." />
+                                           </children>
+                                       </VBox>
+                                       <Text fill="white" layoutX="315.0" layoutY="25.0" text="0" />
+                                       <Text fill="white" layoutX="375.0" layoutY="25.0" text="0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                               <HBox alignment="CENTER" prefWidth="60.0" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                                   <children>
+                                       <Label id="stickyn" prefHeight="46.0" prefWidth="50.0">
+                                           <HBox.margin>
+                                               <Insets />
+                                           </HBox.margin></Label>
+                                   </children>
+                               </HBox>
+                               <AnchorPane prefWidth="700.0" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                   <children>
+                                       <VBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="7.0" spacing="1.0">
+                                           <children>
+                                               <Text fill="white" styleClass="link" text="Games" />
+                                               <Text fill="#6d6d6d" style="-fx-font-size: 8pt;" text="Locul unde realitatea virtuala prinde viata." />
+                                           </children>
+                                       </VBox>
+                                       <Text fill="white" layoutX="315.0" layoutY="25.0" text="0" />
+                                       <Text fill="white" layoutX="375.0" layoutY="25.0" text="0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefHeight="10" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                               <HBox alignment="CENTER" prefWidth="60.0" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="6">
+                                   <children>
+                                       <Label id="stickyn" prefHeight="46.0" prefWidth="50.0">
+                                           <HBox.margin>
+                                               <Insets />
+                                           </HBox.margin></Label>
+                                   </children>
+                               </HBox>
+                               <AnchorPane prefWidth="700.0" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                   <children>
+                                       <VBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="7.0" spacing="1.0">
+                                           <children>
+                                               <Text fill="white" styleClass="link" text="Hardware" />
+                                               <Text fill="#6d6d6d" style="-fx-font-size: 8pt;" text="Despre componente, periferice si multimedia." />
+                                           </children>
+                                       </VBox>
+                                       <Text fill="white" layoutX="315.0" layoutY="25.0" text="0" />
+                                       <Text fill="white" layoutX="375.0" layoutY="25.0" text="0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                               <HBox alignment="CENTER" prefWidth="60.0" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="7">
+                                   <children>
+                                       <Label id="stickyn" prefHeight="46.0" prefWidth="50.0">
+                                           <HBox.margin>
+                                               <Insets />
+                                           </HBox.margin></Label>
+                                   </children>
+                               </HBox>
+                               <AnchorPane prefWidth="700.0" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                   <children>
+                                       <VBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="7.0" spacing="1.0">
+                                           <children>
+                                               <Text fill="white" styleClass="link" text="Apps" />
+                                               <Text fill="#6d6d6d" style="-fx-font-size: 8pt;" text="Critical error detected!" />
+                                           </children>
+                                       </VBox>
+                                       <Text fill="white" layoutX="315.0" layoutY="25.0" text="0" />
+                                       <Text fill="white" layoutX="375.0" layoutY="25.0" text="0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                               <HBox alignment="CENTER" prefWidth="60.0" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="8">
+                                   <children>
+                                       <Label id="stickyn" prefHeight="46.0" prefWidth="50.0">
+                                           <HBox.margin>
+                                               <Insets />
+                                           </HBox.margin></Label>
+                                   </children>
+                               </HBox>
+                               <AnchorPane prefWidth="700.0" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                   <children>
+                                       <VBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="7.0" spacing="1.0">
+                                           <children>
+                                               <Text fill="white" styleClass="link" text="Sport" />
+                                               <Text fill="#6d6d6d" style="-fx-font-size: 8pt;" text="Un loc de discutii pentru fanii sportului." />
+                                           </children>
+                                       </VBox>
+                                       <Text fill="white" layoutX="315.0" layoutY="25.0" text="0" />
+                                       <Text fill="white" layoutX="375.0" layoutY="25.0" text="0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefHeight="10" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                               <HBox alignment="CENTER" prefWidth="60.0" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="9">
+                                   <children>
+                                       <Label id="stickyn" prefHeight="46.0" prefWidth="50.0">
+                                           <HBox.margin>
+                                               <Insets />
+                                           </HBox.margin></Label>
+                                   </children>
+                               </HBox>
+                               <AnchorPane prefWidth="700.0" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                   <children>
+                                       <VBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="7.0" spacing="1.0">
+                                           <children>
+                                               <Text fill="white" styleClass="link" text="Notebook Club" />
+                                               <Text fill="#6d6d6d" style="-fx-font-size: 8pt;" text="Locul unde cei cu mobilitate se afirma." />
+                                           </children>
+                                       </VBox>
+                                       <Text fill="white" layoutX="315.0" layoutY="25.0" text="0" />
+                                       <Text fill="white" layoutX="375.0" layoutY="25.0" text="0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="9" />
+                               <HBox alignment="CENTER" prefWidth="60.0" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="10">
+                                   <children>
+                                       <Label id="stickyn" prefHeight="46.0" prefWidth="50.0">
+                                           <HBox.margin>
+                                               <Insets />
+                                           </HBox.margin></Label>
+                                   </children>
+                               </HBox>
+                               <AnchorPane prefWidth="700.0" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                                   <children>
+                                       <VBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="7.0" spacing="1.0">
+                                           <children>
+                                               <Text fill="white" styleClass="link" text="Mobile" />
+                                               <Text fill="#6d6d6d" style="-fx-font-size: 8pt;" text="Mobile phones have their right place." />
+                                           </children>
+                                       </VBox>
+                                       <Text fill="white" layoutX="315.0" layoutY="25.0" text="0" />
+                                       <Text fill="white" layoutX="375.0" layoutY="25.0" text="0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="10" />
+                               <HBox alignment="CENTER" prefWidth="60.0" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="11">
+                                   <children>
+                                       <Label id="stickyn" prefHeight="46.0" prefWidth="50.0">
+                                           <HBox.margin>
+                                               <Insets />
+                                           </HBox.margin></Label>
+                                   </children>
+                               </HBox>
+                               <AnchorPane prefWidth="700.0" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                                   <children>
+                                       <VBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="7.0" spacing="1.0">
+                                           <children>
+                                               <Text fill="white" styleClass="link" text="Publicitate" />
+                                               <Text fill="#6d6d6d" style="-fx-font-size: 8pt;" text="Vinzi? Cumperi? Sau doar te uiti..." />
+                                           </children>
+                                       </VBox>
+                                       <Text fill="white" layoutX="315.0" layoutY="25.0" text="0" />
+                                       <Text fill="white" layoutX="375.0" layoutY="25.0" text="0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefHeight="10" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="11" />
+                               <HBox alignment="CENTER" prefHeight="10" prefWidth="60" styleClass="dltable-f1" GridPane.columnIndex="0" GridPane.rowIndex="12" />
+                               <HBox alignment="CENTER" prefHeight="10" prefWidth="700" styleClass="dltable-f2" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                               <HBox alignment="CENTER" prefHeight="10" prefWidth="50" styleClass="dltable-f4" GridPane.columnIndex="2" GridPane.rowIndex="12" />
+                           </children>
+                       </GridPane>
+                   </children>
+               </VBox>
+               <VBox alignment="CENTER">
+                   <children>
+                       <HBox alignment="CENTER">
+                           <children>
+                               <HBox alignment="CENTER" prefHeight="45" prefWidth="60.0" styleClass="dltable-h1" />
+                               <AnchorPane prefHeight="45.0" prefWidth="700.0" styleClass="dltable-h2">
+                                   <children>
+                                       <Text fill="white" layoutX="100.0" layoutY="25.0" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Special" />
+                                       <Text fill="white" layoutX="300.0" layoutY="25.0" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Topics" />
+                                       <Text fill="white" layoutX="360.0" layoutY="25.0" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Posts" />
+                                       <Text fill="white" layoutX="540.0" layoutY="25.0" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Last post" wrappingWidth="128.0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefHeight="45" prefWidth="50.0" styleClass="dltable-h4" />
+                           </children>
+                       </HBox>
+                       <GridPane alignment="CENTER">
+                           <children>
+                               <HBox alignment="CENTER" prefWidth="60.0" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                   <children>
+                                       <Label id="stickyn" prefHeight="46.0" prefWidth="50.0">
+                                           <HBox.margin>
+                                               <Insets />
+                                           </HBox.margin></Label>
+                                   </children>
+                               </HBox>
+                               <AnchorPane prefWidth="700.0" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                   <children>
+                                       <VBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="7.0" spacing="1.0">
+                                           <children>
+                                               <Text fill="white" styleClass="link" text="XXX Club" />
+                                               <Text fill="#6d6d6d" style="-fx-font-size: 8pt;" text="Zona de relaxare spirituala." />
+                                           </children>
+                                       </VBox>
+                                       <Text fill="white" layoutX="315.0" layoutY="25.0" text="0" />
+                                       <Text fill="white" layoutX="375.0" layoutY="25.0" text="0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                               <HBox alignment="CENTER" prefWidth="60.0" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                   <children>
+                                       <Label id="stickyn" prefHeight="46.0" prefWidth="50.0">
+                                           <HBox.margin>
+                                               <Insets />
+                                           </HBox.margin></Label>
+                                   </children>
+                               </HBox>
+                               <AnchorPane prefWidth="700.0" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                   <children>
+                                       <VBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="7.0" spacing="1.0">
+                                           <children>
+                                               <Text fill="white" styleClass="link" text="Console Club" />
+                                               <Text fill="#6d6d6d" style="-fx-font-size: 8pt;" text="PlayStation, X-Box, Wii si tot ce tine de ele." />
+                                           </children>
+                                       </VBox>
+                                       <Text fill="white" layoutX="315.0" layoutY="25.0" text="0" />
+                                       <Text fill="white" layoutX="375.0" layoutY="25.0" text="0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                               <HBox alignment="CENTER" prefWidth="60.0" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                   <children>
+                                       <Label id="stickyn" prefHeight="46.0" prefWidth="50.0">
+                                           <HBox.margin>
+                                               <Insets />
+                                           </HBox.margin></Label>
+                                   </children>
+                               </HBox>
+                               <AnchorPane prefWidth="700.0" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                   <children>
+                                       <VBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="7.0" spacing="1.0">
+                                           <children>
+                                               <Text fill="white" styleClass="link" text="Linux Club" />
+                                               <Text fill="#6d6d6d" style="-fx-font-size: 8pt;" text="aka AREA 51 pentru cei mai multi." />
+                                           </children>
+                                       </VBox>
+                                       <Text fill="white" layoutX="315.0" layoutY="25.0" text="0" />
+                                       <Text fill="white" layoutX="375.0" layoutY="25.0" text="0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefHeight="10" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                               <HBox alignment="CENTER" prefWidth="60.0" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                                   <children>
+                                       <Label id="stickyn" prefHeight="46.0" prefWidth="50.0">
+                                           <HBox.margin>
+                                               <Insets />
+                                           </HBox.margin></Label>
+                                   </children>
+                               </HBox>
+                               <AnchorPane prefWidth="700.0" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                   <children>
+                                       <VBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="7.0" spacing="1.0">
+                                           <children>
+                                               <Text fill="white" styleClass="link" text="Covers CLub" />
+                                               <Text fill="#6d6d6d" style="-fx-font-size: 8pt;" text="Unde arta intalneste arta." />
+                                           </children>
+                                       </VBox>
+                                       <Text fill="white" layoutX="315.0" layoutY="25.0" text="0" />
+                                       <Text fill="white" layoutX="375.0" layoutY="25.0" text="0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefHeight="10" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                               <HBox alignment="CENTER" prefHeight="10" prefWidth="60" styleClass="dltable-f1" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                               <HBox alignment="CENTER" prefHeight="10" prefWidth="700" styleClass="dltable-f2" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                               <HBox alignment="CENTER" prefHeight="10" prefWidth="50" styleClass="dltable-f4" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                           </children>
+                       </GridPane>
+                   </children>
+               </VBox>
+               <VBox alignment="CENTER">
+                   <children>
+                       <HBox alignment="CENTER">
+                           <children>
+                               <HBox alignment="CENTER" prefHeight="45" prefWidth="60.0" styleClass="dltable-h1" />
+                               <AnchorPane prefHeight="45.0" prefWidth="700.0" styleClass="dltable-h2">
+                                   <children>
+                                       <Text fill="white" layoutX="100.0" layoutY="25.0" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Multiplayer" />
+                                       <Text fill="white" layoutX="300.0" layoutY="25.0" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Topics" />
+                                       <Text fill="white" layoutX="360.0" layoutY="25.0" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Posts" />
+                                       <Text fill="white" layoutX="540.0" layoutY="25.0" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Last post" wrappingWidth="128.0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefHeight="45" prefWidth="50.0" styleClass="dltable-h4" />
+                           </children>
+                       </HBox>
+                       <GridPane alignment="CENTER">
+                           <children>
+                               <HBox alignment="CENTER" prefWidth="60.0" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                   <children>
+                                       <Label id="stickyn" prefHeight="46.0" prefWidth="50.0">
+                                           <HBox.margin>
+                                               <Insets />
+                                           </HBox.margin></Label>
+                                   </children>
+                               </HBox>
+                               <AnchorPane prefWidth="700.0" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                   <children>
+                                       <VBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="7.0" spacing="1.0">
+                                           <children>
+                                               <Text fill="white" styleClass="link" text="iPLAY FIFA 16" />
+                                               <Text fill="#6d6d6d" style="-fx-font-size: 8pt;" text="FIFA 16 Championship" />
+                                           </children>
+                                       </VBox>
+                                       <Text fill="white" layoutX="315.0" layoutY="25.0" text="0" />
+                                       <Text fill="white" layoutX="375.0" layoutY="25.0" text="0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                               <HBox alignment="CENTER" prefWidth="60.0" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                   <children>
+                                       <Label id="stickyn" prefHeight="46.0" prefWidth="50.0">
+                                           <HBox.margin>
+                                               <Insets />
+                                           </HBox.margin></Label>
+                                   </children>
+                               </HBox>
+                               <AnchorPane prefWidth="700.0" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                   <children>
+                                       <VBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="7.0" spacing="1.0">
+                                           <children>
+                                               <Text fill="white" styleClass="link" text="iDC" />
+                                               <Text fill="#6d6d6d" style="-fx-font-size: 8pt;" text="iPLAY Defense Of The Ancients Championship" />
+                                           </children>
+                                       </VBox>
+                                       <Text fill="white" layoutX="315.0" layoutY="25.0" text="0" />
+                                       <Text fill="white" layoutX="375.0" layoutY="25.0" text="0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                               <HBox alignment="CENTER" prefWidth="60.0" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                   <children>
+                                       <Label id="stickyn" prefHeight="46.0" prefWidth="50.0">
+                                           <HBox.margin>
+                                               <Insets />
+                                           </HBox.margin></Label>
+                                   </children>
+                               </HBox>
+                               <AnchorPane prefWidth="700.0" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                   <children>
+                                       <VBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="7.0" spacing="1.0">
+                                           <children>
+                                               <Text fill="white" styleClass="link" text="iCS" />
+                                               <Text fill="#6d6d6d" style="-fx-font-size: 8pt;" text="iPLAY Counter Strike Tournament" />
+                                           </children>
+                                       </VBox>
+                                       <Text fill="white" layoutX="315.0" layoutY="25.0" text="0" />
+                                       <Text fill="white" layoutX="375.0" layoutY="25.0" text="0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefHeight="10" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                               <HBox alignment="CENTER" prefHeight="10" prefWidth="60" styleClass="dltable-f1" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                               <HBox alignment="CENTER" prefHeight="10" prefWidth="700" styleClass="dltable-f2" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                               <HBox alignment="CENTER" prefHeight="10" prefWidth="50" styleClass="dltable-f4" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                           </children>
+                       </GridPane>
+                   </children>
+               </VBox>
+               <VBox alignment="CENTER">
+                   <children>
+                       <HBox alignment="CENTER">
+                           <children>
+                               <HBox alignment="CENTER" prefHeight="45" prefWidth="60.0" styleClass="dltable-h1" />
+                               <AnchorPane prefHeight="45.0" prefWidth="700.0" styleClass="dltable-h2">
+                                   <children>
+                                       <Text fill="white" layoutX="100.0" layoutY="25.0" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Trash" />
+                                       <Text fill="white" layoutX="300.0" layoutY="25.0" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Topics" />
+                                       <Text fill="white" layoutX="360.0" layoutY="25.0" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Posts" />
+                                       <Text fill="white" layoutX="540.0" layoutY="25.0" style="-fx-font-size:8pt; -fx-font-weight:bold;" text="Last post" wrappingWidth="128.0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefHeight="45" prefWidth="50.0" styleClass="dltable-h4" />
+                           </children>
+                       </HBox>
+                       <GridPane alignment="CENTER">
+                           <children>
+                               <HBox alignment="CENTER" prefWidth="60.0" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                   <children>
+                                       <Label id="stickyn" prefHeight="46.0" prefWidth="50.0">
+                                           <HBox.margin>
+                                               <Insets />
+                                           </HBox.margin></Label>
+                                   </children>
+                               </HBox>
+                               <AnchorPane prefWidth="700.0" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                   <children>
+                                       <VBox alignment="CENTER_LEFT" layoutX="0.0" layoutY="7.0" spacing="1.0">
+                                           <children>
+                                               <Text fill="white" styleClass="link" text="Trash" />
+                                               <Text fill="#6d6d6d" style="-fx-font-size: 8pt;" text="Numele spune totul..." />
+                                           </children>
+                                       </VBox>
+                                       <Text fill="white" layoutX="315.0" layoutY="25.0" text="0" />
+                                       <Text fill="white" layoutX="375.0" layoutY="25.0" text="0" />
+                                   </children>
+                               </AnchorPane>
+                               <HBox alignment="CENTER" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+                               <HBox alignment="CENTER" prefHeight="10" prefWidth="60" styleClass="dltable-f1" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                               <HBox alignment="CENTER" prefHeight="10" prefWidth="700" styleClass="dltable-f2" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                               <HBox alignment="CENTER" prefHeight="10" prefWidth="50" styleClass="dltable-f4" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                           </children>
+                       </GridPane>
+                   </children>
+               </VBox>
+           </children>
+        </VBox>
+    </children>
+</VBox>

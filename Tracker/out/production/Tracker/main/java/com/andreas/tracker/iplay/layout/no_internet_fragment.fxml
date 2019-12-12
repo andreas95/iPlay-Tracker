@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+<GridPane alignment="TOP_CENTER" hgap="20" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1100.0" stylesheets="@../../../../../../resources/css/login.css" vgap="40" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.andreas.tracker.iplay.fragments.NoInternetFragment">
+    <padding><Insets top="50"/></padding>
+    <children>
+        <VBox styleClass="transparent" spacing="10" alignment="CENTER" prefWidth="600">
+            <children>
+                <ImageView fitHeight="32.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                    <image>
+                        <Image url="@../../../../../../resources/img/login/error.png" />
+                    </image>
+                </ImageView>
+                <Text fill="white" text="${'Error: Internet connection failed.\nPlease check your internet connection! '}">
+                    <font>
+                        <Font name="Times New Roman" size="15" />
+                    </font>
+                </Text>
+            </children>
+        </VBox>
+    </children>
+</GridPane>

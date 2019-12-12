@@ -1,0 +1,1668 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<VBox prefHeight="615.0" prefWidth="1000.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" stylesheets="@../../../../../../resources/css/login.css" xmlns="http://javafx.com/javafx/8.0.76-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.andreas.tracker.iplay.fragments.LoginFragment">
+    <children>
+<GridPane fx:id="PaneMain" alignment="TOP_CENTER" hgap="10" vgap="15">
+    <children>
+        <HBox alignment="CENTER" spacing="7" GridPane.columnIndex="0" GridPane.rowIndex="0">
+            <padding><Insets top="40" /></padding>
+            <children>
+                <Button fx:id="ButtonLogin" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showLoginPane" prefHeight="60" prefWidth="130" styleClass="button-login" />
+                <Button fx:id="ButtonRecover" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showRecoverPane" prefHeight="60" prefWidth="130" styleClass="button-recover" />
+                <Button fx:id="ButtonSignup" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showSignupPane" prefHeight="60" prefWidth="130" styleClass="button-signup" />
+               <!-- <Button fx:id="ButtonTrialAccount" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showSignupPane" prefHeight="60" prefWidth="130" styleClass="button-trial-account" />
+            -->
+            </children>
+        </HBox>
+
+        <VBox fx:id="PaneLogin"  spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <children>
+                <TextFlow textAlignment="CENTER">
+                    <children>
+                        <Text fill="white" text="Note: You need internet enabled to log in. "/>
+                        <Text fill="white" text="6 failed logins in a row will result in banning your ip for 24 hours!" style="-fx-font-weight: bold;"/>
+                    </children>
+                </TextFlow>
+                <TextFlow textAlignment="CENTER">
+                    <children>
+                        <Text fill="white" text="You have " style="-fx-font-weight: bold;"/>
+                        <Text fx:id="TextCountLogin" fill="green" style="-fx-font-weight: bold; -fx-font-size: 10pt;"/>
+                        <Text fill="white" text=" login attempt(s) left in your current session." style="-fx-font-weight: bold;"/>
+                    </children>
+                </TextFlow>
+
+                <VBox spacing="0" alignment="CENTER">
+                    <children>
+                        <HBox alignment="CENTER" prefHeight="10" maxWidth="400" styleClass="pane-header">
+                            <children>
+                            </children>
+                        </HBox>
+                        <GridPane alignment="CENTER" vgap="10" hgap="2" maxWidth="400" styleClass="pane-middle">
+                            <children>
+                                <Text fill="white" style="-fx-font-family: monospace; -fx-font-weight: bold;" text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                                <TextField fx:id="FieldUsername" prefWidth="250" promptText="type your username..." GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+
+                                <Text fill="white" style="-fx-font-family: monospace; -fx-font-weight: bold;" text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                                <PasswordField fx:id="FieldPassword" prefWidth="250" promptText="type your password..." GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+
+                                <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                    <children>
+                                        <Button fx:id="ButtonForLogin" mnemonicParsing="false" onAction="#login" styleClass="btn" text="Log in!">
+                                            <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../../../../resources/img/common/button/add.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </GridPane>
+                        <HBox alignment="CENTER" prefHeight="10" maxWidth="400" styleClass="pane-footer">
+                            <children>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+
+        <VBox fx:id="PaneRecover" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <children>
+                <Text fill="white" text="Before you can reset your password, you need to type your email address and the characters in the picture below."/>
+
+                <VBox spacing="0" alignment="CENTER">
+                    <children>
+                        <HBox alignment="CENTER" prefHeight="10" maxWidth="400" styleClass="pane-header">
+                            <children>
+                            </children>
+                        </HBox>
+                        <GridPane alignment="CENTER" vgap="10" hgap="2" maxWidth="400" styleClass="pane-middle">
+                            <children>
+                                <Text fill="white" style="-fx-font-family: monospace; -fx-font-weight: bold;" text="E-Mail Address:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                                <TextField fx:id="FieldEmail" prefWidth="250" promptText="type your email..." GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                                <Text fill="white" style="-fx-font-family: monospace; -fx-font-weight: bold;" text="Captcha:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                                <ImageView fitHeight="65.0" fitWidth="210.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <image>
+                                        <Image url="@../../../../../../resources/img/login/captcha.jpeg" />
+                                    </image>
+                                </ImageView>
+
+                                <Text fill="white" style="-fx-font-family: monospace; -fx-font-weight: bold;" text="Characters:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                                <TextField fx:id="FieldCharactersRecover" prefWidth="250" promptText="type characters..." GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+
+                                <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                    <children>
+                                        <Button fx:id="ButtonForRecover" mnemonicParsing="false" onAction="#recover" styleClass="btn" text="Recover!">
+                                            <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../../../../resources/img/common/button/update.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </GridPane>
+                        <HBox alignment="CENTER" prefHeight="10" maxWidth="400" styleClass="pane-footer">
+                            <children>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+
+        <VBox fx:id="PaneSignup" spacing="10" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <children>
+                <VBox alignment="CENTER">
+                    <children>
+                        <Text fill="white" text="Registration on iPLAY!" style="-fx-font-size: 12pt; -fx-font-weight:bold;"/>
+                    </children>
+                </VBox>
+
+                <TextFlow textAlignment="CENTER">
+                    <children>
+                        <Text fill="white" text="Fields marked "/>
+                        <Text fill="#dd4b39" text="*"/>
+                        <Text fill="white" text=" are required."/>
+                    </children>
+                </TextFlow>
+
+                <VBox spacing="0" alignment="CENTER">
+                    <children>
+                        <HBox alignment="CENTER" prefHeight="10" maxWidth="400" styleClass="pane-header">
+                            <children>
+                            </children>
+                        </HBox>
+                        <GridPane alignment="CENTER" vgap="10" hgap="6" maxWidth="400" styleClass="pane-middle">
+                            <children>
+                                <Text fill="white" style="-fx-font-family: monospace; -fx-font-weight: bold;" text="Username:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                                <TextField fx:id="FieldRegisterUsername" promptText="type your username..." GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                <Text fill="#dd4b39" text="*" GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+
+                                <Text fill="white" style="-fx-font-family: monospace; -fx-font-weight: bold;" text="Password:" GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+                                <PasswordField fx:id="FieldRegisterPassword" prefWidth="250" promptText="type your password..." GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                <Text fill="#dd4b39" text="*" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+
+                                <Text fill="white" style="-fx-font-family: monospace; -fx-font-weight: bold;" text="Password again:" GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+                                <PasswordField fx:id="FieldRegisterPasswordAgain" prefWidth="250" promptText="type your password..." GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                <Text fill="#dd4b39" text="*" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+
+                                <!--
+                                <Text fill="white" style="-fx-font-family: monospace; -fx-font-weight: bold;" text="Invite code:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                                <PasswordField fx:id="FieldRegisterPasswordAgain" prefWidth="250" promptText="type invite code..." GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                -->
+
+                                <Text fill="white" style="-fx-font-family: monospace; -fx-font-weight: bold;" text="Email:" GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+                                <TextField fx:id="FieldRegisterEmail" promptText="type your email..." GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                <Text fill="#dd4b39" text="*" GridPane.columnIndex="2" GridPane.rowIndex="4"/>
+
+                                <VBox alignment="CENTER_LEFT" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                    <children>
+                                        <Text fill="white" text="The email address must be valid."/>
+                                        <Text fill="white" text="The email address won't be publicly shown anywhere."/>
+                                    </children>
+                                </VBox>
+
+                                <Text fill="white" style="-fx-font-family: monospace; -fx-font-weight: bold;" text="Captcha:" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+                                <ImageView fitHeight="65.0" fitWidth="210.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                    <image>
+                                        <Image url="@../../../../../../resources/img/login/captcha.jpeg" />
+                                    </image>
+                                </ImageView>
+
+                                <Text fill="white" style="-fx-font-family: monospace; -fx-font-weight: bold;" text="Characters:" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+                                <TextField fx:id="FieldCharactersRegister" prefWidth="250" promptText="type characters..." GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                <Text fill="#dd4b39" text="*" GridPane.columnIndex="2" GridPane.rowIndex="7"/>
+
+                                <Text fill="white" style="-fx-font-family: monospace; -fx-font-weight: bold;" text="County:" GridPane.columnIndex="0" GridPane.rowIndex="8"/>
+                                <HBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                    <children>
+                                        <ComboBox fx:id="ComboCountry" value="---- None selected ----"  prefWidth="160"/>
+                                        <Text fill="#dd4b39" text="*"/>
+                                    </children>
+                                </HBox>
+
+                                <Text fill="white" style="-fx-font-family: monospace; -fx-font-weight: bold;" text="Secret question:" GridPane.columnIndex="0" GridPane.rowIndex="9"/>
+                                <HBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                    <children>
+                                        <ComboBox fx:id="ComboSecretQuestion" value="---- None selected ----" prefWidth="160"/>
+                                        <Text fill="#dd4b39" text="*"/>
+
+                                    </children>
+                                </HBox>
+
+                                <Text fill="white" style="-fx-font-family: monospace; -fx-font-weight: bold;" text="Secret response:" GridPane.columnIndex="0" GridPane.rowIndex="10"/>
+                                <TextField fx:id="FieldSecretResponse" prefWidth="250" promptText="type response..." GridPane.columnIndex="1" GridPane.rowIndex="10" />
+                                <Text fill="#dd4b39" text="*" GridPane.columnIndex="2" GridPane.rowIndex="10"/>
+
+                                <Text fill="white" style="-fx-font-family: monospace; -fx-font-weight: bold;" text="Gender:" GridPane.columnIndex="0" GridPane.rowIndex="11"/>
+                                <HBox spacing="10" GridPane.columnIndex="1" GridPane.rowIndex="11">
+                                    <children>
+                                        <RadioButton fx:id="ButtonMale" textFill="white" selected="false" text="Male" />
+                                        <RadioButton fx:id="ButtonFemale" textFill="white" selected="false" text="Female" />
+                                        <Text fill="#dd4b39" text="*"/>
+                                    </children>
+                                </HBox>
+
+                                <HBox GridPane.columnIndex="1" GridPane.rowIndex="12">
+                                    <children>
+                                        <CheckBox fx:id="CheckRules" textFill="white" text="I have read, understood and agree to the "/>
+                                        <Text fx:id="LinkRules" styleClass="link" text="rules." onMouseClicked="#showPaneRules"/>
+                                    </children>
+                                </HBox>
+
+
+                                <HBox  GridPane.columnIndex="1" GridPane.rowIndex="13">
+                                    <children>
+                                        <CheckBox fx:id="CheckFAQ" text=" I agree to " textFill="white"/>
+                                        <Text fx:id="LinkFAQ" styleClass="link" text="read the FAQ" onMouseClicked="#showPaneFAQ"/>
+                                        <Text fill="white" text=" before asking."/>
+                                    </children>
+                                </HBox>
+
+                                <CheckBox fx:id="CheckAge" textFill="white" text="I am at least 15 years old."  GridPane.columnIndex="1" GridPane.rowIndex="14"/>
+
+                                <HBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="15">
+                                    <children>
+                                        <Button fx:id="ButtonForSignup" mnemonicParsing="false" onAction="#signup" styleClass="btn" text="Sign up!">
+                                            <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../../../../resources/img/common/button/vote.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                </HBox>
+                            </children>
+                        </GridPane>
+                        <HBox alignment="CENTER" prefHeight="10" maxWidth="400" styleClass="pane-footer">
+                            <children>
+                            </children>
+                        </HBox>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+
+        <VBox fx:id="PaneMessage" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <children>
+                <HBox alignment="CENTER" prefHeight="10" maxWidth="400" styleClass="pane-header"/>
+                <HBox alignment="CENTER" maxWidth="400" styleClass="pane-middle">
+                    <children>
+                        <VBox spacing="10" alignment="CENTER">
+                            <children>
+                                <Label fx:id="TypeError" textFill="white" style="-fx-font-size: 10pt; -fx-font-weight:bold;" contentDisplay="TOP"/>
+                                <Text fx:id="MessageError" fill="white" text="" textAlignment="CENTER"/>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="10" maxWidth="400" styleClass="pane-footer"/>
+            </children>
+        </VBox>
+
+        <VBox fx:id="PaneRules" spacing="15" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <padding><Insets top="10" bottom="30"/></padding>
+            <children>
+                <VBox alignment="CENTER">
+                    <children>
+                        <Text fill="white" text="Main Rules - Breaking these rules will get you banned" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                            <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                        <HBox prefWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-header"/>
+                        <VBox prefWidth="750" alignment="CENTER_LEFT" styleClass="table-middle">
+                            <children>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • This is a torrent site which promotes sharing amongst the community. If you are not willing to give back to the community what you take from it, this site is not for you. In other words, we expect you to have an acceptable share ratio.">
+                                    <VBox.margin><Insets top="5" bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • We're a community. Working together is what makes this place what it is. If you come across something which violates a rule, report it! Ignoring it is only damaging the community.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Do not sell our invites. The invites were given to you to invite your friends or people you think that can contribute. If you are found selling invites, you'll lose your account.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <TextFlow>
+                                    <children>
+                                        <Text fill="white" text=" • "/>
+                                        <Text fill="red" text="(Updated) "/>
+                                        <Text wrappingWidth="735" fill="white"
+                                              text="Do NOT upload our torrents/files to other trackers (private, public, it doesn't matter)! Stealing torrents will result in your account being disabled."/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • One (1) account per person per lifetime.  Anyone creating additional accounts will be banned.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Use your account or lose it.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <TextFlow>
+                                    <children>
+                                        <Text fill="white" text=" • "/>
+                                        <Text fill="red" text="(New) "/>
+                                        <Text wrappingWidth="735" fill="white"
+                                              text="Accounts that have zero activity (0 bytes uploaded) after being a member for 28 days will be disabled automatically by the system."/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                                <TextFlow>
+                                    <children>
+                                        <Text fill="white" text=" • "/>
+                                        <Text fill="red" text="(New) "/>
+                                        <Text wrappingWidth="735" fill="white"
+                                              text="Accounts with less than 175MB in total Upload / Download activity per month may be disabled."/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                            </children>
+                        </VBox>
+                        <HBox prefWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-footer"/>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <children>
+                        <Text fill="white" text="Downloading Rules - By not following these rules you will lose download privileges!" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                            <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                        <HBox prefWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-header"/>
+                        <VBox prefWidth="750" alignment="CENTER_LEFT" styleClass="table-middle">
+                            <children>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Low ratios may result in severe consequences, including banning in extreme cases. (low ratio &lt; 0.4)">
+                                    <VBox.margin><Insets top="10" bottom="10" left="10"/></VBox.margin></Text>
+                                <TextFlow>
+                                    <children>
+                                        <Text wrappingWidth="735" fill="white"
+                                              text=" • Always give back what you took and try to seed every torrent to a "/>
+                                        <Text fill="white" text="1:1 ratio." style="-fx-font-weight:bold;"/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Seeding is your best chance to get your ratio up. Use it and upload with your maximum speed.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Give others a chance to seed. If your ratio on a single torrent is already above 2.0, you should give others the chance to seed too. Overseeding will only make it hard or even impossible for others to keep a good ratio.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                            </children>
+                        </VBox>
+                        <HBox prefWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-footer"/>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <children>
+                        <Text fill="white" text="General Forum Guidelines - Please follow these guidelines or else you might end up with a warning!" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                            <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                        <HBox prefWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-header"/>
+                        <VBox prefWidth="750" alignment="CENTER_LEFT" styleClass="table-middle">
+                            <children>
+                                <Text fx:id="TextPosting" wrappingWidth="735" fill="white" styleClass="link"
+                                      text=" • Click here first.">
+                                    <VBox.margin><Insets top="5" bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Do not tell people to read the Rules, the FAQ, or comment on their ratios and torrents.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Do not make comments to lock, move or trash topics. These are all Moderating decisions.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Do not quote excessively. One quote of a quote box is sufficient. Edit the quote to make your point instead. Always remove large images when quoting a post.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • No self-congratulatory (its my birthday, I am a power user, etc.) or banal topics of any kind are allowed. If in any doubt, ask a moderator for permission.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • No advertising, mechandising or promotions of any sort are allowed in the forums.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Please don't use our forum to promote blogs (yours or others)">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Please do not use other users avatars.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • No aggressive behaviour or flaming in the forums.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <TextFlow>
+                                    <children>
+                                        <Text wrappingWidth="735" fill="white"
+                                              text=" • Don't post comments that don't add anything to the discussion. "/>
+                                        <Text wrappingWidth="735" fill="white" style="-fx-font-weight:bold;"
+                                              text="NO SPAMMING!"/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • No language other than Romanian or English in the forums.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • No requesting or posting of serials, CD keys, passwords or cracks in the forums.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • No images larger than 800x600, and preferably web-optimised.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Please ensure all questions are posted in the correct section! (BitTorrent questions in the BitTorrent - Networking section, General questions in the General discussions section, etc.)">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Posts are not often deleted. Though they are sometimes moved to the trash. Please check though the trash before accusing Mods of deleting posts.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <TextFlow>
+                                    <children>
+                                        <Text wrappingWidth="735" fill="white"
+                                              text=" • Last, please read the"/>
+                                        <Text wrappingWidth="735" fill="white" style="-fx-font-weight:bold;"
+                                              text=" FAQ "/>
+                                        <Text wrappingWidth="735" fill="white"
+                                              text="before asking any questions!"/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                            </children>
+                        </VBox>
+                        <HBox prefWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-footer"/>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <children>
+                        <Text fill="white" text="Torrent Comments Guidelines - Please follow these guidelines or else you might end up with a warning!" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                            <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                        <HBox prefWidth="750" prefHeight="10" alignment="CENTER" styleClass="table-header"/>
+                        <VBox prefWidth="750" alignment="CENTER" styleClass="table-middle">
+                            <children>
+                                <TextFlow>
+                                    <children>
+                                        <Text wrappingWidth="735" fill="white"
+                                              text=" • Always "/>
+                                        <Text wrappingWidth="735" fill="white" style="-fx-font-weight:bold;"
+                                              text="respect the uploader!"/>
+                                    </children>
+                                    <VBox.margin><Insets top="5" bottom="10" left="10"/></VBox.margin></TextFlow>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Please limit your torrent comments to the specific upload in question.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • If you have no intentions of downloading, don't comment.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • No language other than Romanian or English in the comments.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • No comments on the upload speed.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • No aggressive behaviour or flaming.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • No links to warez, crack or serial sites.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • No requesting or posting of serials, CD keys, passwords or cracks.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Remember our releases are not subject to your own taste, If you don't like a release, stay away from it.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <TextFlow>
+                                    <children>
+                                        <Text wrappingWidth="735" fill="white" text=" • "/>
+                                        <Text wrappingWidth="735" fill="red" text="(Updated) "/>
+                                        <Text wrappingWidth="735" fill="white" text="No questions requesting Screenshots, System Requirements, Subtitles, etc."/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                                <TextFlow>
+                                    <children>
+                                        <Text wrappingWidth="735" fill="white" text=" • "/>
+                                        <Text wrappingWidth="735" fill="red" text="(New) "/>
+                                        <Text wrappingWidth="735" fill="white" text="Do not post links or discuss about"/>
+                                        <Text wrappingWidth="735" fill="white" text=" SUBTITLES " style="-fx-font-weight:bold;"/>
+                                        <Text wrappingWidth="735" fill="white" text="in the comments."/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                            </children>
+                        </VBox>
+                        <HBox prefWidth="750" prefHeight="10" alignment="CENTER" styleClass="table-footer"/>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <children>
+                        <Text fill="white" text="Avatar and Signature Guidelines - Please try to follow these guidelines" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                            <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                        <HBox prefWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-header"/>
+                        <VBox prefWidth="750" alignment="CENTER_LEFT" styleClass="table-middle">
+                            <children>
+                                <TextFlow>
+                                    <children>
+                                        <Text wrappingWidth="735" fill="white" text=" • "/>
+                                        <Text wrappingWidth="735" fill="red" text="(New) "/>
+                                        <Text wrappingWidth="735" fill="white" text="The avatars and signatures must be uploaded in the local bitbucket, by selecting the right option (avatar if uploading an avatar, signature if uploading a signature). You cannot update your profile if you try to use an avatar or signature not uploaded in the local bitbucket."/>
+                                    </children>
+                                    <VBox.margin><Insets top="5" bottom="10" left="10"/></VBox.margin></TextFlow>
+                                <TextFlow>
+                                    <children>
+                                        <Text wrappingWidth="735" fill="white" text=" • "/>
+                                        <Text wrappingWidth="735" fill="red" text="(New) "/>
+                                        <Text wrappingWidth="735" fill="white" text="Images formats accepted are: JPG, PNG, GIF (non animated). If you upload an animated GIF, only the first frame will be preserved."/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                                <TextFlow>
+                                    <children>
+                                        <Text wrappingWidth="735" fill="white" text=" • "/>
+                                        <Text wrappingWidth="735" fill="red" text="(New) "/>
+                                        <Text wrappingWidth="735" fill="white" text=" The images for avatars will be automatically resized to 150x250 px if they are larger or smaller in width or larger in height. To avoid image distorsion, try using directly 150 px width and at most 250 px height sized avatars."/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                                <TextFlow>
+                                    <children>
+                                        <Text wrappingWidth="735" fill="white" text=" • "/>
+                                        <Text wrappingWidth="735" fill="red" text="(New) "/>
+                                        <Text wrappingWidth="735" fill="white" text=" The images for signatures will be automatically resized to 525x125 px if they are larger (in width, height or both). To avoid image distorsion, try using directly 525x125 px or smaller sized signatures."/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                                <TextFlow>
+                                    <children>
+                                        <Text wrappingWidth="735" fill="white" text=" • "/>
+                                        <Text wrappingWidth="735" fill="red" text="(New) "/>
+                                        <Text wrappingWidth="735" fill="white" text="You can use only one avatar and/or only one signature. For the signature you can choose between the following options: no signature or simple text signature (max. 150 alphanumeric characters; no formatting, BB codes or links are accepted; if used, they will be ignored) or one image (uploaded in the local bitbucket, using the above rules) "/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Do not use potentially offensive material involving porn, religious material, animal / human cruelty or ideologically charged images. Mods have wide discretion on what is acceptable. If in doubt PM one.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Do not have excessive images in your profile.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Do not include any images, flames or language that would not be allowed in the forums. Remember it may be a Moderator who's looking at your profile!">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                            </children>
+                        </VBox>
+                        <HBox prefWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-footer"/>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <children>
+                        <Text fill="white" text="Requesting Rules - By not following these rules you will lose download privileges!" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                            <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                        <HBox prefWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-header"/>
+                        <VBox prefWidth="750" alignment="CENTER_LEFT" styleClass="table-middle">
+                            <children>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Don't request stuff which is already uploaded. Use the provided search function before making a request.">
+                                    <VBox.margin><Insets top="5" bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Do not request UNRELEASED stuff.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Don't make any request in forum/comments, use the Request Section!">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • In your request you must include some DETAILS ( a link and some little description : imdb.com / gamespot.com .. )">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <TextFlow>
+                                    <children>
+                                        <Text wrappingWidth="735" fill="white"
+                                              text=" • Do not request"/>
+                                        <Text wrappingWidth="735" fill="white" style="-fx-font-weight:bold;"
+                                              text=" subtitles."/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                                <TextFlow>
+                                    <children>
+                                        <Text wrappingWidth="735" fill="white"
+                                              text=" • Do not request"/>
+                                        <Text wrappingWidth="735" fill="white" style="-fx-font-weight:bold;"
+                                              text=" ROMANIAN "/>
+                                        <Text wrappingWidth="735" fill="white"
+                                              text="stuff."/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                                <TextFlow>
+                                    <children>
+                                        <Text wrappingWidth="735" fill="white"
+                                              text=" • Do not request"/>
+                                        <Text wrappingWidth="735" fill="white" style="-fx-font-weight:bold;"
+                                              text=" XXX "/>
+                                        <Text wrappingWidth="735" fill="white"
+                                              text="materials."/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Do not request FREE STUFF(demos, trailers, etc.).">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <TextFlow>
+                                    <children>
+                                        <Text wrappingWidth="735" fill="white"
+                                              text=" • "/>
+                                        <Text wrappingWidth="735" fill="red"
+                                              text="(Updated) "/>
+                                        <Text wrappingWidth="735" fill="white"
+                                              text="Don't request for PACKS, COLLECTIONS, DISCOGRAPHIES etc. pack'em yourself, request each release separately (however we do accept TV series full seasons)."/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                            </children>
+                        </VBox>
+                        <HBox prefWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-footer"/>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <children>
+                        <Text fill="white" text="Cheating" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                            <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                        <HBox prefWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-header"/>
+                        <VBox prefWidth="750" alignment="CENTER_LEFT" styleClass="table-middle">
+                            <children>
+                                <TextFlow>
+                                    <children>
+                                        <Text wrappingWidth="735" fill="white" text=" • "/>
+                                        <Text wrappingWidth="735" fill="red" text="(New) "/>
+                                        <Text wrappingWidth="735" fill="white" text="We won't tolerate any attempt of any kind of &quot;Fake upload&quot; / &quot;Ghost leeching&quot; or any other method of cheating the ratio system. Breaking this rule will get your account disabled."/>
+                                    </children>
+                                    <VBox.margin><Insets top="5" bottom="10" left="10"/></VBox.margin></TextFlow>
+                                <TextFlow>
+                                    <children>
+                                        <Text wrappingWidth="735" fill="white" text=" • "/>
+                                        <Text wrappingWidth="735" fill="red" text="(New) "/>
+                                        <Text wrappingWidth="735" fill="white" text="Don't try all kinds of software to cheat, remember, we try also any kinds of software/script that will help us finding those who brake the rules and we are having some funny time."/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                                <TextFlow>
+                                    <children>
+                                        <Text wrappingWidth="735" fill="white" text=" • "/>
+                                        <Text wrappingWidth="735" fill="red" text="(New) "/>
+                                        <Text wrappingWidth="735" fill="white" text="We won't tolerate any person who is using iPLAY as their website/tracker source."/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                                <TextFlow>
+                                    <children>
+                                        <Text wrappingWidth="735" fill="white" text=" • "/>
+                                        <Text wrappingWidth="735" fill="red" text="(New) "/>
+                                        <Text wrappingWidth="735" fill="white" text="We will ban/disable all ip/accounts of all website/tracker persons that will brake the above rule!"/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                            </children>
+                        </VBox>
+                        <HBox prefWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-footer"/>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+
+        <VBox fx:id="PaneFAQ" spacing="15" alignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="1">
+            <padding><Insets top="10" bottom="30"/></padding>
+            <children>
+                <VBox alignment="CENTER">
+                    <children>
+                        <Text fill="white" text="FAQ Intro" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                            <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                        <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-header"/>
+                        <VBox maxWidth="750" alignment="CENTER_LEFT" styleClass="table-middle">
+                            <children>
+                                <TextFlow maxWidth="730">
+                                    <children>
+                                        <Text wrappingWidth="735" fill="white"
+                                              text="Welcome to iPLAY! "/>
+                                        <Text wrappingWidth="735" fill="white"
+                                              text="Our goal is not only to provide the absolutely best stuff (0Day and goldies), but to create a great community for the benifit of all. Therefore, only specially authorised users have permission to upload torrents. If you have access to the newest stuff and/or rare stuff do not hesitate to "/>
+                                        <Text styleClass="link" text="apply here."/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="20" top="10" left="10"/></VBox.margin></TextFlow>
+                                <TextFlow maxWidth="730">
+                                    <children>
+                                        <Text wrappingWidth="735" fill="white"
+                                              text="This is a private tracker, and you have to register before you can get full access to the site. Before you do anything here at iPLAY we suggest you read the"/>
+                                        <Text styleClass="link" text=" rules! "/>
+                                        <Text wrappingWidth="735" fill="white"
+                                              text="There are only a few rules to abide by, but we do enforce them!"/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="20" left="10"/></VBox.margin></TextFlow>
+                                <TextFlow maxWidth="730">
+                                    <children>
+                                        <Text wrappingWidth="735" fill="white"
+                                              text="Before you go any further you should read the iPLAY "/>
+                                        <Text styleClass="link" text="user agreement."/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                            </children>
+                        </VBox>
+                        <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-footer"/>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <children>
+                        <Text fill="white" text="Contents" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                            <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                        <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-header"/>
+                        <VBox maxWidth="750" minWidth="750.0" alignment="CENTER_LEFT" styleClass="table-middle">
+                            <children>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Site information">
+                                    <VBox.margin><Insets bottom="10" top="10" left="15"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ What is this bittorrent all about anyway? How do I get the files?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Where does the donated money go?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • User information">
+                                    <VBox.margin><Insets bottom="10" left="15"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ I registered an account but did not receive the confirmation e-mail?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ I've lost my user name or password! Can you send it to me?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Can you rename my account?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Can you delete my (confirmed) account?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ So, what's MY ratio?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Why is my IP displayed on my details page?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Help! I cannot login!? (a.k.a. Login of Death)">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ My IP address is dynamic. How do I stay logged in?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Why am I listed as not connectable? (And why should I care?)">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ What are the different user classes?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ How does this promotion thing work anyway?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Why can't my friend become a member?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ How does this invite thing work anyway?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ How do I add an avatar to my profile?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ When are accounts auto-pruned?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ What's a trial account?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ When I promote from trial user?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ How can I promote?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ I had an account but couldn't promote, can I try again?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ What's a &quot;passkey&quot;?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ What's this &quot;Reset passkey&quot; option in my profile?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Stats">
+                                    <VBox.margin><Insets bottom="10" left="15"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Most common reasons for stats not updating">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Best practices">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ May I use any bittorrent client?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Why is a torrent I'm leeching/seeding listed several times in my profile?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ I've finished or cancelled a torrent. Why is it still listed in my profile?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Why do I sometimes see torrents I'm not leeching in my profile?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Multiple IPs (Can I login from different computers?)">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ How does NAT/ICS change the picture?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ For those of you who are interested (Anatomy of a torrent session)">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Uploading">
+                                    <VBox.margin><Insets bottom="10" left="15"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Why can't I upload torrents?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Using Azureus">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Using Official Bittorrent Client">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ What rules must I follow to remain part of the Uploader team?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Can I upload your torrents to other trackers?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Downloading">
+                                    <VBox.margin><Insets bottom="10" left="15"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ How do I use the files I've downloaded?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Downloaded a movie and don't know what CAM/TS/TC/SCR means?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Why did an active torrent suddenly disappear?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ How do I resume a broken download or reseed something?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Why do my downloads sometimes stall at 99%?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ What are these &quot;a piece has failed an hash check&quot; messages?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ The torrent is supposed to be 100MB. How come I downloaded 120MB?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Why do I get a &quot;rejected by tracker - Port xxxx is blacklisted&quot; error?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ What's this &quot;IOError - [Errno13] Permission denied&quot; error?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • How can I improve my download speed?">
+                                    <VBox.margin><Insets bottom="10" left="15"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Do not immediately jump on new torrents">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Make yourself connectable">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Limit your upload speed">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Limit the number of simultaneous connections">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Limit the number of simultaneous uploads">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Just give it some time">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" ◦ Why is my browsing so slow while leeching?">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • My ISP uses a transparent proxy. What should I do?">
+                                    <Text wrappingWidth="735" fill="white"
+                                          text=" ◦ What is a proxy?">
+                                        <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                    <Text wrappingWidth="735" fill="white"
+                                          text=" ◦ How do I find out if I'm behind a (transparent/anonymous) proxy?">
+                                        <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                    <Text wrappingWidth="735" fill="white"
+                                          text=" ◦ Why am I listed as not connectable even though I'm not NAT/Firewalled?">
+                                        <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                    <Text wrappingWidth="735" fill="white"
+                                          text=" ◦ Can I bypass my ISP's proxy?">
+                                        <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                    <Text wrappingWidth="735" fill="white"
+                                          text=" ◦ How do I make my bittorrent client use a proxy?">
+                                        <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                    <Text wrappingWidth="735" fill="white"
+                                          text=" ◦ Why can't I signup from behind a proxy?">
+                                        <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                    <Text wrappingWidth="735" fill="white"
+                                          text=" ◦ Does this apply to other torrent sites?">
+                                        <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                    <VBox.margin><Insets bottom="10" left="15"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • Why can't I connect? Is the site blocking me?">
+                                    <Text wrappingWidth="735" fill="white"
+                                          text=" ◦ Maybe my address is blacklisted?">
+                                        <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                    <Text wrappingWidth="735" fill="white"
+                                          text=" ◦ Your ISP blocks the site's address">
+                                        <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                    <Text wrappingWidth="735" fill="white"
+                                          text=" ◦ Alternate port (81)">
+                                        <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                    <VBox.margin><Insets bottom="10" left="15"/></VBox.margin></Text>
+                                <Text wrappingWidth="735" fill="white"
+                                      text=" • What if I can't find the answer to my problem here?">
+                                    <VBox.margin><Insets bottom="10" left="15"/></VBox.margin></Text>
+                            </children>
+                        </VBox>
+                        <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-footer"/>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <children>
+                        <Text fill="white" text="Site information" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                            <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                        <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-header"/>
+                        <VBox maxWidth="750" alignment="CENTER_LEFT" styleClass="table-middle">
+                            <children>
+                               <Text fill="white" style="-fx-font-weight:bold;" text="What is this bittorrent all about anyway? How do I get the files?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white"
+                                      text="Check out Brian's BitTorrent FAQ and Guide.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="Where does the donated money go?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="iPLAY is situated on a dedicated server in Bucharest, Romania. Our monthly running costs are around €1000. For a detalied explanation of this please go here.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                            </children>
+                        </VBox>
+                        <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-footer"/>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <children>
+                        <Text fill="white" text="User information" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                            <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                        <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-header"/>
+                        <VBox maxWidth="750" alignment="CENTER_LEFT" styleClass="table-middle">
+                            <children>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="I registered an account but did not receive the confirmation e-mail?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="For now accounts are automatically confirmed upon registration, so will receive no e-mail. ">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="I've lost my user name or password! Can you send it to me?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Please go to our homepage and press the Recover button in the middle.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="Can you rename my account?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="We do not rename accounts, sorry.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="Can you delete my (confirmed) account?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Sorry, but we don't delete accounts. You can however disable your account by visiting this page.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="So, what's MY ratio?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Click on your username in the header or go to your profile, then click your username (at the top).">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="It's important to distinguish between your overall ratio and the individual ratio on each torrent you may be seeding or leeching. The overall ratio takes into account the total uploaded and downloaded from your account since you joined the site. The individual ratio takes into account those values for each torrent.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="You may see two symbols instead of a number: &quot;Inf.&quot;, which is just an abbreviation for Infinity, and means that you have downloaded 0 bytes while uploading a non-zero amount (ul/dl becomes infinity); &quot;---&quot;, which should be read as &quot;non-available&quot;, and shows up when you have both downloaded and uploaded 0 bytes (ul/dl = 0/0 which is an indeterminate amount).">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="Why is my IP displayed on my details page?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Only you and the site moderators can view your IP address and email. Regular users do not see that information.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="Help! I cannot login!? (a.k.a. Login of Death)">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="This problem sometimes occurs with MSIE. Close all Internet Explorer windows and open Internet Options in the control panel. Click the Delete Cookies button. You should now be able to login.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="My IP address is dynamic. How do I stay logged in?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="You do not have to anymore. All you have to do is make sure you are logged in with your actual IP when starting a torrent session. After that, even if the IP changes mid-session, the seeding or leeching will continue and the statistics will update without any problem.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="Why am I listed as not connectable? (And why should I care?)">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="The tracker has determined that you are firewalled or NATed and cannot accept incoming connections. ">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="This means that other peers in the swarm will be unable to connect to you, only you to them. Even worse, if two peers are both in this state they will not be able to connect at all. This has obviously a detrimental effect on the overall speed. ">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="The way to solve the problem involves opening the ports used for incoming connections (the same range you defined in your client) on the firewall and/or configuring your NAT server to use a basic form of NAT for that range instead of NAPT (the actual process differs widely between different router models. Check your router documentation and/or support forum. You will also find lots of information on the subject at PortForward).">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="What are the different user classes?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <GridPane alignment="CENTER_LEFT" vgap="10" hgap="20">
+                                    <children>
+                                        <Text fill="white" style="-fx-font-weight:bold;" GridPane.columnIndex="0"
+                                           GridPane.rowIndex="0"  text="Peasant"/>
+                                        <Text fill="white" wrappingWidth="600" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                                              text="Users with a ratio below .40 &amp; who downloaded more than 10 GB for 1 week (7 days) will be warned to correct their ratio. They wll be able to seed/leech 15 torrents. If they don't fix their ratio after 2 weeks they will be automatically demoted to peasant and limited to 10 torrents max. Peasants will have 1 week to increase their ratio or their account will be deleted."/>
+                                        <Text fill="white" style="-fx-font-weight:bold;" GridPane.columnIndex="0"
+                                              GridPane.rowIndex="1"  text="User"/>
+                                        <Text fill="white" wrappingWidth="600" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                                              text="The default class of new members. If you have downloaded less than a 10 GB you will only be able seed/leech 15 torrents at a time. After you have downloaded 10 GB and your ratio is above .40 you will be able to seed/leech 25 torrents at a time."/>
+                                        <Text fill="white" style="-fx-font-weight:bold;" GridPane.columnIndex="0"
+                                              GridPane.rowIndex="2"  text="Power User"/>
+                                        <Text fill="white" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                                              text="Are able to seed/leech 75 torrents at a time."/>
+                                        <Text fill="white" style="-fx-font-weight:bold;" GridPane.columnIndex="0"
+                                              GridPane.rowIndex="3"  text="XtremE User"/>
+                                        <Text fill="white" GridPane.rowIndex="3" GridPane.columnIndex="1"
+                                              text="Are able to seed/leech 150 torrents at a time."/>
+                                        <ImageView GridPane.columnIndex="0" GridPane.rowIndex="4" fitHeight="11.0" fitWidth="11.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/donor_small.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Text fill="white" GridPane.rowIndex="4" GridPane.columnIndex="1"
+                                              text="Has donated money to iPLAY and are immune to automatic demotion."/>
+                                        <Text fill="white" style="-fx-font-weight:bold;" GridPane.columnIndex="0"
+                                              GridPane.rowIndex="5"  text="VIP"/>
+                                        <Text fill="white" GridPane.rowIndex="5" GridPane.columnIndex="1"
+                                              text="Same privileges as Power User and is considered an Elite Member of iPLAY. Immune to automatic demotion."/>
+                                        <Text fill="white" style="-fx-font-weight:bold;" GridPane.columnIndex="0"
+                                              GridPane.rowIndex="6"  text="Other"/>
+                                        <Text fill="white" GridPane.rowIndex="6" GridPane.columnIndex="1"
+                                              text="Customised title."/>
+                                        <Text fill="#4040c0" style="-fx-font-weight:bold;" GridPane.columnIndex="0"
+                                              GridPane.rowIndex="7"  text="Uploader"/>
+                                        <Text fill="white" GridPane.rowIndex="7" GridPane.columnIndex="1"
+                                              text="Same as PU except with upload rights and immune to automatic demotion."/>
+                                        <Text fill="#a83838" style="-fx-font-weight:bold;" GridPane.columnIndex="0"
+                                              GridPane.rowIndex="8"  text="Moderator"/>
+                                        <Text fill="white" GridPane.rowIndex="8" GridPane.columnIndex="1"
+                                              text="Can edit and delete any uploaded torrents. Can also moderate user comments and disable accounts."/>
+                                        <Text fill="#a83838" style="-fx-font-weight:bold;" GridPane.columnIndex="0"
+                                              GridPane.rowIndex="9"  text="SysOp"/>
+                                        <Text fill="white" GridPane.rowIndex="9" GridPane.columnIndex="1"
+                                              text="The coder of tracker."/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></GridPane>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="How does this promotion thing work anyway?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <GridPane alignment="CENTER_LEFT" vgap="10" hgap="20">
+                                    <children>
+                                        <Text fill="white" style="-fx-font-weight:bold;" GridPane.columnIndex="0"
+                                              GridPane.rowIndex="0"  text="Power User"/>
+                                        <Text fill="white" GridPane.rowIndex="0" GridPane.columnIndex="1"
+                                              text="Must have been be a member for at least 4 weeks, have uploaded at least 50GB and have a ratio at or above 1.05.&#10;The promotion is automatic when these conditions are met. Note that you will be automatically demoted from&#10;this status if your ratio drops below 0.95 at any time."/>
+                                        <Text fill="white" style="-fx-font-weight:bold;" GridPane.columnIndex="0"
+                                              GridPane.rowIndex="1" text="XtremE User"/>
+                                        <Text fill="white" GridPane.rowIndex="1" GridPane.columnIndex="1"
+                                              text="Must have been be a member for at least 4 weeks, have uploaded at least 250GB and have a ratio at or above 1.05.&#10;The promotion is automatic when these conditions are met. Note that you will be automatically demoted from&#10;this status if your ratio drops below 0.95 at any time."/>
+                                        <ImageView GridPane.columnIndex="0" GridPane.rowIndex="2" fitHeight="11.0" fitWidth="11.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@../../../../../../resources/img/common/donor_small.png" />
+                                            </image>
+                                        </ImageView>
+                                        <Text fill="white" GridPane.rowIndex="2" GridPane.columnIndex="1"
+                                              text="Enter the donation details on this page to activate your donor status."/>
+                                        <Text fill="white" style="-fx-font-weight:bold;" GridPane.columnIndex="0"
+                                              GridPane.rowIndex="3"  text="VIP"/>
+                                        <Text fill="white" GridPane.rowIndex="3" GridPane.columnIndex="1"
+                                              text="Assigned by mods at their discretion to users they feel contribute something special to the site.&#10;(Anyone begging for VIP status will be automatically disqualified.)"/>
+                                        <Text fill="white" style="-fx-font-weight:bold;" GridPane.columnIndex="0"
+                                              GridPane.rowIndex="4"  text="Other"/>
+                                        <Text fill="white" GridPane.rowIndex="4" GridPane.columnIndex="1"
+                                              text="Conferred by mods at their discretion (not available to Users or Power Users)."/>
+                                        <Text fill="#4040c0" style="-fx-font-weight:bold;" GridPane.columnIndex="0"
+                                              GridPane.rowIndex="5"  text="Uploader"/>
+                                        <Text fill="white" GridPane.rowIndex="5" GridPane.columnIndex="1"
+                                              text="	Appointed by Admins/SysOp (see the 'Uploading' section for conditions)."/>
+                                        <Text fill="#a83838" style="-fx-font-weight:bold;" GridPane.columnIndex="0"
+                                              GridPane.rowIndex="6"  text="Moderator"/>
+                                        <Text fill="white" GridPane.rowIndex="6" GridPane.columnIndex="1"
+                                              text="You don't ask us, we'll ask you!"/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></GridPane>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="Why can't my friend become a member?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="There is a 70000 invite limit. When that number is reached we stop accepting new invites so no new members can join. Accounts inactive are pruned from time to time, so keep trying. (There is no reservation or queuing system, don't ask for that.)">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="How does this invite thing work anyway?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="#bed1eb" style="-fx-font-weight:bold; -fx-font-size:11pt;" text="Invites are given when we consider that people deserve them, work for them. ">
+                                    <VBox.margin><Insets bottom="10" top="5" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="You can view how many given/available invites by going to your &quot;User details&quot; page and looking at the number next to &quot;Given&quot;/&quot;Available&quot;. To invite someone follow the instructions from this topic.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="How do I add an avatar to my profile?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="First, find an image that you like, and that is within the rules. Then you will have to upload it to our local Bitbucket, selecting Avatar as Upload type. All that is left to do is copy the URL you were given when uploading it to the avatar field in your profile.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Please do not make a post just to test your avatar. If everything is allright you'll see it in your details page.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="When are accounts auto-pruned?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Disabled accounts are pruned on a regular basis.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="What's a trial account?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="A trial accont means that you are in a test period. You have a limit of 7 torrents which you can download OR a download limit of 7 Gb. Beside this you cannot send private messages to other users and you cannot post in forum.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="When I promote from trial user?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="If after 7 days you are eligible for promotion your account will have no more limitation, thus becoming a normal user.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="How can I promote">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white"
+                                      text="You can promote from trial to full user account in two ways:&#10;1) After the 7 days trial period if your global ratio is 1.5 or greater you are eligible for promotion, but promotion must be approved by staff.&#10;2) By making a donation, in this way your account will be converted from trial to full automatically. ">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="I had an account but couldn't promote, can I try again?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="No, you cannot. We will store all the informations used before to create a trial account. Most of the attemps will be blocked by scripts but we will have human resources allocated for checking the active trial accounts. Trying to abuse of this occasion will get your ip / ip class banned!">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="What's a &quot;passkey&quot;?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="A passkey is a 32 characters key associated with your account that uniquely identifies you as a http://www.iplay.ro user. When a .torrent file is downloaded from your account, the passkey is automatically added to the announce URL in the .torrent file.&#10;Make sure you keep your passkey private at all times. ">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="What's this &quot;Reset passkey&quot; feature in my profile?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="You can use this feature to generate a new passkey for you account. &#10;Remember that the passkey uniquely identifies you, therefore if someone would learn it they would be able to leech from your account. Should you suspect your key from being compromised just create a new one. &#10;Note that by using this you will invalidate all the .torrent files that you may have previously downloaded, and will have to download them again. ">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                            </children>
+                        </VBox>
+                        <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-footer"/>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <children>
+                        <Text fill="white" text="Stats" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                            <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                        <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-header"/>
+                        <VBox maxWidth="750" alignment="CENTER_LEFT" styleClass="table-middle">
+                            <children>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="Most common reason for stats not updating">
+                                    <VBox.margin><Insets bottom="15" top="20" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text=" • The user is cheating. (a.k.a. &quot;Summary Ban&quot;)">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text=" • The server is overloaded and unresponsive. Just try to keep the session open until the server responds again. (Flooding the server with consecutive manual updates is not recommended.)">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text=" • You are using a faulty client. If you want to use an experimental or CVS version you do it at your own risk.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="Best practices">
+                                    <VBox.margin><Insets bottom="15" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text=" • If a torrent you are currently leeching/seeding is not listed on your profile, just wait or force a manual update.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text=" • Make sure you exit your client properly, so that the tracker receives &quot;event=completed&quot;.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text=" • If the tracker is down, do not stop seeding. As long as the tracker is back up before you exit the client the stats should update properly.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="May I use any bittorrent client?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="No. For a list of allowed clients click here (romanian) or here (english).">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="We recommend you to read the current accepted clients and versions here.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="Why is a torrent I'm leeching/seeding listed several times in my profile?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="If for some reason (e.g. pc crash, or frozen client) your client exits improperly and you restart it, it will have a new peer_id, so it will show as a new torrent. The old one will never receive a &quot;event=completed&quot; or &quot;'event=stopped&quot; and will be listed until some tracker timeout. Just ignore it, it will eventually go away.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="I've finished or cancelled a torrent. Why is it still listed in my profile?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Some clients, notably TorrentStorm and Nova Torrent, do not report properly to the tracker when canceling or finishing a torrent. In that case the tracker will keep waiting for some message - and thus listing the torrent as seeding or leeching - until some timeout occurs. Just ignore it, it will eventually go away.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="Why do I sometimes see torrents I'm not leeching in my profile!?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="When a torrent is first started, the tracker uses the IP to identify the user. Therefore the torrent will become associated with the user who last accessed the site from that IP. If you share your IP in some way (you are behind NAT/ICS, or using a proxy), and some of the persons you share it with are also users, you may occasionally see their torrents listed in your profile. (If they start a torrent session from that IP and you were the last one to visit the site the torrent will be associated with you). Note that now torrents listed in your profile will always count towards your total stats. ">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="To make sure your torrents show up in your profile you should visit the site immediately before starting a session. ">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="(The only way to completely stop foreign torrents from showing in profiles is to forbid users without an individual IP from accessing the site. Yes, that means you. Complain at your own risk.)">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="Multiple IPs (Can I login from different computers?)">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Yes, the tracker is now capable of following sessions from different IPs for the same user. A torrent is associated with the user when it starts, and only at that moment is the IP relevant. So if you want to seed/leech from computer A and computer B with the same account you should access the site from computer A, start the torrent there, and then repeat both steps from computer B (not limited to two computers or to a single torrent on each, this is just the simplest example). You do not need to login again when closing the torrent.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="How does NAT/ICS change the picture">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="This is a very particular case in that all computers in the LAN will appear to the outside world as having the same IP. We must distinguish between two cases:">
+                                    <VBox.margin><Insets bottom="15" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="1. You are the single iplay4 users in the LAN">
+                                    <VBox.margin><Insets bottom="15" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="You should use the same iplay4 account in all the computers.">
+                                    <VBox.margin><Insets bottom="15" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Note also that in the ICS case it is preferable to run the BT client on the ICS gateway. Clients running on the other computers will be unconnectable (they will be listed as such, as explained elsewhere in the FAQ) unless you specify the appropriate services in your ICS configuration (a good explanation of how to do this for Windows XP can be found here). In the NAT case you should configure different ranges for clients on different computers and create appropriate NAT rules in the router. (Details vary widely from router to router and are outside the scope of this FAQ. Check your router documentation and/or support forum.)">
+                                    <VBox.margin><Insets bottom="15" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="2. There are multiple http://www.iplay.ro users in the LAN">
+                                    <VBox.margin><Insets bottom="15" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Each torrent will be associated with the user's ip and passkey. The stats for each user should be recorded accurately because the stats depend on both to function properly. ">
+                                    <VBox.margin><Insets bottom="15" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;" text="For those of you who are interested...">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Some info about the &quot;Anatomy of a torrent session&quot;. ">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                            </children>
+                        </VBox>
+                        <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-footer"/>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <children>
+                        <Text fill="white" text="Uploading" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                            <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                        <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-header"/>
+                        <VBox maxWidth="750" alignment="CENTER_LEFT" styleClass="table-middle">
+                            <children>
+                                <Text fill="white" style="-fx-font-weight:bold; -fx-font-size:9pt;" text="Why can't I upload torrents?">
+                                    <VBox.margin><Insets bottom="15" top="20" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="You probably do not have your bitTorrent client setup correctly. Make sure you have used the tracker's announce url and the information areas are filled in correctly.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="1) This is a guide explaining how to upload torrents using the BitTorrent client Azureus.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Download Azureus from here: 'Azureus.'&#10;Go to the preferences (Azureus->Preferences).&#10;In the &quot;Server&quot; page change the &quot;Incoming TCP listen port&quot; to a non Peer-to-Peer port (6879 will work).&#10;If you have a firewall make sure this port range is open in both directions.&#10;Time to create a torrent to upload (File->Create a Torrent).&#10;In the &quot;Announce URL&quot; put &quot;http://www.iplay.ro/announce.php?passkey=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot;.&#10;Click the &quot;Browse&quot; button and find the file you want to share then click &quot;Next&quot;.&#10;Check to see if the right file is selected and click &quot;Finish&quot;.&#10;Voila, the torrent will be created where the file is.&#10;Login to the site 'iplay4' and go to the &quot;Upload&quot; section.&#10;In the &quot;Torrent file&quot; area click the &quot;Browse&quot; button and find the torrent file then click &quot;Open&quot;.&#10;In the &quot;Torrent name&quot; area type the name of the file if the name on the torrent is not descriptive.&#10;In the &quot;Description&quot; area type a thorough description of the file. Make sure the description is complete and includes all relevant information. DO NOT POST SERIALS/CRACKS.&#10;In the &quot;Type&quot; area choose the type of file by clicking on the pull down menu. Make sure the file is under the correct type.&#10;Check over the following steps and if everything is correct click the &quot;Do it!&quot; button.&#10;Time to seed the torrent: download the torrent off the site, click &quot;Open&quot;(File->Open->.torrent File), and find the downloaded torrent. You will not be able to seed the torrent created by the client because of the passkey that needs to be embedded in the torrent.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="It will take a couple minutes for your torrent to appear in the &quot;Browse&quot; section. ">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="2) This is a guide by verve explaining how to generate and upload a torrent using the official bittorrent client &quot;BitTorrent 3.4.2&quot; by following an example.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Let's say you want to share a folder called &quot;success&quot; with a file &quot;how-to.txt&quot; in it, lying on your desktop. Do the following steps:
+                                            &#10;Download &quot;BitTorrent 3.4.2&quot; from here: 'BitTorrent 3.4.2'
+                                            &#10;Install and open it.
+                                            &#10;Go to the menu &quot;BitTorrent-->Preferences...&quot; and change &quot;Low Port: 6890&quot;, &quot;High Port: 6999&quot; and check &quot;always ask for download folder&quot;. Click on &quot;Save&quot;
+                                            &#10;If you have a firewall make sure this port range is open in both directions, meaning in and out, maybe you should turn it off for this first time.
+                                            &#10;Go to the menu &quot;File-->Generate Torrent File...&quot;.
+                                            &#10;Type in the &quot;Tracker URL:&quot;-field &quot;http://www.iplay.ro/announce.php?passkey=aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa&quot;.
+                                            &#10;Drag'n'drop the &quot;success&quot;-folder from your Desktop into the little squared window you see over the &quot;Generate...&quot;-button, after that you can see the path of your &quot;success&quot;-folder, that should be &quot;/Users/.../Desktop/success/&quot;. Make sure the &quot;Make a torrent for each file/folder within this folder...&quot;- box is unchecked.
+                                            &#10;Click on &quot;Generate...&quot; and select the place and name you want the new torrent file to be saved. Just to keep it near the &quot;success&quot;-folder choose your Desktop and leave the name as suggested. Click on &quot;Save&quot;. When generating has finished, close the generate window.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="So with this youve got the &quot;success&quot;-folder and a file called &quot;success.torrent&quot; lying on your Desktop.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Go to 'iplay4' login and go to the &quot;Upload&quot; section.
+                                            &#10;In the &quot;torrent file&quot;-field click on &quot;Browse&quot; and select your newly created &quot;success.torrent&quot; lying on your Desktop, you should see it after that beside the button.
+                                            &#10;Type in the &quot;torrent name&quot;-field a descriptive torrent name you want to be seen by others on the &quot;browse&quot; page of iplay4, maybe &quot;Success - How to become an uploader&quot;.
+                                            &#10;Type in the &quot;description&quot;-field a description of the content of the &quot;success&quot;-folder, maybe &quot;This is a short introduction to upload a torrent with BitTorrent&quot;. Make sure the description is complete and includes all relevant information. DO NOT POST SERIALS/CRACKS HERE.
+                                            &#10;Choose a category from the pulldown menu, maybe &quot;Books/Articles/Magazines&quot;.
+                                            &#10;Click on &quot;Do it!&quot;, check the confirmation message.
+                                            &#10;Download the torrent off the site , go to &quot;BitTorrent 3.4.2&quot;, choose &quot;File-->Open...&quot; and select the &quot;success.torrent&quot; from your Desktop. After that choose your &quot;success&quot;-folder as place to be saved. &quot;BitTorrent 3.4.2&quot; should now check your &quot;success&quot;-folder and states &quot;checking-->complete-->seeding&quot;. You will not be able to seed the torrent created by the client because of the passkey that needs to be embedded in the torrent.
+                                            &#10;Go to 'iplay4' &quot;browse&quot;, after some minutes you should see &quot;Success - how to become an uploader&quot; with one seeder.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="You've done it ! ">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <TextFlow>
+                                    <children>
+                                        <Text fill="white" style="-fx-font-weight:bold;"
+                                              text="What rules must I follow to remain part of the"/>
+                                        <Text fill="darkred" style="-fx-font-weight:bold;"
+                                              text=" Uploader "/>
+                                        <Text fill="white" style="-fx-font-weight:bold;"
+                                              text="team?"/>
+                                    </children>
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></TextFlow>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="You must be able to provide releases that:
+                                            &#10;Include a detailed description.
+                                            &#10;Please refer to topic: Poor descriptions
+                                            &#10;No nasty files!
+                                            &#10;All files must be in a legitiment format so they are functional.
+                                            &#10;Pre-release stuff should be labeled with an *ALPHA* or *BETA* tag.
+                                            &#10;Make sure not to include any serial numbers, CD keys or similar in the description (you do not need to edit the NFO!).
+                                            &#10;Make sure your torrents are well-seeded for at least 24 hours.
+                                            &#10;Also, you should have at least 1MBit upload bandwidth.
+                                            &#10;Do not include the release date in the torrent name.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="If you have something interesting that somehow violate these rules, ask a mod and we might make an exception.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="Can I upload your torrents to other trackers?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="No. We are a closed, limited-membership community. Only registered users can use iplay4. Posting our torrents on other trackers is useless, since most people who attempt to download them will be unable to connect with us. This generates a lot of frustration and bad-will against iPLAY, and will therefore not be tolerated.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Complaints from other sites' administrative staff about our torrents being posted on their sites will result in the banning of the users responsible.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                            </children>
+                        </VBox>
+                        <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-footer"/>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <children>
+                        <Text fill="white" text="Downloading" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                            <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                        <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-header"/>
+                        <VBox maxWidth="750" alignment="CENTER_LEFT" styleClass="table-middle">
+                            <children>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="How do I use the files I've downloaded?">
+                                    <VBox.margin><Insets bottom="10" top="20" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Check out this guide.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="Downloaded a movie and don't know what CAM/TS/TC/SCR means?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Check out this guide.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="Why did an active torrent suddenly disappear?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="There may be three reasons for this:
+                                            &#10;(1) The torrent may have been out-of-sync with the site rules.
+                                            &#10;(2) The uploader may have deleted it because it was a bad release. A replacement will probably be uploaded to take its place.
+                                            &#10;(3) Torrents are automatically deleted after 7 days of inactivity.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="How do I resume a broken download or reseed something?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Open the .torrent file. When your client asks you for a location, choose the location of the existing file(s) and it will resume/reseed the torrent.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="Why do my downloads sometimes stall at 99%?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="The more pieces you have, the harder it becomes to find peers who have pieces you are missing. That is why downloads sometimes slow down or even stall when there are just a few percent remaining. Just be patient and you will, sooner or later, get the remaining pieces.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="What are these &quot;a piece has failed an hash check&quot; messages? ">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Bittorrent clients check the data they receive for integrity. When a piece fails this check it is automatically re-downloaded. Occasional hash fails are a common occurrence, and you shouldn't worry.
+                                            &#10;&#10;Some clients have an (advanced) option/preference to 'kick/ban clients that send you bad data' or similar. It should be turned on, since it makes sure that if a peer repeatedly sends you pieces that fail the hash check it will be ignored in the future.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="The torrent is supposed to be 100MB. How come I downloaded 120MB? ">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="See the hash fails topic. If your client receives bad data it will have to redownload it, therefore the total downloaded may be larger than the torrent size. Make sure the &quot;kick/ban&quot; option is turned on to minimize the extra downloads.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="Why do I get a &quot;rejected by tracker - Port xxxx is blacklisted&quot; error?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Your client is reporting to the tracker that it uses one of the default bittorrent ports (6881-6889) or any other common p2p port for incoming connections.
+                                            &#10;&#10;iplay4 does not allow clients to use ports commonly associated with p2p protocols. The reason for this is that it is a common practice for ISPs to throttle those ports (that is, limit the bandwidth, hence the speed).
+                                            &#10;&#10;The blocked ports list include, but is not neccessarily limited to, the following:
+                                            &#10;&#10;Direct Connect 411 - 413
+                                            &#10;&#10;Kazaa          1214
+                                            &#10;&#10;eDonkey        4662
+                                            &#10;&#10;Gnutella       6346 - 6347
+                                            &#10;&#10;BitTorrent     6881 - 6889
+                                            &#10;&#10;In order to use use our tracker you must configure your client to use any port range that does not contain those ports (a range within the region 49152 through 65535 is preferable, cf. IANA). Notice that some clients, like Azureus 2.0.7.0 or higher, use a single port for all torrents, while most others use one port per open torrent. The size of the range you choose should take this into account (typically less than 10 ports wide. There is no benefit whatsoever in choosing a wide range, and there are possible security implications).
+                                            &#10;&#10;These ports are used for connections between peers, not client to tracker. Therefore this change will not interfere with your ability to use other trackers (in fact it should increase your speed with torrents from any tracker, not just ours). Your client will also still be able to connect to peers that are using the standard ports. If your client does not allow custom ports to be used, you will have to switch to one that does.
+                                            &#10;&#10;Do not ask us, or in the forums, which ports you should choose. The more random the choice is the harder it will be for ISPs to catch on to us and start limiting speeds on the ports we use. If we simply define another range ISPs will start throttling that range also.
+                                            &#10;&#10;Finally, remember to forward the chosen ports in your router and/or open them in your firewall, should you have them. See the Why am I listed as not connectable?  section and links therein for more information on this.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="What's this &quot;IOError - [Errno13] Permission denied&quot; error?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="If you just want to fix it reboot your computer, it should solve the problem. Otherwise read on.
+                                            &#10;&#10;IOError means Input-Output Error, and that is a file system error, not a tracker one. It shows up when your client is for some reason unable to open the partially downloaded torrent files. The most common cause is two instances of the client to be running simultaneously: the last time the client was closed it somehow didn't really close but kept running in the background, and is therefore still locking the files, making it impossible for the new instance to open them.
+                                            &#10;&#10;A more uncommon occurrence is a corrupted FAT. A crash may result in corruption that makes the partially downloaded files unreadable, and the error ensues. Running scandisk should solve the problem. (Note that this may happen only if you're running Windows 9x - which only support FAT - or NT/2000/XP with FAT formatted hard drives. NTFS is much more robust and should never permit this problem.)">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                            </children>
+                        </VBox>
+                        <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-footer"/>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <children>
+                        <Text fill="white" text="How can I improve my download speed?" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                            <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                        <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-header"/>
+                        <VBox maxWidth="750" alignment="CENTER_LEFT" styleClass="table-middle">
+                            <children>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="The download speed mostly depends on the seeder-to-leecher ratio (SLR). Poor download speed is mainly a problem with new and very popular torrents where the SLR is low.
+                                            &#10;&#10;(Proselytising sidenote: make sure you remember that you did not enjoy the low speed. Seed so that others will not endure the same.)
+                                            &#10;&#10;There are a couple of things that you can try on your end to improve your speed:">
+                                    <VBox.margin><Insets bottom="10" top="20" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="Do not immediately jump on new torrents">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="In particular, do not do it if you have a slow connection. The best speeds will be found around the half-life of a torrent, when the SLR will be at its highest. (The downside is that you will not be able to seed so much. It's up to you to balance the pros and cons of this.)">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="Make yourself connectable ">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="See the Why am I listed as not connectable?  section.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="Limit your upload speed">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="The upload speed affects the download speed in essentially two ways:">
+                                    <Text fill="white" wrappingWidth="720"
+                                          text=" • Bittorrent peers tend to favour those other peers that upload to them. This means that if A and B are leeching the same torrent and A is sending data to B at high speed then B will try to reciprocate. So due to this effect high upload speeds lead to high download speeds.">
+                                        <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                    <Text fill="white" wrappingWidth="720"
+                                          text=" • Due to the way TCP works, when A is downloading something from B it has to keep telling B that it received the data sent to him. (These are called acknowledgements - ACKs -, a sort of &quot;got it!&quot; messages). If A fails to do this then B will stop sending data and wait. If A is uploading at full speed there may be no bandwidth left for the ACKs and they will be delayed. So due to this effect excessively high upload speeds lead to low download speeds.">
+                                        <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                    <TextFlow>
+                                        <children>
+                                            <Text fill="white" wrappingWidth="720"
+                                                  text="The full effect is a combination of the two. The upload should be kept as high as possible while allowing the ACKs to get through without delay."/>
+                                            <Text fill="white" style="-fx-font-weight:bold;" wrappingWidth="720"
+                                                  text=" A good thumb rule is keeping the upload at about 80% of the theoretical upload speed."/>
+                                            <Text fill="white" wrappingWidth="720"
+                                                  text=" You will have to fine tune yours to find out what works best for you. (Remember that keeping the upload high has the additional benefit of helping with your ratio.) "/>
+                                        </children>
+                                   <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></TextFlow>
+                                <Text fill="white" wrappingWidth="720"
+                                          text="If you are running more than one instance of a client it is the overall upload speed that you must take into account. Some clients (e.g. Azureus) limit global upload speed, others (e.g. Shad0w's) do it on a per torrent basis. Know your client. The same applies if you are using your connection for anything else (e.g. browsing or ftp), always think of the overall upload speed.">
+                                        <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="Limit the number of simultaneous connections">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Some operating systems (like Windows 9x) do not deal well with a large number of connections, and may even crash. Also some home routers (particularly when running NAT and/or firewall with stateful inspection services) tend to become slow or crash when having to deal with too many connections. There are no fixed values for this, you may try 60 or 100 and experiment with the value. Note that these numbers are additive, if you have two instances of a client running the numbers add up.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="Limit the number of simultaneous uploads">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Isn't this the same as above? No. Connections limit the number of peers your client is talking to and/or downloading from. Uploads limit the number of peers your client is actually uploading to. The ideal number is typically much lower than the number of connections, and highly dependent on your (physical) connection.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="Just give it some time">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="As explained above peers favour other peers that upload to them. When you start leeching a new torrent you have nothing to offer to other peers and they will tend to ignore you. This makes the starts slow, in particular if, by change, the peers you are connected to include few or no seeders. The download speed should increase as soon as you have some pieces to share.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="Why is my browsing so slow while leeching?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Your download speed is always finite. If you are a peer in a fast torrent it will almost certainly saturate your download bandwidth, and your browsing will suffer. You can use NetLimiter to limit your upload/download bandwidth.
+                                            &#10;&#10;Browsing was used just as an example, the same would apply to gaming, IMing, etc...">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                            </children>
+                        </VBox>
+                        <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-footer"/>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <children>
+                        <Text fill="white" text="My ISP uses a transparent proxy. What should I do?" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                            <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                        <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-header"/>
+                        <VBox maxWidth="750" alignment="CENTER_LEFT" styleClass="table-middle">
+                            <children>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Caveat: This is a large and complex topic. It is not possible to cover all variations here.
+                                            &#10;&#10;Short reply: change to an ISP that does not force a proxy upon you. If you cannot or do not want to then read on.">
+                                    <VBox.margin><Insets bottom="10" top="20" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="What is a proxy?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Basically a middleman. When you are browsing a site through a proxy your requests are sent to the proxy and the proxy forwards them to the site instead of you connecting directly to the site. There are several classifications (the terminology is far from standard):
+                                             &#10;&#10;Transparent Explicit/Voluntary Anonymous Highly Anonymous Public
+                                                &#10;A transparent proxy is one that needs no configuration on the clients. It works by automatically redirecting all port 80 traffic to the proxy. (Sometimes used as synonymous for non-anonymous.)
+                                                &#10;Clients must configure their browsers to use them.
+                                                &#10;The proxy sends no client identification to the server. (HTTP_X_FORWARDED_FOR header is not sent; the server does not see your IP.)
+                                                &#10;The proxy sends no client nor proxy identification to the server. (HTTP_X_FORWARDED_FOR, HTTP_VIA and HTTP_PROXY_CONNECTION headers are not sent; the server doesn't see your IP and doesn't even know you're using a proxy.)
+                                                &#10;(Self explanatory)
+                                                 &#10;&#10;A transparent proxy may or may not be anonymous, and there are several levels of anonymity.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="How do I find out if I'm behind a (transparent/anonymous) proxy?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Try ProxyJudge. It lists the HTTP headers that the server where it is running received from you. The relevant ones are HTTP_CLIENT_IP, HTTP_X_FORWARDED_FOR and REMOTE_ADDR.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="Why am I listed as not connectable even though I'm not NAT/Firewalled?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="The TorrentBits tracker is quite smart at finding your real IP, but it does need the proxy to send the HTTP header HTTP_X_FORWARDED_FOR. If your ISP's proxy does not then what happens is that the tracker will interpret the proxy's IP address as the client's IP address. So when you login and the tracker tries to connect to your client to see if you are NAT/firewalled it will actually try to connect to the proxy on the port your client reports to be using for incoming connections. Naturally the proxy will not be listening on that port, the connection will fail and the tracker will think you are NAT/firewalled.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="Can I bypass my ISP's proxy?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="If your ISP only allows HTTP traffic through port 80 or blocks the usual proxy ports then you would need to use something like socks and that is outside the scope of this FAQ.
+                                            &#10;&#10;(Not working) The site accepts connections on port 81 besides the usual 80, and using them may be enough to fool some proxies. So the first thing to try should be connecting to http://www.iplay.ro:81. Note that even if this works your bt client will still try to connect to port 80 unless you edit the announce url in the .torrent file.
+                                            &#10;&#10;Otherwise you may try the following:">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text=" • Choose any public non-anonymous proxy that does not use port 80 (e.g. from this, this or this list).">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text=" • Configure your computer to use that proxy. For Windows XP, do Start, Control Panel, Internet Options, Connections, LAN Settings, Use a Proxy server, Advanced and type in the IP and port of your chosen proxy. Or from Internet Explorer use Tools, Internet Options, ...">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text=" • (Facultative) Visit ProxyJudge. If you see an HTTP_X_FORWARDED_FOR in the list followed by your IP then everything should be ok, otherwise choose another proxy and try again.">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text=" • Visit http://www.iplay.ro hopefully the tracker will now pickup your real IP (check your profile to make sure).">
+                                    <VBox.margin><Insets bottom="10" left="30"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Notice that now you will be doing all your browsing through a public proxy, which are typically quite slow. Communications between peers do not use port 80 so their speed will not be affected by this, and should be better than when you were &quot;unconnectable&quot;.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="How do I make my bittorrent client use a proxy?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Just configure Windows XP as above. When you configure a proxy for Internet Explorer you're actually configuring a proxy for all HTTP traffic (thank Microsoft and their &quot;IE as part of the OS policy&quot; ). On the other hand if you use another browser (Opera/Mozilla/Firefox) and configure a proxy there you'll be configuring a proxy just for that browser. We don't know of any BT client that allows a proxy to be specified explicitly.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="Why can't I signup from behind a proxy?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="It is our policy not to allow new accounts to be opened from behind a proxy.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="Does this apply to other torrent sites?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="This section was written for TorrentBits Tracker, a closed, port 80-81 tracker. Other trackers may be open or closed, and many listen on e.g. ports 6868 or 6969. The above does not necessarily apply to other trackers.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                            </children>
+                        </VBox>
+                        <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-footer"/>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <children>
+                        <Text fill="white" text="Why can't I connect? Is the site blocking me?" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                            <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                        <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-header"/>
+                        <VBox maxWidth="750" alignment="CENTER_LEFT" styleClass="table-middle">
+                            <children>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Your failure to connect may be due to several reasons.">
+                                    <VBox.margin><Insets bottom="20" top="20" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="Maybe my address is blacklisted?">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="The site blocks addresses listed in the (former) PeerGuardian database, as well as addresses of banned users. This works at Apache/PHP level, it's just a script that blocks logins from those addresses. It should not stop you from reaching the site. In particular it does not block lower level protocols, you should be able to ping/traceroute the server even if your address is blacklisted. If you cannot then the reason for the problem lies elsewhere.
+                                            &#10;&#10;If somehow your address is indeed blocked in the PG database do not contact us about it, it is not our policy to open ad hoc exceptions. You should clear your IP with the database maintainers instead.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="Your ISP blocks the site's address">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="(In first place, it's unlikely your ISP is doing so. DNS name resolution and/or network problems are the usual culprits.)
+                                            &#10;There's nothing we can do. You should contact your ISP (or get a new one). Note that you can still visit the site via a proxy, follow the instructions in the relevant section. In this case it doesn't matter if the proxy is anonymous or not, or which port it listens to.
+                                            &#10;&#10;Notice that you will always be listed as an &quot;unconnectable&quot; client because the tracker will be unable to check that you're capable of accepting incoming connections.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" style="-fx-font-weight:bold;"
+                                      text="Alternate port (81): off until further notice">
+                                    <VBox.margin><Insets bottom="10" top="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Some of our torrents use ports other than the usual HTTP port 80. This may cause problems for some users, for instance those behind some firewall or proxy configurations. You can easily solve this by editing the .torrent file yourself with any torrent editor, e.g. MakeTorrent, and replacing the announce url http://www.iplay.ro:81 with http://www.iplay.ro:80 or just http://www.iplay.ro.
+                                            &#10;&#10;Editing the .torrent with Notepad is not recommended. It may look like a text file, but it is in fact a bencoded file. If for some reason you must use a plain text editor, change the announce url to http://www.iplay.ro:80, not http://www.iplay.ro. (If you're thinking about changing the number before the announce url instead, you know too much to be reading this.)">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                            </children>
+                        </VBox>
+                        <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-footer"/>
+                    </children>
+                </VBox>
+                <VBox alignment="CENTER">
+                    <children>
+                        <Text fill="white" text="What if I can't find the answer to my problem here?" style="-fx-font-weight: bold; -fx-font-size:10pt;">
+                            <VBox.margin><Insets bottom="5" /></VBox.margin></Text>
+                        <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-header"/>
+                        <VBox maxWidth="750" alignment="CENTER_LEFT" styleClass="table-middle">
+                            <children>
+                                <Text fill="white" wrappingWidth="720"
+                                      text="Post in the Forums, by all means. You'll find they are usually a friendly and helpful place, provided you follow a few basic guidelines:">
+                                    <VBox.margin><Insets bottom="15" top="20" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text=" • Make sure your problem is not really in this FAQ. There's no point in posting just to be sent back here.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text=" • Before posting read the sticky topics (the ones at the top). Many times new information that still hasn't been incorporated in the FAQ can be found there.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text=" • Help us in helping you. Do not just say &quot;it doesn't work!&quot;. Provide details so that we don't have to guess or waste time asking. What client do you use? What's your OS? What's your network setup? What's the exact error message you get, if any? What are the torrents you are having problems with? The more you tell the easiest it will be for us, and the more probable your post will get a reply.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                                <Text fill="white" wrappingWidth="720"
+                                      text=" • And needless to say: be polite. Demanding help rarely works, asking for it usually does the trick.">
+                                    <VBox.margin><Insets bottom="10" left="10"/></VBox.margin></Text>
+                            </children>
+                        </VBox>
+                        <HBox maxWidth="750" prefHeight="10" alignment="CENTER_LEFT" styleClass="table-footer"/>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+        </children>
+    </GridPane>
+<ScrollPane fx:id="Sp" fitToWidth="true" hbarPolicy="AS_NEEDED" vbarPolicy="AS_NEEDED" />
+        </children>
+        </VBox>
+
+
+

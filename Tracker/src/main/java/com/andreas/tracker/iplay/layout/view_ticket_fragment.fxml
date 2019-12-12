@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<VBox alignment="CENTER" spacing="5" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.andreas.tracker.iplay.fragments.ViewTicketFragment">
+    <children>
+        <Text fx:id="TextTicketSubject" fill="white" style="-fx-font-size:11pt; -fx-font-weight:bold;" />
+        <GridPane alignment="CENTER">
+            <children>
+                <HBox prefHeight="20" prefWidth="142" styleClass="profile-header-left" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                <HBox prefHeight="20" prefWidth="398" styleClass="profile-header-right" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                <HBox alignment="CENTER_RIGHT" prefWidth="142" styleClass="profile-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                    <children>
+                        <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Message">
+                            <HBox.margin>
+                                <Insets right="30.0" />
+                            </HBox.margin></Text>
+                    </children>
+                </HBox>
+                <HBox prefWidth="398" styleClass="profile-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <children>
+                        <Text fx:id="TextMessage" fill="white" wrappingWidth="350">
+                            <HBox.margin>
+                                <Insets bottom="10.0" left="10.0" />
+                            </HBox.margin>
+                        </Text>
+                    </children>
+                </HBox>
+                <HBox alignment="CENTER_RIGHT" prefWidth="142" styleClass="profile-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                    <children>
+                        <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Answer">
+                            <HBox.margin>
+                                <Insets right="30.0" />
+                            </HBox.margin></Text>
+                    </children>
+                </HBox>
+                <HBox prefWidth="398" styleClass="profile-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                    <children>
+                        <Text fx:id="TextAnswer" fill="white" wrappingWidth="350">
+                            <HBox.margin>
+                                <Insets bottom="10.0" left="10.0" />
+                            </HBox.margin>
+                        </Text>
+                    </children>
+                </HBox>
+                <HBox prefHeight="20" prefWidth="142" styleClass="profile-footer-left" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                <HBox prefHeight="20" prefWidth="398" styleClass="profile-footer-right" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            </children>
+        </GridPane>
+    </children>
+</VBox>

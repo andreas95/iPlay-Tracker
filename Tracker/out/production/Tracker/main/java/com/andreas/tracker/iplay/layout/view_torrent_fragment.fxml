@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.web.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.layout.*?>
+
+<GridPane alignment="CENTER" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.com.andreas.tracker.iplay.fragments.ViewTorrentFragment">
+    <padding><Insets top="10" /></padding>
+    <children>
+        <HBox alignment="CENTER" prefHeight="45" prefWidth="100" styleClass="dltable-h1" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <HBox alignment="CENTER" prefHeight="45" styleClass="dltable-h2" GridPane.columnIndex="1" GridPane.rowIndex="0">
+            <children>
+                <Text fx:id="TextTorrentName" fill="white" style="-fx-font-size:11pt; -fx-font-weight:bold;" textAlignment="CENTER" wrappingWidth="600" />
+            </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="45" prefWidth="50" styleClass="dltable-h4" GridPane.columnIndex="2" GridPane.rowIndex="0" />
+            <HBox alignment="CENTER" prefWidth="100" styleClass="dltable-m1" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <HBox alignment="CENTER" prefWidth="640" styleClass="dltable-m2" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                    <children>
+                        <GridPane alignment="CENTER">
+                            <children>
+                                <HBox prefHeight="20" prefWidth="110" styleClass="torrent-header-left" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                                <HBox prefHeight="20" prefWidth="640" styleClass="torrent-header-right" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+                                <HBox alignment="CENTER_RIGHT" prefHeight="20" prefWidth="110.0" styleClass="torrent-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                    <children>
+                                        <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Download " />
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" prefHeight="20" prefWidth="640" spacing="10" styleClass="torrent-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                    <children>
+                                        <Label fx:id="ButtonDirectLink" onMouseClicked="#download_direct">
+                                            <graphic>
+                                                <ImageView fitHeight="33.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../../../../resources/img/common/download_direct.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Label>
+
+                                        <Label fx:id="ButtonMagnetLink" onMouseClicked="#download_magnet">
+                                            <graphic>
+                                                <ImageView fitHeight="33.0" fitWidth="158.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../../../../resources/img/common/download_magnet.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Label>
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER_RIGHT" prefHeight="20" prefWidth="110.0" styleClass="torrent-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="2">
+                                    <children>
+                                        <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Genre " />
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" prefHeight="20" prefWidth="640" styleClass="torrent-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                    <children>
+                                        <Text fx:id="TextTorrentGenre" fill="white" style="-fx-font-size:9pt;" />
+                                    </children>
+                                </HBox>
+
+                                <HBox alignment="CENTER_RIGHT" prefHeight="20" prefWidth="110.0" styleClass="torrent-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="3">
+                                    <children>
+                                        <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Description " />
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER" prefHeight="20" prefWidth="640" styleClass="torrent-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                    <children>
+                                        <WebView fx:id="TextDescription" />
+                                    </children>
+                                </HBox>
+
+                                <HBox alignment="CENTER_RIGHT" prefHeight="20" prefWidth="110.0" styleClass="torrent-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="4">
+                                    <children>
+                                        <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Type " />
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" prefHeight="20" prefWidth="640" styleClass="torrent-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                    <children>
+                                        <Text fx:id="TextTorrentType" fill="white" style="-fx-font-size:9pt;" />
+                                    </children>
+                                </HBox>
+
+                                <HBox alignment="CENTER_RIGHT" prefHeight="20" prefWidth="110.0" styleClass="torrent-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="5">
+                                    <padding><Insets right="10" /></padding>
+                                    <children>
+                                        <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Size " />
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" prefHeight="20" prefWidth="640" styleClass="torrent-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                    <children>
+                                        <Text fx:id="TextTorrentSize" fill="white" style="-fx-font-size:9pt;" />
+                                    </children>
+                                </HBox>
+
+                                <HBox alignment="CENTER_RIGHT" prefHeight="20" prefWidth="110.0" styleClass="torrent-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="6">
+                                    <children>
+                                        <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Added " />
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" prefHeight="20" prefWidth="640" styleClass="torrent-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                    <children>
+                                        <Text fx:id="TextTorrentAdded" fill="white" style="-fx-font-size:9pt;" />
+                                    </children>
+                                </HBox>
+
+                                <HBox alignment="CENTER_RIGHT" prefHeight="20" prefWidth="110.0" styleClass="torrent-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="7">
+                                    <children>
+                                        <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Snatched " />
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" prefHeight="20" prefWidth="640" styleClass="torrent-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                                    <children>
+                                        <Text fx:id="TextTorrentSnatched" fill="white" style="-fx-font-size:9pt;" />
+                                    </children>
+                                </HBox>
+
+                                <HBox alignment="CENTER_RIGHT" prefHeight="20" prefWidth="110.0" styleClass="torrent-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="8">
+                                    <children>
+                                        <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Uploaded by " />
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" prefHeight="20" prefWidth="640" styleClass="torrent-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                                    <children>
+                                        <Text fx:id="TextTorrentUploadedBy" fill="white" style="-fx-font-size:9pt; -fx-font-weight:bold;" />
+                                    </children>
+                                </HBox>
+
+                                <HBox alignment="CENTER_RIGHT" prefHeight="20" prefWidth="110.0" styleClass="torrent-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="9">
+                                    <children>
+                                        <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Report torrent " />
+                                    </children>
+                                </HBox>
+                                <HBox alignment="CENTER_LEFT" prefHeight="20" prefWidth="640" styleClass="torrent-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="9">
+                                    <children>
+                                        <Text fill="white" style="-fx-font-size:9pt;" text="Click" />
+                                        <Text fx:id="ButtonReport" onMouseClicked="#report_torrent" styleClass="link" text=" here " />
+                                        <Text fill="white" style="-fx-font-size:9pt;" text="to report this torrent to staff for violation of the rules." />
+                                    </children>
+                                </HBox>
+
+                                <HBox alignment="CENTER_RIGHT" prefHeight="20" prefWidth="110.0" styleClass="torrent-middle-left" GridPane.columnIndex="0" GridPane.rowIndex="10">
+                                    <children>
+                                        <Text fill="black" style="-fx-font-size:9pt; -fx-font-weight:bold;" text="Thanks by " />
+                                    </children>
+                                </HBox>
+                                <VBox alignment="CENTER_LEFT" prefHeight="20" prefWidth="640" spacing="5" styleClass="torrent-middle-right" GridPane.columnIndex="1" GridPane.rowIndex="10">
+                                    <children>
+                                        <Text fx:id="TextThanks" fill="white" style="-fx-font-size:9pt; -fx-font-weight:bold;" />
+
+                                        <Button fx:id="ButtonThanks" mnemonicParsing="false" onAction="#thanks" styleClass="thanks" text="Thanks">
+                                            <font>
+                                                <Font name="SansSerif Bold" size="14.0" />
+                                            </font>
+                                            <graphic>
+                                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                                    <image>
+                                                        <Image url="@../../../../../../resources/img/common/button/like.png" />
+                                                    </image>
+                                                </ImageView>
+                                            </graphic>
+                                        </Button>
+                                    </children>
+                                </VBox>
+                                <HBox prefHeight="20" prefWidth="110" styleClass="torrent-footer-left" GridPane.columnIndex="0" GridPane.rowIndex="11" />
+                                <HBox prefHeight="20" prefWidth="640" styleClass="torrent-footer-right" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                            </children>
+               <columnConstraints>
+                  <ColumnConstraints />
+                  <ColumnConstraints />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+                  <RowConstraints />
+               </rowConstraints>
+               <HBox.margin>
+                  <Insets bottom="5.0" left="-60.0" top="5.0" />
+               </HBox.margin>
+                        </GridPane>
+                    </children>
+                </HBox>
+        <HBox alignment="CENTER" prefWidth="50" styleClass="dltable-m4" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+        <HBox alignment="CENTER" prefHeight="10" prefWidth="100" styleClass="dltable-f1" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+        <HBox alignment="CENTER" prefHeight="10" styleClass="dltable-f2" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+        <HBox alignment="CENTER" prefHeight="10" prefWidth="50" styleClass="dltable-f4" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+        <VBox alignment="CENTER" GridPane.columnIndex="0" GridPane.columnSpan="3" GridPane.rowIndex="3">
+            <children>
+
+            </children>
+        </VBox>
+        <VBox alignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <padding><Insets top="15" /></padding>
+            <children>
+                <HBox alignment="CENTER" maxWidth="400.0" prefHeight="10" prefWidth="400" styleClass="little-pane-header" />
+                <VBox alignment="CENTER" maxWidth="400" prefWidth="400" styleClass="little-pane-middle">
+                    <children>
+                        <TextArea maxWidth="300" minWidth="300" prefHeight="90" prefWidth="300" />
+                        <Button mnemonicParsing="false" styleClass="btn" text="Do it!">
+                            <graphic>
+                                <ImageView fitHeight="16.0" fitWidth="16.0" pickOnBounds="true" preserveRatio="true">
+                                    <image>
+                                        <Image url="@../../../../../../resources/img/common/button/add.png" />
+                                    </image>
+                                </ImageView>
+                            </graphic>
+                     <VBox.margin>
+                        <Insets top="6.0" />
+                     </VBox.margin>
+                        </Button>
+                    </children>
+                </VBox>
+                <HBox alignment="CENTER" maxWidth="400.0" prefHeight="10" prefWidth="400" styleClass="little-pane-footer" />
+            </children>
+        </VBox>
+    </children>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+</GridPane>
